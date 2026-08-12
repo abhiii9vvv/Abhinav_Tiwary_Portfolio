@@ -10,7 +10,7 @@ export const profile = {
   subheadline:
     "I build real-world products across full-stack engineering, backend systems, cloud infrastructure, and Generative AI.",
   about:
-    "I work at the intersection of full-stack engineering and Generative AI — learning by shipping real products across SaaS platforms, backend systems, cloud infrastructure, real-time applications, and developer tooling.",
+    "I work at the intersection of full-stack engineering and Generative AI, learning by shipping real products across SaaS platforms, backend systems, cloud infrastructure, real-time applications, and developer tooling.",
   availability: "Open to Frontend / Full-Stack / Gen AI internships",
   headshot: "/images/headshot.png",
 };
