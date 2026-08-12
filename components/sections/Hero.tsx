@@ -21,7 +21,7 @@ export function Hero() {
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, shouldReduceMotion ? 0 : 40]);
 
   return (
-    <section ref={sectionRef} id="top" className="mx-auto max-w-5xl px-6 pb-20 pt-16 sm:px-10 sm:pt-24">
+    <section ref={sectionRef} id="top" className="mx-auto max-w-7xl px-6 pb-20 pt-16 sm:px-10 sm:pt-24">
       <div className="grid items-center gap-14 sm:grid-cols-[1.2fr_0.8fr]">
         <Reveal>
           <div>

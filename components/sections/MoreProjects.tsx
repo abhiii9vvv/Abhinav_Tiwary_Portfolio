@@ -7,7 +7,7 @@ import { ArrowUpRight, GithubMark } from "@/components/icons";
 export function MoreProjects() {
   return (
     <Section id="more-projects" eyebrow="Repositories" title="More on GitHub.">
-      <div className="grid gap-x-6 gap-y-1 sm:grid-cols-2">
+      <div className="grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
         {moreProjects.map((project, i) => (
           <Reveal key={project.slug} delay={i * 0.03}>
             <a

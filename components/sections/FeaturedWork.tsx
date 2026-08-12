@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 export function FeaturedWork() {
   return (
     <Section id="work" eyebrow="Featured Work" title="Products I've shipped.">
-      <div className="grid items-stretch gap-6 sm:grid-cols-2">
+      <div className="grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {featuredProjects.map((project, i) => (
           <Reveal key={project.slug} delay={i * 0.05}>
             <ProjectCard

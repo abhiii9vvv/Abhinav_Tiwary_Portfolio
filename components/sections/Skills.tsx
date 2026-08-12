@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 export function Skills() {
   return (
     <Section id="skills" eyebrow="Skills" title="Tools I reach for.">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {skillGroups.map((group, groupIndex) => (
           <Reveal key={group.label} delay={groupIndex * 0.05}>
             <div className="rounded-2xl border border-line bg-bg-raised p-6">

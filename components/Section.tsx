@@ -10,7 +10,7 @@ export function Section({ id, eyebrow, title, children, className }: SectionProp
   return (
     <section
       id={id}
-      className={`mx-auto max-w-5xl scroll-mt-20 px-6 py-24 sm:px-10 ${className ?? ""}`}
+      className={`mx-auto max-w-7xl scroll-mt-20 px-6 py-24 sm:px-10 ${className ?? ""}`}
     >
       <div className="mb-12">
         {eyebrow && (

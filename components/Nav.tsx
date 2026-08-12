@@ -32,7 +32,7 @@ export function Nav() {
       <header className="sticky top-0 z-50 border-b border-line bg-bg/90 backdrop-blur">
         <nav
           aria-label="Primary"
-          className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 sm:px-10"
+          className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10"
         >
           <Link
             href="/"
