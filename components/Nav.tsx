@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight } from "@/components/icons";
 
 const links = [
   { href: "/", label: "Home" },
@@ -17,6 +19,7 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -38,17 +41,33 @@ export function Nav() {
             Abhinav Tiwary
           </Link>
           <ul className="hidden gap-6 text-sm text-ink-muted lg:flex">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="rounded-sm transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`relative rounded-sm pb-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                      isActive ? "text-ink" : "hover:text-ink"
+                    }`}
+                  >
+                    {link.label}
+                    {isActive && (
+                      <span className="absolute inset-x-0 -bottom-[1px] h-[2px] rounded-full bg-ink" />
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
+          <Link
+            href="/contact"
+            className="hidden shrink-0 items-center gap-1.5 rounded-full bg-ink px-5 py-2.5 text-sm text-bg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 lg:inline-flex"
+          >
+            Let&apos;s Connect
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -64,17 +83,23 @@ export function Nav() {
             id="mobile-nav"
             className="flex flex-col gap-1 border-t border-line px-6 py-4 lg:hidden"
           >
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-sm py-2 text-ink-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {links.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`block rounded-sm py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                      isActive ? "font-medium text-ink" : "text-ink-muted hover:text-ink"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         )}
       </header>

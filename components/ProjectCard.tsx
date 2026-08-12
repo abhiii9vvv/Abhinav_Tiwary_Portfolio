@@ -34,12 +34,11 @@ export function ProjectCard({
       href={primaryLink}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line border-t-4 bg-bg-raised transition-shadow duration-300 ${
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-bg-raised transition-shadow duration-300 ${
         compact
           ? "shadow-none hover:shadow-[0_10px_24px_-16px_rgba(0,0,0,0.14)]"
           : "shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_18px_40px_-16px_rgba(0,0,0,0.18)]"
       } ${large ? "sm:col-span-2" : ""}`}
-      style={{ borderTopColor: colorForTag(project.name) }}
     >
       {project.screenshot && (
         <div
@@ -63,7 +62,7 @@ export function ProjectCard({
               {project.status}
             </span>
           )}
-          <h3 className="font-display text-2xl text-ink">{project.name}</h3>
+          <h3 className={`font-display text-ink ${large ? "text-3xl" : "text-2xl"}`}>{project.name}</h3>
           <p className="mt-1 text-ink-muted">{project.tagline}</p>
         </div>
         <p className="mt-4 text-sm leading-relaxed text-ink-muted">{project.description}</p>

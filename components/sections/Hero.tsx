@@ -4,9 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { profile, stats } from "@/content/profile";
+import { profile } from "@/content/profile";
 import { Reveal } from "@/components/Reveal";
 import { ArrowUpRight } from "@/components/icons";
+import { techIconMap } from "@/components/icons/tech";
+
+const heroStack = ["React.js", "Next.js", "Node.js", "MongoDB", "TypeScript", "AWS"];
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -19,11 +22,14 @@ export function Hero() {
 
   return (
     <section ref={sectionRef} id="top" className="mx-auto max-w-5xl px-6 pb-20 pt-16 sm:px-10 sm:pt-24">
-      <div className="flex flex-col-reverse items-start gap-10 sm:flex-row sm:items-center sm:justify-between">
+      <div className="grid items-center gap-14 sm:grid-cols-[1.2fr_0.8fr]">
         <Reveal>
           <div>
             <p className="mb-4 text-sm uppercase tracking-[0.2em] text-ink-muted">
-              {profile.location} · {profile.availability}
+              {profile.location}
+            </p>
+            <p className="mb-6 text-sm font-medium uppercase tracking-[0.15em] text-accent">
+              {profile.availability}
             </p>
             <h1 className="text-balance font-display text-5xl leading-[1.05] tracking-tight text-ink sm:text-6xl">
               {profile.headline}
@@ -36,42 +42,48 @@ export function Hero() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm text-bg transition-all duration-200 hover:opacity-85 active:scale-[0.96]"
               >
-                Get in touch
+                Let&apos;s Connect
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/work"
                 className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm text-ink transition-colors duration-200 hover:border-ink active:scale-[0.96]"
               >
-                See featured work
+                See My Work
+                <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
+            <ul className="mt-10 flex flex-wrap gap-2">
+              {heroStack.map((tech) => {
+                const Icon = techIconMap[tech];
+                return (
+                  <li
+                    key={tech}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-line bg-bg-raised px-3 py-1.5 text-xs text-ink-muted"
+                  >
+                    {Icon && <Icon className="h-4 w-4 shrink-0" />}
+                    {tech}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </Reveal>
         <Reveal delay={0.15}>
-          <motion.div style={{ y: parallaxY }}>
-            <Image
-              src={profile.headshot}
-              alt={profile.name}
-              width={180}
-              height={180}
-              className="rounded-full border border-black/10 object-cover"
-              priority
-            />
+          <motion.div style={{ y: parallaxY }} className="mx-auto w-full max-w-sm sm:max-w-none">
+            <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-line bg-bg-raised">
+              <Image
+                src={profile.headshot}
+                alt={profile.name}
+                fill
+                sizes="(min-width: 640px) 360px, 320px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
         </Reveal>
       </div>
-
-      <Reveal delay={0.25}>
-        <dl className="mt-20 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-line pt-10 sm:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="font-display text-3xl tabular-nums text-ink">{stat.value}</dt>
-              <dd className="mt-1 text-sm text-ink-muted">{stat.label}</dd>
-            </div>
-          ))}
-        </dl>
-      </Reveal>
     </section>
   );
 }

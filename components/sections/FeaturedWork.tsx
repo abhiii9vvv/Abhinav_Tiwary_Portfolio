@@ -11,7 +11,7 @@ export function FeaturedWork() {
           <Reveal key={project.slug} delay={i * 0.05}>
             <ProjectCard
               project={project}
-              large={project.slug === "campussetu" || i === featuredProjects.length - 1}
+              large={i === 0 || project.slug === "campussetu" || i === featuredProjects.length - 1}
             />
           </Reveal>
         ))}

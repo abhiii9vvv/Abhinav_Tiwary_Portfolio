@@ -5,10 +5,10 @@ import { MailMark, LinkedinMark, GithubMark, ArrowUpRight } from "@/components/i
 
 export function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Let's build something.">
+    <Section id="contact" eyebrow="Contact" title="Let's build something useful.">
       <Reveal>
         <p className="max-w-xl text-lg text-ink-muted">
-          {profile.availability}. Reach out directly. I read every message.
+          I&apos;m open to full-time opportunities, internships, and interesting engineering projects.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
           <a
