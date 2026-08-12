@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const links = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
@@ -7,6 +11,8 @@ const links = [
 ];
 
 export function Nav() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <a
@@ -38,7 +44,34 @@ export function Nav() {
               </li>
             ))}
           </ul>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            className="rounded-sm text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:hidden"
+          >
+            {open ? "Close" : "Menu"}
+          </button>
         </nav>
+        {open && (
+          <ul
+            id="mobile-nav"
+            className="flex flex-col gap-1 border-t border-line px-6 py-4 sm:hidden"
+          >
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-sm py-2 text-ink-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </header>
     </>
   );
