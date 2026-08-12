@@ -24,5 +24,5 @@ export const stats = [
   { value: "50+", label: "GitHub Repositories", description: "Building and sharing solutions", icon: "github" },
   { value: "1,000+", label: "GitHub Contributions", description: "Consistent and impactful", icon: "contributions" },
   { value: "250+", label: "DSA Problems Solved", description: "Data Structures & Algorithms", icon: "code" },
-  { value: "2nd Runner-Up", label: "Smart India Hackathon 2025", description: "National level competition", icon: "trophy" },
+  { value: "2nd Runner-Up", label: "Smart India Hackathon 2025", description: "Internal round, Sharda University", icon: "trophy" },
 ] as const;

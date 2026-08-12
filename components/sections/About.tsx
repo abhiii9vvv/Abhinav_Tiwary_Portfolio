@@ -18,15 +18,15 @@ export function About() {
           <div className="rounded-2xl border border-line bg-bg-raised p-6">
             <p className="text-sm uppercase tracking-[0.15em] text-ink-muted">Currently</p>
             <dl className="mt-4 flex flex-col gap-3 text-sm">
-              <div className="flex items-center justify-between gap-4">
+              <div className="grid grid-cols-[72px_1fr] gap-4">
                 <dt className="text-ink-muted">Studying</dt>
                 <dd className="text-right text-ink">{education.degree.replace("Bachelor of Technology, ", "B.Tech, ")}</dd>
               </div>
-              <div className="flex items-center justify-between gap-4">
+              <div className="grid grid-cols-[72px_1fr] gap-4">
                 <dt className="text-ink-muted">Based in</dt>
-                <dd className="text-ink">{profile.location}</dd>
+                <dd className="text-right text-ink">{profile.location}</dd>
               </div>
-              <div className="flex items-center justify-between gap-4">
+              <div className="grid grid-cols-[72px_1fr] gap-4">
                 <dt className="text-ink-muted">Status</dt>
                 <dd className="text-right text-accent">Open to opportunities</dd>
               </div>

@@ -31,11 +31,4 @@ export const experience: ExperienceEntry[] = [
       "Built MERN modules and REST APIs, focusing on query optimization, input validation, error handling, and API integration.",
     highlight: "25% response-time improvement",
   },
-  {
-    org: "ShadowFox",
-    role: "Web Development Intern",
-    period: "April 2026",
-    description:
-      "Full-stack features with React components and Express APIs following MVC architecture, focused on UI optimization and maintainable, scalable development.",
-  },
 ];

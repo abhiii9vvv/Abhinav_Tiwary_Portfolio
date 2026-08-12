@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "@/components/icons";
@@ -36,9 +37,16 @@ export function Nav() {
         >
           <Link
             href="/"
-            className="shrink-0 whitespace-nowrap rounded-sm font-display text-base text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:text-lg"
+            className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
           >
-            Abhinav Tiwary
+            <Image
+              src="/images/logo.png"
+              alt="Abhinav Tiwary"
+              width={555}
+              height={88}
+              className="h-8 w-auto sm:h-9"
+              priority
+            />
           </Link>
           <ul className="hidden gap-5 text-sm text-ink-muted xl:flex">
             {links.map((link) => {

@@ -40,6 +40,17 @@ export function Footer() {
           <p className="text-sm text-ink-muted">© {new Date().getFullYear()} {profile.name}</p>
         </div>
       </div>
+      <p className="mx-auto mt-6 max-w-7xl text-xs text-ink-muted/60">
+        Logo by{" "}
+        <a
+          href="https://cooltext.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-ink-muted"
+        >
+          Cool Text
+        </a>
+      </p>
     </footer>
   );
 }
