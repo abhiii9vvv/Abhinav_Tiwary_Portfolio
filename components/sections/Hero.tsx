@@ -67,20 +67,16 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal delay={0.15}>
-          <motion.div style={{ y: parallaxY }} className="relative mx-auto w-full max-w-sm sm:max-w-none">
-            <div
-              className="relative aspect-square w-full"
-              style={{
-                maskImage: "radial-gradient(ellipse 62% 62% at center, black 55%, transparent 100%)",
-                WebkitMaskImage: "radial-gradient(ellipse 62% 62% at center, black 55%, transparent 100%)",
-              }}
-            >
+          <motion.div style={{ y: parallaxY }} className="relative mx-auto w-full max-w-md sm:max-w-none">
+            <div className="relative aspect-square w-full">
               <Image
-                src={profile.headshot}
+                src={profile.headshotTransparent}
                 alt={profile.name}
                 fill
-                sizes="(min-width: 640px) 360px, 320px"
-                className="object-cover"
+                sizes="(min-width: 640px) 480px, 400px"
+                quality={100}
+                className="object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.16)] [image-rendering:high-quality]"
+                style={{ filter: "contrast(1.05) saturate(1.05)" }}
                 priority
               />
             </div>

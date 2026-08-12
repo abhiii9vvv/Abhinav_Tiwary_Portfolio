@@ -17,6 +17,7 @@ export const profile = {
     "I'd rather have something working in production than a perfect plan for it. That bias toward shipping is basically how I learn.",
   ],
   headshot: "/images/headshot.png",
+  headshotTransparent: "/images/headshot-transparent.png",
 };
 
 export const stats = [
