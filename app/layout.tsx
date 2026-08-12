@@ -4,11 +4,8 @@ import { profile } from "@/content/profile";
 import { StructuredData } from "@/components/StructuredData";
 import "./globals.css";
 
-// NOTE: Placeholder production domain. Update this to the real deployed
-// domain before going live (also update the same URL in
-// components/StructuredData.tsx, app/sitemap.ts, and app/robots.ts).
-const SITE_URL = "https://abhinavtiwary.dev";
-const OG_TITLE = "Abhinav Tiwary — Full-Stack Developer & Gen AI Builder";
+const SITE_URL = "https://abhinavtiwary.online";
+const OG_TITLE = "Abhinav Tiwary, Full-Stack Developer & Gen AI Builder";
 const OG_DESCRIPTION = profile.headline;
 
 const fraunces = Fraunces({
@@ -49,7 +46,7 @@ export const metadata: Metadata = {
     title: OG_TITLE,
     description: OG_DESCRIPTION,
     url: SITE_URL,
-    siteName: `${profile.name} — Portfolio`,
+    siteName: `${profile.name}, Portfolio`,
     images: [
       {
         url: profile.headshot,
