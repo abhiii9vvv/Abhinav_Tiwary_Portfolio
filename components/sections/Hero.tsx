@@ -25,11 +25,8 @@ export function Hero() {
       <div className="grid items-center gap-14 sm:grid-cols-[1.2fr_0.8fr]">
         <Reveal>
           <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.2em] text-ink-muted">
+            <p className="mb-6 text-sm uppercase tracking-[0.2em] text-ink-muted">
               {profile.location}
-            </p>
-            <p className="mb-6 text-sm font-medium uppercase tracking-[0.15em] text-accent">
-              {profile.availability}
             </p>
             <h1 className="text-balance font-display text-5xl leading-[1.05] tracking-tight text-ink sm:text-6xl">
               {profile.headline}
@@ -70,8 +67,14 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal delay={0.15}>
-          <motion.div style={{ y: parallaxY }} className="mx-auto w-full max-w-sm sm:max-w-none">
-            <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-line bg-bg-raised">
+          <motion.div style={{ y: parallaxY }} className="relative mx-auto w-full max-w-sm sm:max-w-none">
+            <div
+              className="relative aspect-square w-full"
+              style={{
+                maskImage: "radial-gradient(ellipse 62% 62% at center, black 55%, transparent 100%)",
+                WebkitMaskImage: "radial-gradient(ellipse 62% 62% at center, black 55%, transparent 100%)",
+              }}
+            >
               <Image
                 src={profile.headshot}
                 alt={profile.name}

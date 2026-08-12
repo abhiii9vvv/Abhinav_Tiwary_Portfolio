@@ -16,7 +16,6 @@ export const profile = {
     "Most days that's React and Next.js on the frontend, Node.js and REST APIs on the backend, and lately wiring LLM APIs and agentic workflows into whatever I'm building.",
     "I'd rather have something working in production than a perfect plan for it. That bias toward shipping is basically how I learn.",
   ],
-  availability: "Open to full-time and internship opportunities, Full-Stack, Backend, AI",
   headshot: "/images/headshot.png",
 };
 

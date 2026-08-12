@@ -11,10 +11,15 @@
   --color-line: oklch(0.895 0.012 80);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 @layer utilities {

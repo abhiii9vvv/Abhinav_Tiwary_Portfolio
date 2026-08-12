@@ -36,11 +36,11 @@ export function Nav() {
         >
           <Link
             href="/"
-            className="rounded-sm font-display text-lg text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+            className="shrink-0 whitespace-nowrap rounded-sm font-display text-base text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:text-lg"
           >
             Abhinav Tiwary
           </Link>
-          <ul className="hidden gap-6 text-sm text-ink-muted lg:flex">
+          <ul className="hidden gap-5 text-sm text-ink-muted xl:flex">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -63,7 +63,7 @@ export function Nav() {
           </ul>
           <Link
             href="/contact"
-            className="hidden shrink-0 items-center gap-1.5 rounded-full bg-ink px-5 py-2.5 text-sm text-bg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 lg:inline-flex"
+            className="hidden shrink-0 items-center gap-1.5 rounded-full bg-ink px-5 py-2.5 text-sm text-bg transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 xl:inline-flex"
           >
             Let&apos;s Connect
             <ArrowUpRight className="h-3.5 w-3.5" />
@@ -73,7 +73,7 @@ export function Nav() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-nav"
-            className="rounded-sm text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 lg:hidden"
+            className="shrink-0 rounded-sm text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 xl:hidden"
           >
             {open ? "Close" : "Menu"}
           </button>
@@ -81,7 +81,7 @@ export function Nav() {
         {open && (
           <ul
             id="mobile-nav"
-            className="flex flex-col gap-1 border-t border-line px-6 py-4 lg:hidden"
+            className="flex flex-col gap-1 border-t border-line px-6 py-4 xl:hidden"
           >
             {links.map((link) => {
               const isActive = pathname === link.href;
