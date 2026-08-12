@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { profile, stats } from "@/content/profile";
 import { Reveal } from "@/components/Reveal";
 import { ArrowUpRight } from "@/components/icons";
@@ -19,19 +20,19 @@ export function Hero() {
               {profile.subheadline}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm text-bg transition-all duration-200 hover:opacity-85 active:scale-[0.96]"
               >
                 Get in touch
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#work"
+              </Link>
+              <Link
+                href="/work"
                 className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm text-ink transition-colors duration-200 hover:border-ink active:scale-[0.96]"
               >
                 See featured work
-              </a>
+              </Link>
             </div>
           </div>
         </Reveal>

@@ -1,13 +1,13 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/sections/Hero";
+import { Achievements } from "@/components/sections/Achievements";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function AchievementsPage() {
   return (
     <>
       <Nav />
       <main id="main-content">
-        <Hero />
+        <Achievements />
       </main>
       <Footer />
     </>

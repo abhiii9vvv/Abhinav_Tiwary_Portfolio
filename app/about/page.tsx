@@ -1,13 +1,13 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <>
       <Nav />
       <main id="main-content">
-        <Hero />
+        <About />
       </main>
       <Footer />
     </>

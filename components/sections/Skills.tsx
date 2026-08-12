@@ -6,10 +6,10 @@ import { Reveal } from "@/components/Reveal";
 export function Skills() {
   return (
     <Section id="skills" eyebrow="Skills" title="Tools I reach for.">
-      <div className="space-y-14">
+      <div className="flex flex-wrap gap-x-14 gap-y-14">
         {skillGroups.map((group, groupIndex) => (
           <Reveal key={group.label} delay={groupIndex * 0.05}>
-            <div>
+            <div className="w-full sm:w-auto">
               <h3 className="mb-5 font-display text-xl text-ink">
                 {group.label}
               </h3>

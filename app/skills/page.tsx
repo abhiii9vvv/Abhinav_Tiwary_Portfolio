@@ -1,13 +1,13 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/sections/Hero";
+import { Skills } from "@/components/sections/Skills";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function SkillsPage() {
   return (
     <>
       <Nav />
       <main id="main-content">
-        <Hero />
+        <Skills />
       </main>
       <Footer />
     </>

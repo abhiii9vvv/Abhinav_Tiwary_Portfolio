@@ -1,13 +1,13 @@
 import { Nav } from "@/components/Nav";
-import { Hero } from "@/components/sections/Hero";
+import { Certifications } from "@/components/sections/Certifications";
 import { Footer } from "@/components/Footer";
 
-export default function Home() {
+export default function CertificationsPage() {
   return (
     <>
       <Nav />
       <main id="main-content">
-        <Hero />
+        <Certifications />
       </main>
       <Footer />
     </>
