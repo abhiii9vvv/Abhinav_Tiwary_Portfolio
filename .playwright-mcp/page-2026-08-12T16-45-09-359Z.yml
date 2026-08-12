@@ -1,0 +1,312 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Mentionwave" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - button "Login" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - navigation [ref=e12]:
+          - link "01 Features" [ref=e13] [cursor=pointer]:
+            - /url: /features
+            - generic [ref=e14]: "01"
+            - text: Features
+          - link "02 Platforms" [ref=e15] [cursor=pointer]:
+            - /url: /platform-coverage
+            - generic [ref=e16]: "02"
+            - text: Platforms
+          - link "03 How It Works" [ref=e17] [cursor=pointer]:
+            - /url: /how-it-works
+            - generic [ref=e18]: "03"
+            - text: How It Works
+          - link "04 Analytics" [ref=e19] [cursor=pointer]:
+            - /url: /analytics
+            - generic [ref=e20]: "04"
+            - text: Analytics
+        - link "by The ARambha" [ref=e21] [cursor=pointer]:
+          - /url: https://www.thearambha.in/
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - link "The ARambha Powered by The ARambha" [ref=e26] [cursor=pointer]:
+          - /url: https://www.thearambha.in/
+          - img "The ARambha" [ref=e27]
+          - generic [ref=e28]: Powered by The ARambha
+        - generic [ref=e29]: Now monitoring 6 platforms
+        - heading "Know what they're saying before it's news." [level=1] [ref=e32]
+        - paragraph [ref=e33]: Every mention, scored and organized in one live dashboard.
+        - generic [ref=e34]:
+          - button "Get Started" [ref=e35] [cursor=pointer]
+          - link "See how it works" [ref=e36] [cursor=pointer]:
+            - /url: "#how-it-works"
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: Overview
+          - generic [ref=e43]: Live
+        - generic [ref=e46]:
+          - generic [ref=e49]:
+            - paragraph [ref=e50]: Total Mentions
+            - paragraph [ref=e51]: "24"
+          - generic [ref=e57]:
+            - paragraph [ref=e58]: Positive Mentions
+            - paragraph [ref=e59]: "3"
+          - generic [ref=e66]:
+            - paragraph [ref=e67]: Negative Mentions
+            - paragraph [ref=e68]: "7"
+          - generic [ref=e75]:
+            - paragraph [ref=e76]: Neutral Mentions
+            - paragraph [ref=e77]: "12"
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - paragraph [ref=e83]: Sentiment Breakdown
+            - generic [ref=e84]:
+              - generic [ref=e85]:
+                - generic:
+                  - paragraph: "24"
+                  - paragraph: Total
+              - generic [ref=e91]:
+                - generic [ref=e92]:
+                  - generic [ref=e94]: Positive
+                  - generic [ref=e95]: 12.5%
+                  - generic [ref=e96]: (3)
+                - generic [ref=e97]:
+                  - generic [ref=e99]: Negative
+                  - generic [ref=e100]: 29.2%
+                  - generic [ref=e101]: (7)
+                - generic [ref=e102]:
+                  - generic [ref=e104]: Neutral
+                  - generic [ref=e105]: 50%
+                  - generic [ref=e106]: (12)
+                - generic [ref=e107]:
+                  - generic [ref=e109]: Unscored
+                  - generic [ref=e110]: 8.3%
+                  - generic [ref=e111]: (2)
+          - paragraph [ref=e113]: Mentions Over Time
+        - generic [ref=e116]:
+          - paragraph [ref=e117]: Mentions by Platform
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e122]: X (Twitter)
+              - generic [ref=e125]: "8"
+            - generic [ref=e126]:
+              - generic [ref=e129]: YouTube
+              - generic [ref=e132]: "6"
+            - generic [ref=e133]:
+              - generic [ref=e136]: Instagram
+              - generic [ref=e139]: "4"
+            - generic [ref=e140]:
+              - generic [ref=e146]: Google Search
+              - generic [ref=e149]: "3"
+            - generic [ref=e150]:
+              - generic [ref=e153]: Facebook
+              - generic [ref=e156]: "2"
+        - generic [ref=e157]:
+          - generic [ref=e158]: 6/6 platforms online
+          - generic [ref=e165]: Updated 2 min ago
+    - generic [ref=e168]:
+      - generic [ref=e169]:
+        - text: Capabilities
+        - heading "Built for people who can't afford to miss a mention." [level=2] [ref=e170]
+        - paragraph [ref=e171]: One dashboard, not five separate tools.
+      - generic [ref=e172]:
+        - generic [ref=e173]:
+          - generic [ref=e174]: "01"
+          - generic [ref=e176]:
+            - heading "AI Sentiment Analysis" [level=3] [ref=e177]
+            - paragraph [ref=e178]: Advanced language models classify every mention as positive, negative, or neutral.
+        - generic [ref=e179]:
+          - generic [ref=e180]: "02"
+          - generic [ref=e182]:
+            - heading "Live Monitoring" [level=3] [ref=e183]
+            - paragraph [ref=e184]: Scheduled and on-demand scans keep your mention feed current.
+        - generic [ref=e185]:
+          - generic [ref=e186]: "03"
+          - generic [ref=e188]:
+            - heading "Role-Based Access" [level=3] [ref=e189]
+            - paragraph [ref=e190]: Admins manage keywords and users; viewers get read-only dashboard access.
+        - generic [ref=e191]:
+          - generic [ref=e192]: "04"
+          - generic [ref=e194]:
+            - heading "Enterprise Security" [level=3] [ref=e195]
+            - paragraph [ref=e196]: Hashed credentials, signed sessions, and role-gated routes throughout.
+        - generic [ref=e197]:
+          - generic [ref=e198]: "05"
+          - generic [ref=e200]:
+            - heading "Multi-language Detection" [level=3] [ref=e201]
+            - paragraph [ref=e202]: Tracks mentions in English, Hindi, and Punjabi with context-aware matching.
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - generic [ref=e206]:
+          - text: Coverage
+          - heading "Five platforms. One unified feed." [level=2] [ref=e207]: Five platforms.One unified feed.
+        - paragraph [ref=e208]: No per-platform setup — turn it on once and stay covered.
+      - generic [ref=e209]:
+        - generic [ref=e210]:
+          - generic [ref=e211]: Active
+          - heading "Instagram" [level=3] [ref=e218]
+          - paragraph [ref=e219]: Posts and comments
+        - generic [ref=e220]:
+          - generic [ref=e221]: Active
+          - heading "Facebook" [level=3] [ref=e228]
+          - paragraph [ref=e229]: Public posts
+        - generic [ref=e230]:
+          - generic [ref=e231]: Active
+          - heading "X (Twitter)" [level=3] [ref=e238]
+          - paragraph [ref=e239]: Public posts
+        - generic [ref=e240]:
+          - generic [ref=e241]: Active
+          - heading "YouTube" [level=3] [ref=e248]
+          - paragraph [ref=e249]: Videos and comments
+        - generic [ref=e250]:
+          - generic [ref=e251]: Active
+          - heading "Google Search" [level=3] [ref=e261]
+          - paragraph [ref=e262]: News and web
+    - generic [ref=e264]:
+      - generic [ref=e265]:
+        - generic [ref=e266]:
+          - text: Process
+          - heading "From raw mention to actionable insight." [level=2] [ref=e267]: From raw mention toactionable insight.
+        - paragraph [ref=e268]: Set it up once. These four steps run on their own from then on.
+      - generic [ref=e269]:
+        - generic [ref=e270]:
+          - paragraph [ref=e272]: Step 01
+          - heading "Collect" [level=3] [ref=e273]
+          - paragraph [ref=e274]: Scrapers gather public mentions across all platforms.
+        - generic [ref=e275]:
+          - paragraph [ref=e277]: Step 02
+          - heading "AI Processing" [level=3] [ref=e278]
+          - paragraph [ref=e279]: Text is matched against name variants and context keywords.
+        - generic [ref=e280]:
+          - paragraph [ref=e282]: Step 03
+          - heading "Sentiment Analysis" [level=3] [ref=e283]
+          - paragraph [ref=e284]: Each mention is scored positive, negative, or neutral.
+        - generic [ref=e285]:
+          - paragraph [ref=e287]: Step 04
+          - heading "Live Dashboard" [level=3] [ref=e288]
+          - paragraph [ref=e289]: Results appear in your dashboard, ready to review.
+    - generic [ref=e291]:
+      - generic [ref=e292]:
+        - generic [ref=e293]:
+          - text: Analytics
+          - heading "The full picture, at a glance." [level=2] [ref=e294]: The full picture,at a glance.
+        - paragraph [ref=e295]: Surfaced automatically — no digging required.
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - generic [ref=e298]: "01"
+          - generic [ref=e300]:
+            - heading "Sentiment Trends" [level=3] [ref=e301]
+            - paragraph [ref=e302]: Track sentiment shifts over time across every tracked platform.
+        - generic [ref=e303]:
+          - generic [ref=e304]: "02"
+          - generic [ref=e306]:
+            - heading "Platform Health" [level=3] [ref=e307]
+            - paragraph [ref=e308]: See which platforms are live and scanning.
+        - generic [ref=e309]:
+          - generic [ref=e310]: "03"
+          - generic [ref=e312]:
+            - heading "Real-Time Alerts" [level=3] [ref=e313]
+            - paragraph [ref=e314]: Get notified the moment a new mention appears.
+        - generic [ref=e315]:
+          - generic [ref=e316]: "04"
+          - generic [ref=e318]:
+            - heading "Top Viral Posts" [level=3] [ref=e319]
+            - paragraph [ref=e320]: Surface the highest-engagement mentions.
+        - generic [ref=e321]:
+          - generic [ref=e322]: "05"
+          - generic [ref=e324]:
+            - heading "Keyword Analysis" [level=3] [ref=e325]
+            - paragraph [ref=e326]: See which name variants are driving matches.
+        - generic [ref=e327]:
+          - generic [ref=e328]: "06"
+          - generic [ref=e330]:
+            - heading "Language Distribution" [level=3] [ref=e331]
+            - paragraph [ref=e332]: Breakdown of mentions by language detected.
+    - generic [ref=e335]:
+      - figure "01 — Campaign Coordinator" [ref=e336]:
+        - generic [ref=e337]: “
+        - blockquote [ref=e338]: Having every mention in one place, already sentiment-scored, saves hours every week.
+      - figure "02 — Communications Lead" [ref=e340]:
+        - generic [ref=e341]: “
+        - blockquote [ref=e342]: The multi-language matching catches mentions our old keyword search missed entirely.
+      - figure "03 — Digital Strategist" [ref=e344]:
+        - generic [ref=e345]: “
+        - blockquote [ref=e346]: When a platform goes quiet, we know within minutes instead of finding out the hard way.
+    - generic [ref=e349]:
+      - generic [ref=e350]:
+        - text: FAQ
+        - heading "Common questions." [level=2] [ref=e351]
+      - generic [ref=e352]:
+        - heading [level=3] [ref=e354]:
+          - button "01 Which platforms does Mentionwave monitor?" [ref=e355]:
+            - generic [ref=e356]: "01"
+            - generic [ref=e357]: Which platforms does Mentionwave monitor?
+        - heading [level=3] [ref=e359]:
+          - button "02 How is sentiment determined?" [ref=e360]:
+            - generic [ref=e361]: "02"
+            - generic [ref=e362]: How is sentiment determined?
+        - heading [level=3] [ref=e364]:
+          - button "03 Can I track more than one person?" [ref=e365]:
+            - generic [ref=e366]: "03"
+            - generic [ref=e367]: Can I track more than one person?
+        - heading [level=3] [ref=e369]:
+          - button "04 How often does scanning run?" [ref=e370]:
+            - generic [ref=e371]: "04"
+            - generic [ref=e372]: How often does scanning run?
+        - heading [level=3] [ref=e374]:
+          - button "05 Is my data secure?" [ref=e375]:
+            - generic [ref=e376]: "05"
+            - generic [ref=e377]: Is my data secure?
+    - contentinfo [ref=e378]:
+      - generic [ref=e379]:
+        - generic [ref=e380]:
+          - generic [ref=e381]:
+            - generic [ref=e382]: Mentionwave
+            - paragraph [ref=e384]: Political Mention Monitoring
+          - generic [ref=e385]:
+            - paragraph [ref=e386]: Features
+            - list [ref=e387]:
+              - listitem [ref=e388]:
+                - link "Real-time Monitoring" [ref=e389] [cursor=pointer]:
+                  - /url: /real-time-monitoring
+              - listitem [ref=e390]:
+                - link "Sentiment Analysis" [ref=e391] [cursor=pointer]:
+                  - /url: /sentiment-analysis
+              - listitem [ref=e392]:
+                - link "Platform Coverage" [ref=e393] [cursor=pointer]:
+                  - /url: /platform-coverage
+          - generic [ref=e394]:
+            - paragraph [ref=e395]: Security
+            - list [ref=e396]:
+              - listitem [ref=e397]:
+                - link "Data Protection" [ref=e398] [cursor=pointer]:
+                  - /url: /data-protection
+              - listitem [ref=e399]:
+                - link "Access Control" [ref=e400] [cursor=pointer]:
+                  - /url: /access-control
+              - listitem [ref=e401]:
+                - link "Encryption" [ref=e402] [cursor=pointer]:
+                  - /url: /encryption
+          - generic [ref=e403]:
+            - paragraph [ref=e404]: Legal
+            - list [ref=e405]:
+              - listitem [ref=e406]:
+                - link "Privacy Policy" [ref=e407] [cursor=pointer]:
+                  - /url: /privacy-policy
+              - listitem [ref=e408]:
+                - link "Terms of Service" [ref=e409] [cursor=pointer]:
+                  - /url: /terms-of-service
+          - generic [ref=e410]:
+            - paragraph [ref=e411]: Support
+            - list [ref=e412]:
+              - listitem [ref=e413]:
+                - link "Contact" [ref=e414] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e415]:
+                - link "Documentation" [ref=e416] [cursor=pointer]:
+                  - /url: /documentation
+        - generic [ref=e417]:
+          - paragraph [ref=e418]: © 2026 Mentionwave. All rights reserved.
+          - link "The ARambha Powered by The ARambha" [ref=e419] [cursor=pointer]:
+            - /url: https://www.thearambha.in/
+            - img "The ARambha" [ref=e420]
+            - generic [ref=e421]: Powered by The ARambha
+  - alert [ref=e422]

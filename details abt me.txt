@@ -1,0 +1,604 @@
+Absolutely. Based on the **resume + the full LinkedIn data you provided**, here is the **final consolidated portfolio dataset**. I’ve kept source-supported details and avoided inventing missing information.
+
+## 1. Personal / Identity
+
+**Name:** Abhinav Tiwary
+**Pronouns:** He/Him
+**Location:** Greater Noida / India
+**Email:** [abhinavv8975@gmail.com](mailto:abhinavv8975@gmail.com)
+**Phone:** +91 6207363626
+**LinkedIn:** linkedin.com/in/abhinavtiwary
+**GitHub:** github.com/abhiii9vvv
+**University:** Sharda University
+**Degree:** B.Tech — Computer Science Engineering
+**Duration:** 2023–2027
+**Current stage:** Final-year CS undergraduate  
+
+---
+
+# 2. Main Professional Identity
+
+### Primary title
+
+**Full-Stack Developer & Gen AI Builder**
+
+### Current LinkedIn headline
+
+**Technology & Operations Associate @ The ARambha | Ex-Associate Web Developer Trainee, SkyCodeHub | Gen AI Expert | Full-Stack Developer | Building CampusSetu | Final Year CS Undergrad** 
+
+### Recommended portfolio headline
+
+> **Full-Stack Developer building scalable web platforms and AI-powered applications.**
+
+### Supporting line
+
+> I build real-world products across full-stack engineering, backend systems, cloud infrastructure, and Generative AI.
+
+---
+
+# 3. About Me
+
+Your strongest positioning is around **building rather than just learning**.
+
+You work across:
+
+* Full-stack engineering
+* Backend development
+* SaaS platforms
+* Generative AI
+* Cloud
+* Docker
+* Real-time applications
+* Developer tooling
+* Problem solving
+
+Your LinkedIn explicitly describes you as working at the intersection of **full-stack engineering and Generative AI**, with the philosophy of learning by shipping real products. 
+
+---
+
+# 4. Technical Stack
+
+### Frontend
+
+* React.js
+* Next.js
+* TypeScript
+* JavaScript
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* REST APIs
+* JWT Authentication
+* WebSockets
+
+### Databases
+
+* MongoDB
+* PostgreSQL
+* MySQL
+* Redis
+
+### Cloud / Infrastructure
+
+* AWS
+* Google Cloud
+* Docker
+* Linux
+
+### AI
+
+* Generative AI
+* LLM APIs
+* AI-powered applications
+* AI agents
+* OpenCV / AI-based proctoring
+
+### Programming
+
+* Java
+* Python
+* JavaScript
+* TypeScript
+* jQuery
+
+### CS Fundamentals
+
+* Data Structures
+* Algorithms
+* OOP
+* DBMS
+* Problem Solving
+* System Design
+
+### Development Tools
+
+* Git
+* Postman
+* Docker
+* Linux
+
+Resume confirms the core stack, while LinkedIn additionally identifies Prisma, Redis, WebSockets and LLM APIs.  
+
+---
+
+# 5. Current Experience
+
+## The ARambha
+
+**Technology & Operations Associate (Intern)**
+
+Current role.
+
+Your LinkedIn states that you're contributing to:
+
+* Technology
+* Digital platforms
+* Operational initiatives
+* Technology supporting the Punjab Assembly Election Campaign 2027
+
+
+
+### Portfolio description
+
+**Technology & Operations Associate**
+Working across technology, digital platforms, and operational initiatives, contributing to technology-driven solutions and digital systems.
+
+---
+
+# 6. Previous Experience
+
+## SkyCodeHub
+
+**Associate Web Developer Trainee**
+
+**21 May – 21 July 2026**
+
+Your LinkedIn post confirms the internship period. 
+
+Focus:
+
+* Frontend development
+* Responsive interfaces
+* Real-world projects
+* Code reviews
+* Debugging
+* Production-oriented development
+
+
+
+---
+
+## Unessa Foundation
+
+**Full Stack Development Intern — March 2026**
+
+Work:
+
+* MERN modules
+* REST APIs
+* Query optimization
+* Input validation
+* Error handling
+* API integration
+* Backend reliability
+
+Achieved:
+
+**25% response-time improvement** 
+
+---
+
+## ShadowFox
+
+**Web Development Intern — April 2026**
+
+Work:
+
+* Full-stack features
+* React components
+* Express APIs
+* MVC architecture
+* UI optimization
+* Responsive interfaces
+* Maintainable/scalable development 
+
+---
+
+# 7. Featured Projects
+
+## 🥇 CampusSetu
+
+**Multi-tenant SaaS campus platform**
+
+**Status:** Building / ongoing
+
+Website:
+
+**campussetu.in**
+
+Purpose:
+
+> A campus management platform designed for Indian educational institutions.
+
+Features described on LinkedIn:
+
+* Academics
+* Notices
+* Attendance
+* Real-time collaboration
+* Multi-tenant architecture
+* AI-powered workflows
+
+
+
+### Technologies
+
+Current LinkedIn stack:
+
+* React
+* Node.js
+* Express
+* Prisma
+* PostgreSQL
+* Redis
+* WebSockets
+* Docker
+* AWS
+* TypeScript
+* Next.js
+* LLM APIs
+
+
+
+Resume additionally describes:
+
+* Role-based access
+* Student / faculty / admin
+* Tenant isolation
+* Modular backend architecture
+* Docker
+* AWS deployment planning 
+
+### Portfolio priority
+
+**★★★★★ — Main flagship project**
+
+This should occupy the largest project card.
+
+---
+
+# 8. SecureExamBrowser
+
+**AI-powered secure examination platform**
+
+**Jan 2025 – July 2025**
+
+Technologies:
+
+* Electron
+* Python
+* OpenCV
+
+Features:
+
+* Secure examination environment
+* Alt-tab restrictions
+* Screen-capture restrictions
+* AI face proctoring
+* Real-time monitoring
+* Violation detection
+* Suspicious activity logging
+* Real-time reporting 
+
+### Portfolio priority
+
+**★★★★★**
+
+This demonstrates significantly more technical depth than a normal CRUD project.
+
+---
+
+# 9. InternSetu
+
+**Internship discovery platform for Indian students**
+
+Purpose:
+
+> Simplifying internship discovery for students in India.
+
+Your LinkedIn About section specifically identifies InternSetu as one of your active/major products. 
+
+### Portfolio priority
+
+**★★★★☆**
+
+---
+
+# 10. Other Projects
+
+These should appear under **More Projects**, rather than taking the same space as CampusSetu.
+
+### av9Assist
+
+AI-powered assistant / experimentation project.
+
+### Weapon Detection System
+
+Computer-vision based detection project.
+
+### Price Tracker
+
+Product price tracking and visualization project.
+
+### VoiceVerse
+
+Python-based Windows voice assistant.
+
+These demonstrate breadth, but the portfolio should focus attention on your strongest current work.
+
+---
+
+# 11. Achievements
+
+Use a dedicated **Achievements** section.
+
+### Smart India Hackathon 2025
+
+🏆 **2nd Runner-Up — Internal**
+
+One of your strongest achievements. 
+
+---
+
+### GitHub
+
+**1,000+ contributions**
+
+Across your development work. 
+
+---
+
+### GitHub Projects
+
+**45+ repositories**
+
+Resume-supported figure. 
+
+---
+
+### LeetCode
+
+**250+ DSA problems solved**
+
+Including:
+
+* Arrays
+* Trees
+* Graphs
+* Dynamic Programming 
+
+---
+
+### AWS Agentic AI Workshop
+
+**First to complete the workshop tasks**
+
+At AWS Student Community Day Delhi NCR 2026.
+
+An AWS Solutions Architect publicly mentioned you among the first participants to complete the workshop tasks. 
+
+This is a **very good portfolio achievement**.
+
+---
+
+# 12. Certifications / Learning
+
+### Google Cloud Career Launchpad
+
+**Generative AI Leader**
+
+March 2026. 
+
+### NPTEL
+
+**Education for Sustainable Development**
+
+* IIT Kharagpur
+* SWAYAM
+* 12-week course
+* **99%**
+* Elite Certification 
+
+### JPMorgan Chase
+
+**Software Engineering Simulation**
+
+### MERN Stack Bootcamp
+
+**MERN Stack Development**
+
+### Other Google Cloud / Gen AI learning
+
+Your portfolio can also mention your broader Google Cloud Generative AI learning credentials, but individual badges should only be displayed if you have the corresponding certificate/badge links.
+
+---
+
+# 13. Community & Events
+
+## AWS Student Community Day Delhi NCR 2026
+
+Hosted at **Sharda University**.
+
+You attended sessions covering:
+
+* AWS
+* Cloud computing
+* AI
+* Agentic AI
+* DevOps
+* Industry practices
+* Networking
+
+ 
+
+### Special recognition
+
+AWS Solutions Architect **Vishnu Vashist** publicly mentioned you as one of the first students to complete the hands-on Agentic AI workshop. 
+
+This deserves its own small **Recognition** card.
+
+---
+
+# 14. Open Source
+
+Your LinkedIn activity shows open-source participation:
+
+> **Contributed. Learned. Built with the open-source community.**
+
+
+
+Don't claim specific projects/contributions unless the GitHub data is actually connected to the portfolio.
+
+---
+
+# 15. Services
+
+LinkedIn currently lists four services:
+
+1. **Custom Software Development**
+2. **Business Analytics**
+3. **Web Development**
+4. **Application Development**
+
+
+
+For a developer portfolio, I'd display:
+
+**Web Development · Full-Stack Development · Custom Software · AI Applications**
+
+and keep Business Analytics secondary unless you actively want clients for it.
+
+---
+
+# 16. Education
+
+### Sharda University
+
+**Bachelor of Technology — Computer Science Engineering**
+
+**2023–2027**
+
+Greater Noida, India. 
+
+---
+
+# 17. Portfolio Stats
+
+These are the strongest numbers:
+
+**45+**
+GitHub Repositories
+
+**1,000+**
+GitHub Contributions
+
+**250+**
+DSA Problems
+
+**25%**
+Backend Response Improvement
+
+**2nd Runner-Up**
+Smart India Hackathon 2025
+
+**99%**
+NPTEL Score
+
+**1K+**
+LinkedIn Followers 
+
+I would **not** put all seven in the hero. Use 3–4 and place the rest throughout the site.
+
+---
+
+# 18. Current Availability
+
+LinkedIn currently shows:
+
+**Open to Work — Recruiters Only**
+
+Preferred locations:
+
+* Noida
+* +4 additional locations
+
+Work modes:
+
+* On-site
+* Hybrid
+* Remote 
+
+Your About section specifically says you're open to:
+
+**Frontend / Full-Stack / Gen AI internships**. 
+
+---
+
+# 19. Final Portfolio Structure
+
+I recommend this exact navigation:
+
+```text
+Home
+About
+Skills
+Experience
+Projects
+Achievements
+Certifications
+Education
+Community
+Contact
+```
+
+### Homepage
+
+**Hero**
+→ Name + Full-Stack / Gen AI positioning
+
+**Stats**
+→ 45+ repos / 1K+ contributions / 250+ DSA / SIH Runner-Up
+
+**Featured Work**
+→ CampusSetu / SecureExamBrowser / InternSetu
+
+**Experience**
+→ The ARambha / SkyCodeHub / Unessa / ShadowFox
+
+**Tech Stack**
+→ Frontend / Backend / Database / Cloud / AI
+
+**Recognition**
+→ SIH + AWS Agentic AI
+
+**Contact CTA**
+→ "Let's build something."
+
+---
+
+## Final positioning
+
+If I had to reduce your entire profile to **one professional identity**, I'd use:
+
+> **Abhinav Tiwary — Full-Stack Developer building scalable web platforms and AI-powered applications.**
+
+And your three strongest proof points are:
+
+**CampusSetu** → product/system building
+**SecureExamBrowser** → technically complex engineering
+**1K+ contributions + SIH + AWS recognition** → consistency + achievement
+
+That's a much stronger story than presenting yourself simply as a **MERN Stack student**. Your LinkedIn itself already supports the broader **Full-Stack + Gen AI + product-building** positioning. 
