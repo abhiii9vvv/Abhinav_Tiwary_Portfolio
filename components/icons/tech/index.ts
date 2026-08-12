@@ -17,6 +17,18 @@ import { DockerIcon } from "./Docker";
 import { LinuxIcon } from "./Linux";
 import { JavaIcon } from "./Java";
 import { PythonIcon } from "./Python";
+import { RestApisIcon } from "./RestApis";
+import { JwtAuthIcon } from "./JwtAuth";
+import { WebSocketsIcon } from "./WebSockets";
+import { GenerativeAIIcon } from "./GenerativeAI";
+import { LlmApisIcon } from "./LlmApis";
+import { AIAgentsIcon } from "./AIAgents";
+import { OpenCVIcon } from "./OpenCV";
+import { DataStructuresIcon } from "./DataStructures";
+import { AlgorithmsIcon } from "./Algorithms";
+import { OOPIcon } from "./OOP";
+import { DBMSIcon } from "./DBMS";
+import { SystemDesignIcon } from "./SystemDesign";
 
 export {
   ReactIcon,
@@ -36,17 +48,31 @@ export {
   LinuxIcon,
   JavaIcon,
   PythonIcon,
+  RestApisIcon,
+  JwtAuthIcon,
+  WebSocketsIcon,
+  GenerativeAIIcon,
+  LlmApisIcon,
+  AIAgentsIcon,
+  OpenCVIcon,
+  DataStructuresIcon,
+  AlgorithmsIcon,
+  OOPIcon,
+  DBMSIcon,
+  SystemDesignIcon,
 };
 
 export { IconShell } from "./IconShell";
 
 /**
  * Lookup of skill-name string (exact strings used in content/skills.ts)
- * to its branded 3D icon component. Only real, logo-able technologies are
- * included here. Abstract CS concepts (REST APIs, JWT Authentication,
- * WebSockets, Generative AI, LLM APIs, AI Agents, OpenCV, Data Structures,
- * Algorithms, OOP, DBMS, System Design) have no real brand mark and are
- * intentionally left out; the Skills section renders those as plain text.
+ * to its icon component. The 17 real-brand technologies render their
+ * actual logo via simple-icons path data. The 12 abstract concepts with no
+ * real brand mark (REST APIs, JWT Authentication, WebSockets, Generative
+ * AI, LLM APIs, AI Agents, OpenCV, Data Structures, Algorithms, OOP, DBMS,
+ * System Design) render an original custom glyph through the same
+ * IconShell children slot used by AWS, so every skill in content/skills.ts
+ * resolves to a tile and none fall back to plain text.
  */
 export const techIconMap: Record<string, ComponentType<{ className?: string }>> = {
   "React.js": ReactIcon,
@@ -66,4 +92,16 @@ export const techIconMap: Record<string, ComponentType<{ className?: string }>> 
   Linux: LinuxIcon,
   Java: JavaIcon,
   Python: PythonIcon,
+  "REST APIs": RestApisIcon,
+  "JWT Authentication": JwtAuthIcon,
+  WebSockets: WebSocketsIcon,
+  "Generative AI": GenerativeAIIcon,
+  "LLM APIs": LlmApisIcon,
+  "AI Agents": AIAgentsIcon,
+  OpenCV: OpenCVIcon,
+  "Data Structures": DataStructuresIcon,
+  Algorithms: AlgorithmsIcon,
+  OOP: OOPIcon,
+  DBMS: DBMSIcon,
+  "System Design": SystemDesignIcon,
 };

@@ -13,24 +13,14 @@ export function Skills() {
               <h3 className="mb-5 font-display text-xl text-ink">
                 {group.label}
               </h3>
-              <ul className="flex flex-wrap gap-3">
+              <ul className="flex flex-wrap gap-x-5 gap-y-6">
                 {group.items.map((item) => {
                   const Icon = techIconMap[item];
 
-                  if (Icon) {
-                    return (
-                      <li key={item} className="group flex flex-col items-center gap-2 w-16">
-                        <Icon className="h-12 w-12 shrink-0 transition-transform duration-200 ease-out group-hover:-translate-y-1" />
-                        <span className="text-center text-xs leading-tight text-ink-muted">
-                          {item}
-                        </span>
-                      </li>
-                    );
-                  }
-
                   return (
-                    <li key={item} className="flex items-center">
-                      <span className="rounded-full border border-line bg-bg-raised px-4 py-2 text-sm text-ink-muted transition-colors duration-200 ease-out hover:border-accent/40 hover:text-ink">
+                    <li key={item} className="group flex flex-col items-center gap-2 w-16">
+                      <Icon className="h-12 w-12 shrink-0 transition-transform duration-200 ease-out group-hover:-translate-y-1" />
+                      <span className="text-center text-xs leading-tight text-ink-muted">
                         {item}
                       </span>
                     </li>
