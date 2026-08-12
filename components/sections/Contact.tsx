@@ -5,7 +5,7 @@ import { MailMark, LinkedinMark, GithubMark, ArrowUpRight } from "@/components/i
 
 export function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Let's build something useful.">
+    <Section id="contact" eyebrow="Contact" title="Let's build something useful." pattern="/patterns/plus.svg">
       <Reveal>
         <p className="max-w-xl text-lg text-ink-muted">
           I&apos;m open to full-time opportunities, internships, and interesting engineering projects.
