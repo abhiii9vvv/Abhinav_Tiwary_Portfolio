@@ -1,7 +1,7 @@
 export const achievements = [
   {
     title: "Smart India Hackathon 2025",
-    detail: "2nd Runner-Up — Internal",
+    detail: "2nd Runner-Up, Internal",
   },
   {
     title: "AWS Agentic AI Workshop",
@@ -27,7 +27,7 @@ export const certifications = [
   {
     name: "Education for Sustainable Development",
     issuer: "NPTEL, IIT Kharagpur (SWAYAM)",
-    date: "12-week course — 99% — Elite Certification",
+    date: "12-week course, 99%, Elite Certification",
   },
   {
     name: "Software Engineering Simulation",
@@ -41,7 +41,7 @@ export const certifications = [
 
 export const education = {
   institution: "Sharda University",
-  degree: "Bachelor of Technology — Computer Science Engineering",
+  degree: "Bachelor of Technology, Computer Science Engineering",
   period: "2023–2027",
   location: "Greater Noida, India",
 };

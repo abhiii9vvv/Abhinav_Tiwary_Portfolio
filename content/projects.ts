@@ -40,7 +40,7 @@ export const featuredProjects: Project[] = [
     name: "The ARambha",
     tagline: "Technology for data-driven campaign operations",
     description:
-      "Technology and digital platform contributions supporting data-driven campaign operations and digital workflows — \"Campaign strategy from booth to ballot, data-driven, digitally delivered.\"",
+      "Technology and digital platform contributions supporting data-driven campaign operations and digital workflows: \"Campaign strategy from booth to ballot, data-driven, digitally delivered.\"",
     tech: ["JavaScript"],
     live: "https://www.thearambha.in/",
     screenshot: "/screenshots/thearambha.png",
@@ -78,7 +78,7 @@ export const strongProjects: Project[] = [
     name: "InternSetu-SIH",
     tagline: "Internship discovery for Indian students",
     description:
-      "Aggregates verified internship opportunities and connects students with them. Built for Smart India Hackathon 2025 — 2nd Runner-Up (Internal).",
+      "Aggregates verified internship opportunities and connects students with them. Built for Smart India Hackathon 2025, 2nd Runner-Up (Internal).",
     tech: ["Next.js", "React", "TypeScript"],
     github: "https://github.com/abhiii9vvv/InternSetu-SIH",
     tier: "strong",
