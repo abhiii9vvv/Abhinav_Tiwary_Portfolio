@@ -6,19 +6,19 @@ import { Reveal } from "@/components/Reveal";
 export function Skills() {
   return (
     <Section id="skills" eyebrow="Skills" title="Tools I reach for.">
-      <div className="flex flex-wrap gap-x-14 gap-y-14">
+      <div className="grid grid-cols-1 gap-x-12 gap-y-14 sm:grid-cols-2">
         {skillGroups.map((group, groupIndex) => (
           <Reveal key={group.label} delay={groupIndex * 0.05}>
-            <div className="w-full sm:w-auto">
+            <div>
               <h3 className="mb-5 font-display text-xl text-ink">
                 {group.label}
               </h3>
-              <ul className="flex flex-wrap gap-x-5 gap-y-6">
+              <ul className="grid grid-cols-[repeat(auto-fill,4rem)] gap-x-5 gap-y-6">
                 {group.items.map((item) => {
                   const Icon = techIconMap[item];
 
                   return (
-                    <li key={item} className="group flex flex-col items-center gap-2 w-16">
+                    <li key={item} className="group flex flex-col items-center gap-2">
                       <Icon className="h-12 w-12 shrink-0 transition-transform duration-200 ease-out group-hover:-translate-y-1" />
                       <span className="text-center text-xs leading-tight text-ink-muted">
                         {item}

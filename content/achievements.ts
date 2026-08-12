@@ -14,7 +14,7 @@ export const achievements = [
   },
   {
     title: "GitHub",
-    detail: "45+ repositories, 1,000+ contributions.",
+    detail: "50+ repositories, 1,000+ contributions.",
   },
 ];
 
