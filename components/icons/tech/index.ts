@@ -44,6 +44,18 @@ import { BcryptIcon } from "./Bcrypt";
 import { MernIcon } from "./Mern";
 import { AiSentimentIcon } from "./AiSentiment";
 import { AiIcon } from "./Ai";
+import { JPMorganChaseIcon } from "./JPMorganChase";
+import { NptelIcon } from "./Nptel";
+import { AWSRealIcon } from "./AWSReal";
+import { JPMorganChaseRealIcon } from "./JPMorganChaseReal";
+import { NptelRealIcon } from "./NptelReal";
+import { TheARambhaLogoIcon } from "./TheARambhaLogo";
+import { MentionWaveLogoIcon } from "./MentionWaveLogo";
+import { ArthaSocialLogoIcon } from "./ArthaSocialLogo";
+import { CampusSetuLogoIcon } from "./CampusSetuLogo";
+import { ShardaLogoIcon } from "./ShardaLogo";
+import { SkyCodeHubLogoIcon } from "./SkyCodeHubLogo";
+import { UnessaLogoIcon } from "./UnessaLogo";
 
 export {
   ReactIcon,
@@ -90,6 +102,18 @@ export {
   MernIcon,
   AiSentimentIcon,
   AiIcon,
+  JPMorganChaseIcon,
+  NptelIcon,
+  AWSRealIcon,
+  JPMorganChaseRealIcon,
+  NptelRealIcon,
+  TheARambhaLogoIcon,
+  MentionWaveLogoIcon,
+  ArthaSocialLogoIcon,
+  CampusSetuLogoIcon,
+  ShardaLogoIcon,
+  SkyCodeHubLogoIcon,
+  UnessaLogoIcon,
 };
 
 export { IconShell } from "./IconShell";
@@ -116,7 +140,7 @@ export const techIconMap: Record<string, ComponentType<{ className?: string }>> 
   PostgreSQL: PostgreSQLIcon,
   MySQL: MySQLIcon,
   Redis: RedisIcon,
-  AWS: AWSIcon,
+  AWS: AWSRealIcon,
   "Google Cloud": GoogleCloudIcon,
   Docker: DockerIcon,
   Linux: LinuxIcon,
@@ -152,4 +176,42 @@ export const techIconMap: Record<string, ComponentType<{ className?: string }>> 
   "AI Sentiment": AiSentimentIcon,
   AI: AiIcon,
   JWT: JwtAuthIcon,
+};
+
+/**
+ * Lookup of certification/community issuer strings (as used in
+ * content/achievements.ts) to an icon component. Reuses real simple-icons
+ * brand marks where they exist (Google Cloud, AWS via its established
+ * IconShell monogram fallback), and original monograms through the same
+ * IconShell system for issuers with no discoverable brand icon (JPMorgan
+ * Chase, NPTEL).
+ */
+export const issuerIconMap: Record<string, ComponentType<{ className?: string }>> = {
+  "Google Cloud Career Launchpad": GoogleCloudIcon,
+  "NPTEL, IIT Kharagpur (SWAYAM)": NptelRealIcon,
+  "JPMorgan Chase": JPMorganChaseIcon,
+  "MERN Stack Bootcamp": MernIcon,
+};
+
+/**
+ * Lookup of Experience org names (as used in content/experience.ts) to a
+ * real site-favicon icon component, fetched directly from each org's live
+ * website where one exists. Orgs with no verified live URL fall back to
+ * the generic OrgMark glyph instead of appearing here.
+ */
+export const orgIconMap: Record<string, ComponentType<{ className?: string }>> = {
+  "The ARambha": TheARambhaLogoIcon,
+  SkyCodeHub: SkyCodeHubLogoIcon,
+  "Unessa Foundation": UnessaLogoIcon,
+};
+
+/**
+ * Lookup of project slugs (as used in content/projects.ts) to a real
+ * site-favicon icon component, fetched from each project's live URL.
+ */
+export const projectIconMap: Record<string, ComponentType<{ className?: string }>> = {
+  mentionwave: MentionWaveLogoIcon,
+  "artha-social": ArthaSocialLogoIcon,
+  "the-arambha": TheARambhaLogoIcon,
+  campussetu: CampusSetuLogoIcon,
 };

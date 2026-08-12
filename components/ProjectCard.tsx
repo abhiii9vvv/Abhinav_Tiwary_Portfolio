@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Project } from "@/content/projects";
 import { ArrowUpRight, GithubMark } from "@/components/icons";
-import { techIconMap } from "@/components/icons/tech";
+import { techIconMap, projectIconMap } from "@/components/icons/tech";
 import { colorForTag } from "@/content/tagColors";
 
 export function ProjectCard({
@@ -28,6 +28,8 @@ export function ProjectCard({
   } else if (compact) {
     bodyPadding = "p-5";
   }
+
+  const ProjectLogo = projectIconMap[project.slug];
 
   return (
     <a
@@ -62,7 +64,10 @@ export function ProjectCard({
               {project.status}
             </span>
           )}
-          <h3 className={`font-display text-ink ${large ? "text-3xl" : "text-2xl"}`}>{project.name}</h3>
+          <div className="flex items-center gap-2.5">
+            {ProjectLogo && <ProjectLogo className="h-8 w-8 shrink-0" />}
+            <h3 className={`font-display text-ink ${large ? "text-3xl" : "text-2xl"}`}>{project.name}</h3>
+          </div>
           <p className="mt-1 text-ink-muted">{project.tagline}</p>
         </div>
         <p className="mt-4 text-sm leading-relaxed text-ink-muted">{project.description}</p>
