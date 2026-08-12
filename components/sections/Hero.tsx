@@ -1,12 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
 import { profile, stats } from "@/content/profile";
 import { Reveal } from "@/components/Reveal";
 import { ArrowUpRight } from "@/components/icons";
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, shouldReduceMotion ? 0 : 40]);
+
   return (
-    <section id="top" className="mx-auto max-w-5xl px-6 pb-20 pt-16 sm:px-10 sm:pt-24">
+    <section ref={sectionRef} id="top" className="mx-auto max-w-5xl px-6 pb-20 pt-16 sm:px-10 sm:pt-24">
       <div className="flex flex-col-reverse items-start gap-10 sm:flex-row sm:items-center sm:justify-between">
         <Reveal>
           <div>
@@ -37,14 +49,16 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal delay={0.15}>
-          <Image
-            src={profile.headshot}
-            alt={profile.name}
-            width={180}
-            height={180}
-            className="rounded-full border border-black/10 object-cover"
-            priority
-          />
+          <motion.div style={{ y: parallaxY }}>
+            <Image
+              src={profile.headshot}
+              alt={profile.name}
+              width={180}
+              height={180}
+              className="rounded-full border border-black/10 object-cover"
+              priority
+            />
+          </motion.div>
         </Reveal>
       </div>
 

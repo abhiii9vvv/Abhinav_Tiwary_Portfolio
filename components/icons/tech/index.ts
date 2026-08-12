@@ -20,8 +20,6 @@ import { PythonIcon } from "./Python";
 import { RestApisIcon } from "./RestApis";
 import { JwtAuthIcon } from "./JwtAuth";
 import { WebSocketsIcon } from "./WebSockets";
-import { GenerativeAIIcon } from "./GenerativeAI";
-import { LlmApisIcon } from "./LlmApis";
 import { AIAgentsIcon } from "./AIAgents";
 import { OpenCVIcon } from "./OpenCV";
 import { DataStructuresIcon } from "./DataStructures";
@@ -29,6 +27,23 @@ import { AlgorithmsIcon } from "./Algorithms";
 import { OOPIcon } from "./OOP";
 import { DBMSIcon } from "./DBMS";
 import { SystemDesignIcon } from "./SystemDesign";
+import { OpenAIIcon } from "./OpenAI";
+import { ClaudeIcon } from "./Claude";
+import { GeminiIcon } from "./Gemini";
+import { VercelIcon } from "./Vercel";
+import { CloudinaryIcon } from "./Cloudinary";
+import { FramerIcon } from "./Framer";
+import { KubernetesIcon } from "./Kubernetes";
+import { JenkinsIcon } from "./Jenkins";
+import { BashIcon } from "./Bash";
+import { Html5Icon } from "./Html5";
+import { Css3Icon } from "./Css3";
+import { GoogleSheetsIcon } from "./GoogleSheets";
+import { ChromeExtensionIcon } from "./ChromeExtension";
+import { BcryptIcon } from "./Bcrypt";
+import { MernIcon } from "./Mern";
+import { AiSentimentIcon } from "./AiSentiment";
+import { AiIcon } from "./Ai";
 
 export {
   ReactIcon,
@@ -51,8 +66,6 @@ export {
   RestApisIcon,
   JwtAuthIcon,
   WebSocketsIcon,
-  GenerativeAIIcon,
-  LlmApisIcon,
   AIAgentsIcon,
   OpenCVIcon,
   DataStructuresIcon,
@@ -60,6 +73,23 @@ export {
   OOPIcon,
   DBMSIcon,
   SystemDesignIcon,
+  OpenAIIcon,
+  ClaudeIcon,
+  GeminiIcon,
+  VercelIcon,
+  CloudinaryIcon,
+  FramerIcon,
+  KubernetesIcon,
+  JenkinsIcon,
+  BashIcon,
+  Html5Icon,
+  Css3Icon,
+  GoogleSheetsIcon,
+  ChromeExtensionIcon,
+  BcryptIcon,
+  MernIcon,
+  AiSentimentIcon,
+  AiIcon,
 };
 
 export { IconShell } from "./IconShell";
@@ -95,8 +125,9 @@ export const techIconMap: Record<string, ComponentType<{ className?: string }>> 
   "REST APIs": RestApisIcon,
   "JWT Authentication": JwtAuthIcon,
   WebSockets: WebSocketsIcon,
-  "Generative AI": GenerativeAIIcon,
-  "LLM APIs": LlmApisIcon,
+  "OpenAI API": OpenAIIcon,
+  Claude: ClaudeIcon,
+  Gemini: GeminiIcon,
   "AI Agents": AIAgentsIcon,
   OpenCV: OpenCVIcon,
   "Data Structures": DataStructuresIcon,
@@ -104,4 +135,21 @@ export const techIconMap: Record<string, ComponentType<{ className?: string }>> 
   OOP: OOPIcon,
   DBMS: DBMSIcon,
   "System Design": SystemDesignIcon,
+  "Vercel Blob": VercelIcon,
+  Cloudinary: CloudinaryIcon,
+  "Framer Motion": FramerIcon,
+  Kubernetes: KubernetesIcon,
+  Jenkins: JenkinsIcon,
+  Bash: BashIcon,
+  HTML5: Html5Icon,
+  CSS3: Css3Icon,
+  HTML: Html5Icon,
+  CSS: Css3Icon,
+  "Google Sheets API": GoogleSheetsIcon,
+  "Chrome Extension": ChromeExtensionIcon,
+  bcrypt: BcryptIcon,
+  MERN: MernIcon,
+  "AI Sentiment": AiSentimentIcon,
+  AI: AiIcon,
+  JWT: JwtAuthIcon,
 };

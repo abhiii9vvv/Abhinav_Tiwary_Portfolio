@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { profile } from "@/content/profile";
 import { StructuredData } from "@/components/StructuredData";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
 const SITE_URL = "https://abhinavtiwary.online";
@@ -92,7 +93,10 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body>{children}</body>
+      <body>
+        <ScrollProgress />
+        {children}
+      </body>
     </html>
   );
 }

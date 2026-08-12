@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Project } from "@/content/projects";
 import { ArrowUpRight, GithubMark } from "@/components/icons";
+import { techIconMap } from "@/components/icons/tech";
+import { colorForTag } from "@/content/tagColors";
 
 export function ProjectCard({
   project,
@@ -32,11 +34,12 @@ export function ProjectCard({
       href={primaryLink}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-bg-raised transition-shadow duration-300 ${
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line border-t-4 bg-bg-raised transition-shadow duration-300 ${
         compact
           ? "shadow-none hover:shadow-[0_10px_24px_-16px_rgba(0,0,0,0.14)]"
           : "shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow-[0_18px_40px_-16px_rgba(0,0,0,0.18)]"
       } ${large ? "sm:col-span-2" : ""}`}
+      style={{ borderTopColor: colorForTag(project.name) }}
     >
       {project.screenshot && (
         <div
@@ -65,14 +68,24 @@ export function ProjectCard({
         </div>
         <p className="mt-4 text-sm leading-relaxed text-ink-muted">{project.description}</p>
         <ul className="mt-4 flex flex-wrap gap-2">
-          {project.tech.map((t) => (
-            <li
-              key={t}
-              className="rounded-full border border-line px-3 py-1 text-xs text-ink-muted"
-            >
-              {t}
-            </li>
-          ))}
+          {project.tech.map((t) => {
+            const TagIcon = techIconMap[t];
+            const color = colorForTag(t);
+            return (
+              <li
+                key={t}
+                className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium"
+                style={{
+                  borderColor: `${color}55`,
+                  backgroundColor: `${color}14`,
+                  color,
+                }}
+              >
+                {TagIcon && <TagIcon className="h-3.5 w-3.5 shrink-0 rounded-[3px]" />}
+                {t}
+              </li>
+            );
+          })}
         </ul>
         <div className="mt-4 flex flex-1 items-end justify-between gap-4">
           {linkLabel && (

@@ -44,7 +44,7 @@ export const featuredProjects: Project[] = [
     tagline: "Technology and digital platform contribution supporting data-driven campaign operations and workflows",
     description:
       "Technology and digital platform contribution supporting data-driven campaign operations and workflows.",
-    tech: ["JavaScript"],
+    tech: ["JavaScript", "Next.js", "Tailwind CSS"],
     live: "https://www.thearambha.in/",
     screenshot: "/screenshots/thearambha.png",
     tier: "featured",
