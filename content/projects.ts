@@ -9,13 +9,14 @@ export type Project = {
   screenshot?: string;
   tier: "featured" | "strong" | "more";
   note?: string;
+  status?: "Current" | "Client" | "Professional" | "Flagship" | "Engineering";
 };
 
 export const featuredProjects: Project[] = [
   {
     slug: "mentionwave",
     name: "MentionWave",
-    tagline: "Real-time mention monitoring and AI sentiment tracking",
+    tagline: "Real-time social intelligence platform for monitoring mentions, sentiment, engagement, and conversations across multiple platforms",
     description:
       "Tracks configurable keyword mentions across X/Twitter, Instagram, Facebook, YouTube, and news sources, with sentiment analysis, engagement tracking, alert rules, and a real-time dashboard.",
     tech: ["TypeScript", "Next.js", "AI Sentiment", "Vercel Blob"],
@@ -23,34 +24,37 @@ export const featuredProjects: Project[] = [
     github: "https://github.com/abhiii9vvv/mentionwave",
     screenshot: "/screenshots/mentionwave.png",
     tier: "featured",
+    status: "Current",
   },
   {
     slug: "artha-social",
     name: "Artha Social",
-    tagline: "Digital marketing agency platform with custom CMS",
+    tagline: "Production marketing platform built for an Indian digital marketing agency",
     description:
-      "Agency website with service pages, lead capture, authentication, a custom admin CMS, media management, and SEO infrastructure, in production.",
+      "Client project including a custom CMS, lead capture, authentication, media management, and SEO infrastructure, in production.",
     tech: ["Next.js", "TypeScript", "MongoDB", "Cloudinary", "Framer Motion"],
     live: "https://www.arthasocial.in/",
     screenshot: "/screenshots/arthasocial.png",
     tier: "featured",
+    status: "Client",
   },
   {
     slug: "the-arambha",
     name: "The ARambha",
-    tagline: "Technology for data-driven campaign operations",
+    tagline: "Technology and digital platform contribution supporting data-driven campaign operations and workflows",
     description:
-      "Technology and digital platform contributions supporting data-driven campaign operations and digital workflows: \"Campaign strategy from booth to ballot, data-driven, digitally delivered.\"",
+      "Technology and digital platform contribution supporting data-driven campaign operations and workflows.",
     tech: ["JavaScript"],
     live: "https://www.thearambha.in/",
     screenshot: "/screenshots/thearambha.png",
     tier: "featured",
     note: "Technology contribution, not campaign strategy",
+    status: "Professional",
   },
   {
     slug: "campussetu",
     name: "CampusSetu",
-    tagline: "Multi-tenant SaaS platform for Indian educational institutions",
+    tagline: "Multi-tenant SaaS campus platform combining academics, attendance, exams, analytics, AI workflows, and real-time collaboration",
     description:
       "Campus management platform covering academics, notices, attendance, exams, and analytics, with role-based access for students, faculty, and admins, multi-tenant architecture, and AI-powered workflows.",
     tech: ["React", "Next.js", "Node.js", "TypeScript", "Docker", "AWS"],
@@ -58,17 +62,19 @@ export const featuredProjects: Project[] = [
     screenshot: "/screenshots/campussetu.png",
     tier: "featured",
     note: "Flagship project",
+    status: "Flagship",
   },
   {
     slug: "secure-exam-browser",
     name: "SecureExamBrowser",
-    tagline: "AI-powered secure examination platform",
+    tagline: "Secure kiosk-mode examination browser with AI face proctoring, OS-level restrictions, real-time monitoring, and suspicious-activity detection",
     description:
       "Kiosk-mode exam browser with alt-tab and screen-capture restrictions, AI face proctoring, real-time monitoring, and violation detection with suspicious-activity logging.",
     tech: ["Electron", "Python", "OpenCV"],
     github: "https://github.com/abhiii9vvv/SecureExamBrowser",
     tier: "featured",
     note: "No public live deployment",
+    status: "Engineering",
   },
 ];
 
@@ -116,7 +122,6 @@ export const strongProjects: Project[] = [
 ];
 
 export const moreProjects: Project[] = [
-  { slug: "experiences-marketplace-backend", name: "experiences-marketplace-backend", tagline: "Two-sided experiences marketplace backend", description: "RBAC auth, booking and vendor management, modular REST APIs.", tech: ["TypeScript", "Node.js", "Express", "Prisma"], github: "https://github.com/abhiii9vvv/experiences-marketplace-backend", tier: "more" },
   { slug: "nodejs", name: "NodeJS", tagline: "Modular Node.js backend architecture", description: "REST APIs, JWT auth, middleware pipelines, MongoDB integration.", tech: ["Node.js", "MongoDB", "JWT"], github: "https://github.com/abhiii9vvv/NodeJS", tier: "more" },
   { slug: "assesment", name: "Assesment", tagline: "Secure backend/API assignment", description: "REST API with JWT, bcrypt, RBAC, and CRUD task management.", tech: ["Node.js", "JWT", "bcrypt"], github: "https://github.com/abhiii9vvv/Assesment", tier: "more" },
   { slug: "devops-practice", name: "DevOps-Practice", tagline: "Hands-on DevOps engineering practice", description: "Docker, Kubernetes, Jenkins, CI/CD, and Linux automation workflows.", tech: ["Docker", "Kubernetes", "Jenkins"], github: "https://github.com/abhiii9vvv/DevOps-Practice", tier: "more" },
@@ -126,8 +131,6 @@ export const moreProjects: Project[] = [
   { slug: "spotify-clone", name: "Spotify Clone", tagline: "High-fidelity Spotify-style web player", description: "Playlist management and audio controls with a responsive music-player UI.", tech: ["HTML", "CSS", "JavaScript"], github: "https://github.com/abhiii9vvv/Spotify_Clone", tier: "more" },
   { slug: "x-twitter", name: "X-Twitter", tagline: "Responsive social-media UI clone", description: "Static responsive clone of the X/Twitter interface.", tech: ["HTML", "CSS"], github: "https://github.com/abhiii9vvv/X-Twitter", tier: "more" },
   { slug: "signsecure", name: "SignSecure", tagline: "Responsive signup interface", description: "Dual-panel signup UI with form validation and smooth animations.", tech: ["HTML5", "CSS3", "JavaScript"], github: "https://github.com/abhiii9vvv/SignSecure", tier: "more" },
-  { slug: "dsa-with-java", name: "DSA_WITH_JAVA", tagline: "DSA implementations in Java", description: "Trees, graphs, dynamic programming, and LeetCode-style problems.", tech: ["Java"], github: "https://github.com/abhiii9vvv/DSA_WITH_JAVA", tier: "more" },
-  { slug: "javascript-fundamentals", name: "JavaScript-Fundamentals", tagline: "Advanced JavaScript reference", description: "Async/await, closures, OOP, DOM, and event handling practice.", tech: ["JavaScript"], github: "https://github.com/abhiii9vvv/JavaScript-Fundamentals", tier: "more" },
-  { slug: "mongodb-fundamentals", name: "mongodb-fundamentals", tagline: "MongoDB practice", description: "CRUD, indexing, aggregation, and schema-design practice.", tech: ["MongoDB"], github: "https://github.com/abhiii9vvv/mongodb-fundamentals", tier: "more" },
-  { slug: "mern-playground", name: "Mern-PlayGround", tagline: "MERN interview preparation", description: "Mini-projects and machine-coding exercises for MERN interviews.", tech: ["MongoDB", "Express", "React", "Node.js"], github: "https://github.com/abhiii9vvv/Mern-PlayGround", tier: "more" },
 ];
+
+export const totalRepoCount = 53;

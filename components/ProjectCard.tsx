@@ -5,6 +5,13 @@ import { ArrowUpRight, GithubMark } from "@/components/icons";
 export function ProjectCard({ project, large }: { project: Project; large?: boolean }) {
   const primaryLink = project.live ?? project.github;
 
+  let linkLabel: string | undefined;
+  if (project.live) {
+    linkLabel = "Live site";
+  } else if (project.github) {
+    linkLabel = "GitHub";
+  }
+
   return (
     <a
       href={primaryLink}
@@ -14,6 +21,11 @@ export function ProjectCard({ project, large }: { project: Project; large?: bool
         large ? "sm:col-span-2" : ""
       }`}
     >
+      {project.status && (
+        <span className="absolute left-4 top-4 z-10 rounded-full bg-ink/85 px-3 py-1 text-xs uppercase tracking-[0.1em] text-bg backdrop-blur-sm">
+          {project.status}
+        </span>
+      )}
       {project.screenshot ? (
         <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-line">
           <Image
@@ -39,12 +51,9 @@ export function ProjectCard({ project, large }: { project: Project; large?: bool
         </div>
       )}
       <div className={large ? "p-8" : "p-6"}>
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h3 className="font-display text-2xl text-ink">{project.name}</h3>
-            <p className="mt-1 text-ink-muted">{project.tagline}</p>
-          </div>
-          <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-ink-muted transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />
+        <div>
+          <h3 className="font-display text-2xl text-ink">{project.name}</h3>
+          <p className="mt-1 text-ink-muted">{project.tagline}</p>
         </div>
         <p className="mt-4 text-sm leading-relaxed text-ink-muted">{project.description}</p>
         <ul className="mt-4 flex flex-wrap gap-2">
@@ -57,12 +66,20 @@ export function ProjectCard({ project, large }: { project: Project; large?: bool
             </li>
           ))}
         </ul>
-        {project.note && (
-          <p className="mt-4 flex items-center gap-1.5 text-xs text-ink-muted">
-            {!project.live && <GithubMark className="h-3.5 w-3.5 shrink-0" />}
-            {project.note}
-          </p>
-        )}
+        <div className="mt-4 flex items-center justify-between gap-4">
+          {linkLabel && (
+            <span className="inline-flex items-center gap-1.5 text-sm text-ink">
+              {linkLabel}
+              <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-ink-muted transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </span>
+          )}
+          {project.note && (
+            <p className="flex items-center gap-1.5 text-xs text-ink-muted">
+              {!project.live && <GithubMark className="h-3.5 w-3.5 shrink-0" />}
+              {project.note}
+            </p>
+          )}
+        </div>
       </div>
     </a>
   );

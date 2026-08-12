@@ -5,7 +5,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 
 export function StrongProjects() {
   return (
-    <Section id="strong-projects" eyebrow="More Work" title="Strong projects.">
+    <Section id="strong-projects" eyebrow="More Work" title="Other things I&apos;ve built.">
       <div className="grid gap-6 sm:grid-cols-2">
         {strongProjects.map((project, i) => (
           <Reveal key={project.slug} delay={i * 0.05}>
