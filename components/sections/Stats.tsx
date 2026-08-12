@@ -1,12 +1,15 @@
 import { stats } from "@/content/profile";
 import { Reveal } from "@/components/Reveal";
-import { GithubMark, ContributionsMark, CodeMark, TrophyMark } from "@/components/icons";
+import { GitHubStatIcon } from "@/components/icons/stats/GitHubStat";
+import { ContributionsStatIcon } from "@/components/icons/stats/ContributionsStat";
+import { DsaStatIcon } from "@/components/icons/stats/DsaStat";
+import { TrophyStatIcon } from "@/components/icons/stats/TrophyStat";
 
 const iconMap = {
-  github: GithubMark,
-  contributions: ContributionsMark,
-  code: CodeMark,
-  trophy: TrophyMark,
+  github: GitHubStatIcon,
+  contributions: ContributionsStatIcon,
+  code: DsaStatIcon,
+  trophy: TrophyStatIcon,
 };
 
 export function Stats() {
@@ -18,7 +21,7 @@ export function Stats() {
           return (
             <Reveal key={stat.label} delay={i * 0.05}>
               <div>
-                <Icon className="mb-3 h-6 w-6 text-accent" />
+                <Icon className="mb-3 h-12 w-12" />
                 <dt className="font-display text-3xl tabular-nums text-ink">{stat.value}</dt>
                 <dd className="mt-1 text-sm text-ink-muted">{stat.label}</dd>
                 <dd className="mt-0.5 text-xs text-ink-muted/70">{stat.description}</dd>

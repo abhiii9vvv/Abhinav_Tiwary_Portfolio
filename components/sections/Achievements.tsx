@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { achievements } from "@/content/achievements";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
@@ -9,9 +10,12 @@ export function Achievements() {
     <Section id="achievements" eyebrow="Achievements" title="Recognition along the way.">
       <div className="flex flex-col gap-6">
         <Reveal>
-          <div className="rounded-2xl border border-line bg-bg-raised p-8 sm:p-10">
-            <h3 className="font-display text-3xl text-ink sm:text-4xl">{headline.title}</h3>
-            <p className="mt-3 max-w-2xl text-lg text-ink-muted">{headline.detail}</p>
+          <div className="flex flex-col items-start gap-6 rounded-2xl border border-line bg-bg-raised p-8 sm:flex-row sm:items-center sm:p-10">
+            <Image src="/3d-icons/trophy.png" alt="" width={96} height={96} className="shrink-0" />
+            <div>
+              <h3 className="font-display text-3xl text-ink sm:text-4xl">{headline.title}</h3>
+              <p className="mt-3 max-w-2xl text-lg text-ink-muted">{headline.detail}</p>
+            </div>
           </div>
         </Reveal>
         <div className="grid items-stretch gap-6 sm:grid-cols-3">
