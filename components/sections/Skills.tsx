@@ -55,7 +55,9 @@ function SkillCard({
   const CategoryIcon = categoryIconMap[group.icon];
   return (
     <Reveal delay={delay} className="h-full">
-      <div className={`flex flex-col rounded-2xl border border-line bg-bg-raised p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ${width}`}>
+      <div
+        className={`group/card flex flex-col rounded-2xl border border-line bg-bg-raised p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_12px_32px_-8px_rgba(139,92,246,0.25)] ${width}`}
+      >
         <div className="mb-4 flex items-center gap-2">
           <CategoryIcon className="h-5 w-5 shrink-0 text-accent" />
           <h3 className="font-display text-base text-ink">{group.label}</h3>
@@ -91,19 +93,27 @@ export function Skills() {
         </div>
 
         {/* Radial layout — desktop/tablet only */}
-        <div className="relative mx-auto hidden max-w-[1400px] lg:block" style={{ height: 820 }}>
+        <div className="relative mx-auto hidden max-w-[1240px] lg:block" style={{ height: 820 }}>
           <svg
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 h-full w-full text-line"
+            className="pointer-events-none absolute inset-0 h-full w-full"
             preserveAspectRatio="none"
           >
-            <g fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 5" opacity={0.6}>
+            <g fill="none" stroke="var(--color-accent)" strokeWidth="1.5" strokeDasharray="1 6" strokeLinecap="round" opacity={0.45}>
               <line x1="50%" y1="11%" x2="50%" y2="22%" />
-              <line x1="22%" y1="20%" x2="41%" y2="34%" />
-              <line x1="78%" y1="20%" x2="59%" y2="34%" />
-              <line x1="22%" y1="80%" x2="41%" y2="66%" />
-              <line x1="78%" y1="80%" x2="59%" y2="66%" />
+              <line x1="19%" y1="20%" x2="41%" y2="34%" />
+              <line x1="81%" y1="20%" x2="59%" y2="34%" />
+              <line x1="19%" y1="80%" x2="41%" y2="66%" />
+              <line x1="81%" y1="80%" x2="59%" y2="66%" />
               <line x1="50%" y1="89%" x2="50%" y2="78%" />
+            </g>
+            <g fill="var(--color-accent)" opacity={0.55}>
+              <circle cx="50%" cy="22%" r="2.5" />
+              <circle cx="41%" cy="34%" r="2.5" />
+              <circle cx="59%" cy="34%" r="2.5" />
+              <circle cx="41%" cy="66%" r="2.5" />
+              <circle cx="59%" cy="66%" r="2.5" />
+              <circle cx="50%" cy="78%" r="2.5" />
             </g>
           </svg>
 
@@ -111,7 +121,7 @@ export function Skills() {
             <div
               aria-hidden="true"
               className="absolute inset-0 -z-10 rounded-full blur-3xl"
-              style={{ backgroundColor: "rgba(139,92,246,0.14)" }}
+              style={{ backgroundColor: "rgba(139,92,246,0.16)" }}
             />
             <Image
               src="/images/skills-character.png"
@@ -120,6 +130,11 @@ export function Skills() {
               height={900}
               className="h-full w-auto object-contain"
               priority={false}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute bottom-2 left-1/2 h-3 w-2/5 -translate-x-1/2 rounded-[50%] blur-sm"
+              style={{ backgroundColor: "rgba(0,0,0,0.18)" }}
             />
           </div>
 
@@ -139,7 +154,7 @@ export function Skills() {
 
         <div className="mt-6">
           <Reveal delay={radialGroups.length * 0.05}>
-            <div className="rounded-2xl border border-line bg-bg-raised p-6">
+            <div className="rounded-2xl border border-line bg-bg-raised p-6 transition-all duration-300 ease-out hover:border-accent/40 hover:shadow-[0_12px_32px_-8px_rgba(139,92,246,0.2)]">
               <div className="mb-5 flex items-center gap-2">
                 <CSFundamentalsMark className="h-5 w-5 shrink-0 text-accent" />
                 <h3 className="font-display text-xl text-ink">{csFundamentals.label}</h3>
