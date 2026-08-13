@@ -40,7 +40,7 @@ export function TextReveal({
         },
       });
     },
-    { scope: containerRef, dependencies: [motionEnabled, delay] }
+    { scope: containerRef, dependencies: [motionEnabled, delay], revertOnUpdate: true }
   );
 
   const lineChildren = Children.map(children, (child) => {
