@@ -19,14 +19,20 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, shouldReduceMotion ? 0 : 40]);
+  const bgParallaxY = useTransform(scrollYProgress, [0, 1], [0, shouldReduceMotion ? 0 : 90]);
 
   return (
     <section ref={sectionRef} id="top" className="relative overflow-hidden">
-      <div
+      <motion.div
         aria-hidden="true"
+        style={{ y: bgParallaxY }}
         className="pointer-events-none absolute inset-0 opacity-[0.25] [mask-image:radial-gradient(ellipse_65%_65%_at_50%_0%,black,transparent)]"
-        style={{ backgroundImage: "url('/patterns/topography.svg')" }}
-      />
+      >
+        <div
+          className="absolute inset-0"
+          style={{ backgroundImage: "url('/patterns/topography.svg')" }}
+        />
+      </motion.div>
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-16 sm:grid-cols-[1.2fr_0.8fr] sm:px-10 sm:pt-24">
         <Reveal>
           <div>
