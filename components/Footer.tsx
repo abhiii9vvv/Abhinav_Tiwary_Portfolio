@@ -1,11 +1,10 @@
 import { profile } from "@/content/profile";
 import { GithubMark, LinkedinMark, MailMark } from "@/components/icons";
-import { CONTENT_MAX_WIDTH } from "@/lib/layout";
 
 export function Footer() {
   return (
     <footer className="border-t border-line px-6 py-10 sm:px-10">
-      <div className={`mx-auto flex ${CONTENT_MAX_WIDTH} flex-col justify-between gap-6 sm:flex-row sm:items-end`}>
+      <div className={`mx-auto flex max-w-[1600px] flex-col justify-between gap-6 sm:flex-row sm:items-end`}>
         <div>
           <p className="font-display text-lg text-ink">{profile.name}</p>
           <p className="mt-1 text-sm text-ink-muted">Full-Stack Developer · Backend · AI</p>

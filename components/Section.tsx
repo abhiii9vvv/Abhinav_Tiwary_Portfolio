@@ -1,4 +1,3 @@
-import { CONTENT_MAX_WIDTH } from "@/lib/layout";
 
 type SectionProps = {
   id: string;
@@ -20,7 +19,7 @@ export function Section({ id, eyebrow, title, children, className, pattern }: Se
           style={{ backgroundImage: `url('${pattern}')` }}
         />
       )}
-      <div className={`relative mx-auto ${CONTENT_MAX_WIDTH} px-6 py-24 sm:px-10 ${className ?? ""}`}>
+      <div className={`relative mx-auto max-w-[1600px] px-6 py-24 sm:px-10 ${className ?? ""}`}>
         <div className="mb-12">
           {eyebrow && (
             <p className="mb-3 text-sm uppercase tracking-[0.2em] text-ink-muted">
