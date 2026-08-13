@@ -25,7 +25,7 @@ export function Skills() {
       const trigger = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top+=80",
-        end: () => `+=${gridRef.current!.offsetHeight + headingRef.current!.offsetHeight}`,
+        end: () => `+=${gridRef.current!.offsetHeight - headingRef.current!.offsetHeight}`,
         pin: headingRef.current,
         pinSpacing: false,
       });
