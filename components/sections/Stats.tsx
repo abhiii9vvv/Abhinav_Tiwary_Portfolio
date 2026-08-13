@@ -4,6 +4,7 @@ import { GitHubStatIcon } from "@/components/icons/stats/GitHubStat";
 import { ContributionsStatIcon } from "@/components/icons/stats/ContributionsStat";
 import { DsaStatIcon } from "@/components/icons/stats/DsaStat";
 import { TrophyStatIcon } from "@/components/icons/stats/TrophyStat";
+import { CONTENT_MAX_WIDTH } from "@/lib/layout";
 
 const iconMap = {
   github: GitHubStatIcon,
@@ -14,7 +15,7 @@ const iconMap = {
 
 export function Stats() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 sm:px-10">
+    <section className={`mx-auto ${CONTENT_MAX_WIDTH} px-6 py-16 sm:px-10`}>
       <dl className="grid grid-cols-2 gap-x-8 gap-y-10 border-t border-line pt-10 sm:grid-cols-4">
         {stats.map((stat, i) => {
           const Icon = iconMap[stat.icon];

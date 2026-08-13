@@ -7,6 +7,7 @@ import { techIconMap } from "@/components/icons/tech";
 import { Reveal } from "@/components/Reveal";
 import { ensureGsapRegistered, ScrollTrigger } from "@/lib/gsap";
 import { useScrollFx } from "@/hooks/useScrollFx";
+import { CONTENT_MAX_WIDTH } from "@/lib/layout";
 
 export function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,7 +25,7 @@ export function Skills() {
       const trigger = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top+=80",
-        end: () => `+=${gridRef.current!.offsetHeight - headingRef.current!.offsetHeight}`,
+        end: () => `+=${gridRef.current!.offsetHeight + headingRef.current!.offsetHeight}`,
         pin: headingRef.current,
         pinSpacing: false,
       });
@@ -36,7 +37,7 @@ export function Skills() {
 
   return (
     <section id="skills" ref={sectionRef} className="relative scroll-mt-20">
-      <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10">
+      <div className={`relative mx-auto ${CONTENT_MAX_WIDTH} px-6 py-24 sm:px-10`}>
         <div ref={headingRef} className="relative z-30 mb-12 bg-bg pb-2">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-ink-muted">Skills</p>
           <h2 className="font-display text-4xl leading-tight text-ink sm:text-5xl">
