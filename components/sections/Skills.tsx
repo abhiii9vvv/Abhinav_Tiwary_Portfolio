@@ -26,7 +26,7 @@ export function Skills() {
         start: "top top+=16",
         end: () => `+=${gridRef.current!.offsetHeight - headingRef.current!.offsetHeight}`,
         pin: headingRef.current,
-        pinSpacing: false,
+        pinSpacing: true,
       });
 
       return () => trigger.kill();
