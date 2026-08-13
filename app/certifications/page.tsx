@@ -1,11 +1,11 @@
-import { Nav } from "@/components/Nav";
+import { Sidebar } from "@/components/Sidebar";
 import { Certifications } from "@/components/sections/Certifications";
 import { Footer } from "@/components/Footer";
 
 export default function CertificationsPage() {
   return (
     <>
-      <Nav />
+      <Sidebar />
       <main id="main-content">
         <Certifications />
       </main>

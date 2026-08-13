@@ -1,4 +1,4 @@
-import { Nav } from "@/components/Nav";
+import { Sidebar } from "@/components/Sidebar";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
 import { About } from "@/components/sections/About";
@@ -16,7 +16,7 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Nav />
+      <Sidebar />
       <main id="main-content">
         <Hero />
         <Stats />
