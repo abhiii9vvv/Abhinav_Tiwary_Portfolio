@@ -9,6 +9,28 @@ const artForTitle: Record<string, string> = {
   LeetCode: "/generated/achievement-target.jpeg",
 };
 
+const detailForTitle: Record<string, React.ReactNode> = {
+  "AWS Agentic AI Workshop": (
+    <>
+      <strong className="font-semibold text-ink">First to complete</strong> the workshop tasks at AWS Student
+      Community Day Delhi NCR 2026, publicly recognized by AWS Solutions Architect{" "}
+      <strong className="font-semibold text-ink">Vishnu Vashist</strong>.
+    </>
+  ),
+  LeetCode: (
+    <>
+      <strong className="font-semibold text-ink">250+ DSA problems</strong> solved across arrays, trees, graphs,
+      and dynamic programming.
+    </>
+  ),
+  GitHub: (
+    <>
+      <strong className="font-semibold text-ink">50+ repositories</strong>,{" "}
+      <strong className="font-semibold text-ink">1,000+ contributions</strong>.
+    </>
+  ),
+};
+
 export function Achievements() {
   const [headline, ...rest] = achievements;
 
@@ -20,7 +42,9 @@ export function Achievements() {
             <Image src="/generated/achievement-medal.jpeg" alt="" width={96} height={96} className="shrink-0 rounded-xl object-cover" />
             <div>
               <h3 className="font-display text-3xl text-ink sm:text-4xl">{headline.title}</h3>
-              <p className="mt-3 max-w-2xl text-lg text-ink-muted">{headline.detail}</p>
+              <p className="mt-3 max-w-2xl text-lg text-ink-muted">
+                <strong className="font-semibold text-ink">2nd Runner-Up</strong>, Internal
+              </p>
             </div>
           </div>
         </Reveal>
@@ -37,7 +61,7 @@ export function Achievements() {
                     Icon && <Icon className="h-10 w-10" />
                   )}
                   <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
-                  <p className="mt-2 text-ink-muted">{item.detail}</p>
+                  <p className="mt-2 text-ink-muted">{detailForTitle[item.title] ?? item.detail}</p>
                 </div>
               </Reveal>
             );

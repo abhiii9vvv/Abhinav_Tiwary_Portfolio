@@ -34,10 +34,14 @@ export function Hero() {
             </p>
             <p className="mb-3 font-display text-lg text-ink-muted sm:text-xl">{profile.name}</p>
             <h1 className="text-balance font-display text-5xl leading-[1.05] tracking-tight text-ink sm:text-6xl">
-              {profile.headline}
+              <strong className="font-display font-semibold text-ink">Full-Stack Developer</strong> building{" "}
+              <strong className="font-display font-semibold text-ink">scalable web platforms</strong> and{" "}
+              <strong className="font-display font-semibold text-ink">AI-powered applications</strong>.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-              {profile.subheadline}
+              I build and ship real-world products across <strong className="font-semibold text-ink">full-stack engineering</strong>,{" "}
+              <strong className="font-semibold text-ink">backend systems</strong>, <strong className="font-semibold text-ink">cloud infrastructure</strong>, and{" "}
+              <strong className="font-semibold text-ink">AI</strong>.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link

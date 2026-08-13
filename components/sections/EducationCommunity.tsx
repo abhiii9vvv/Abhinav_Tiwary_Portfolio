@@ -16,11 +16,13 @@ export function EducationCommunity() {
               <ShardaLogoIcon className="h-10 w-10 shrink-0" />
               <div>
                 <h3 className="font-display text-2xl text-ink">{education.degree}</h3>
-                <p className="text-ink-muted">{education.institution}</p>
+                <p className="text-ink-muted">
+                  <strong className="font-semibold text-ink">{education.institution}</strong>
+                </p>
               </div>
             </div>
             <p className="mt-3 text-sm text-ink-muted">
-              {education.period} · {education.location}
+              <strong className="font-semibold text-ink">{education.period}</strong> · {education.location}
             </p>
           </div>
         </Reveal>
@@ -35,7 +37,11 @@ export function EducationCommunity() {
             </div>
             <p className="mt-3 text-sm text-ink-muted">{community.location}</p>
             <p className="mt-3 max-w-2xl text-ink-muted">{community.description}</p>
-            <p className="mt-3 text-sm text-accent">{community.recognition}</p>
+            <p className="mt-3 text-sm text-accent">
+              AWS Solutions Architect <strong className="font-semibold">Vishnu Vashist</strong> publicly
+              recognized Abhinav as <strong className="font-semibold">one of the first students</strong> to
+              complete the hands-on Agentic AI workshop.
+            </p>
           </div>
         </Reveal>
       </div>
