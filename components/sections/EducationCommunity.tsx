@@ -8,22 +8,31 @@ export function EducationCommunity() {
     <Section id="education" eyebrow="Education & Community" title="Sharda University.">
       <div className="flex flex-col gap-6">
         <Reveal>
-          <div
-            className="relative overflow-hidden rounded-2xl border border-line bg-bg-raised bg-cover bg-bottom p-6 sm:p-8"
-            style={{ backgroundImage: "linear-gradient(to top, var(--color-bg-raised) 35%, transparent), url('/generated/education-campus.jpeg')" }}
-          >
-            <div className="flex items-center gap-3">
-              <ShardaLogoIcon className="h-10 w-10 shrink-0" />
-              <div>
-                <h3 className="font-display text-2xl text-ink">{education.degree}</h3>
-                <p className="text-ink-muted">
-                  <strong className="font-semibold text-ink">{education.institution}</strong>
-                </p>
+          <div className="relative overflow-hidden rounded-2xl border border-line bg-bg-raised">
+            <div
+              aria-hidden="true"
+              className="h-28 w-full bg-contain bg-bottom bg-no-repeat sm:h-36"
+              style={{ backgroundImage: "url('/generated/education-campus.jpeg')" }}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-0 h-28 sm:h-36"
+              style={{ backgroundImage: "linear-gradient(to top, var(--color-bg-raised) 0%, transparent 70%)" }}
+            />
+            <div className="p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <ShardaLogoIcon className="h-10 w-10 shrink-0" />
+                <div>
+                  <h3 className="font-display text-2xl text-ink">{education.degree}</h3>
+                  <p className="text-ink-muted">
+                    <strong className="font-semibold text-ink">{education.institution}</strong>
+                  </p>
+                </div>
               </div>
+              <p className="mt-3 text-sm text-ink-muted">
+                <strong className="font-semibold text-ink">{education.period}</strong> · {education.location}
+              </p>
             </div>
-            <p className="mt-3 text-sm text-ink-muted">
-              <strong className="font-semibold text-ink">{education.period}</strong> · {education.location}
-            </p>
           </div>
         </Reveal>
         <Reveal delay={0.1}>

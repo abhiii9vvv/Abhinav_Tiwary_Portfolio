@@ -14,7 +14,6 @@ import {
   EducationIcon,
   ContactIcon,
 } from "@/components/icons/nav";
-import { ArrowUpRight } from "@/components/icons";
 import { useActiveNavLink, type NavLink } from "@/hooks/useActiveNavLink";
 
 type SidebarLink = NavLink & { Icon: React.ComponentType<{ className?: string }> };
@@ -104,17 +103,6 @@ export function Sidebar() {
             );
           })}
         </nav>
-
-        <a
-          href="https://lifeherbagroup.com/resume/Abhinav_Tiwary_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Resume"
-          className="mt-6 flex shrink-0 flex-col items-center gap-1.5 text-ink-muted opacity-70 transition-[opacity,scale] duration-200 hover:scale-105 hover:opacity-100 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-        >
-          <ArrowUpRight className="h-5 w-5" />
-          <span className="text-[10px] uppercase tracking-[0.12em]">Resume</span>
-        </a>
       </header>
 
       {/* Mobile top bar */}
