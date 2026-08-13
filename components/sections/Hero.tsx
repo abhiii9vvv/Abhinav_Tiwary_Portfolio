@@ -86,8 +86,8 @@ export function Hero() {
                 alt={profile.name}
                 fill
                 sizes="(min-width: 640px) 480px, 400px"
-                quality={100}
-                className="object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.16)] [image-rendering:high-quality]"
+                quality={85}
+                className="object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.16)]"
                 style={{ filter: "contrast(1.05) saturate(1.05)" }}
                 priority
               />

@@ -12,7 +12,7 @@
 }
 
 html {
-  overflow-x: clip;
+  /* overflow-x clipping handled on body to avoid extra stacking context */
 }
 
 body {

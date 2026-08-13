@@ -44,7 +44,11 @@ export function Sidebar() {
       setBarPosition(null);
       return;
     }
-    setBarPosition({ top: activeEl.offsetTop, height: activeEl.offsetHeight });
+    // Defer DOM measurement to avoid forced synchronous layout reflow
+    const raf = requestAnimationFrame(() => {
+      setBarPosition({ top: activeEl.offsetTop, height: activeEl.offsetHeight });
+    });
+    return () => cancelAnimationFrame(raf);
   }, [activeIndex]);
 
   return (

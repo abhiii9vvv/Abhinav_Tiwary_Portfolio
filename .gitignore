@@ -38,3 +38,6 @@ next-env.d.ts
 # tool/session artifacts
 .playwright-mcp/
 .superpowers/
+.agents/
+.claude/
+docs/superpowers/

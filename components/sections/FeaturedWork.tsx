@@ -20,20 +20,23 @@ export function FeaturedWork() {
       const cards = gridRef.current.querySelectorAll("[data-zoom-card]");
       if (cards.length === 0) return;
 
-      gsap.set(cards, { opacity: 0, scale: 0.85 });
-      cards.forEach((card) => {
-        gsap.to(card, {
+      // Single ScrollTrigger + stagger instead of N individual triggers
+      gsap.fromTo(
+        cards,
+        { opacity: 0, scale: 0.85 },
+        {
           opacity: 1,
           scale: 1,
           duration: 0.7,
           ease: "power2.out",
+          stagger: 0.07,
           scrollTrigger: {
-            trigger: card,
+            trigger: gridRef.current,
             start: "top 88%",
             once: true,
           },
-        });
-      });
+        }
+      );
     },
     { scope: gridRef, dependencies: [motionEnabled], revertOnUpdate: true }
   );

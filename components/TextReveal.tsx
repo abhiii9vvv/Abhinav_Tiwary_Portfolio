@@ -25,7 +25,7 @@ export function TextReveal({
       const lines = containerRef.current.querySelectorAll("[data-reveal-line]");
       if (lines.length === 0) return;
 
-      gsap.set(lines, { opacity: 0, y: 24 });
+      gsap.set(lines, { opacity: 0, y: 24, willChange: "opacity, transform" });
       gsap.to(lines, {
         opacity: 1,
         y: 0,
@@ -38,6 +38,10 @@ export function TextReveal({
           start: "top 85%",
           once: true,
         },
+        onComplete: () => {
+          // Free GPU compositing layers once animation is done
+          gsap.set(lines, { willChange: "auto" });
+        },
       });
     },
     { scope: containerRef, dependencies: [motionEnabled, delay], revertOnUpdate: true }
@@ -45,13 +49,8 @@ export function TextReveal({
 
   const lineChildren = Children.map(children, (child) => {
     if (isValidElement(child)) {
-      const existingClassName =
-        typeof child.props === "object" && child.props && "className" in child.props
-          ? (child.props.className as string | undefined)
-          : undefined;
       return cloneElement(child as React.ReactElement<{ className?: string }>, {
         "data-reveal-line": "",
-        className: [existingClassName, "will-change-transform"].filter(Boolean).join(" "),
       } as never);
     }
     return child;
