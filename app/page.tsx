@@ -6,7 +6,6 @@ import { Skills } from "@/components/sections/Skills";
 import { Experience } from "@/components/sections/Experience";
 import { FeaturedWork } from "@/components/sections/FeaturedWork";
 import { StrongProjects } from "@/components/sections/StrongProjects";
-import { MoreProjects } from "@/components/sections/MoreProjects";
 import { Achievements } from "@/components/sections/Achievements";
 import { Certifications } from "@/components/sections/Certifications";
 import { EducationCommunity } from "@/components/sections/EducationCommunity";
@@ -25,7 +24,6 @@ export default function Home() {
         <Experience />
         <FeaturedWork />
         <StrongProjects />
-        <MoreProjects />
         <Achievements />
         <Certifications />
         <EducationCommunity />

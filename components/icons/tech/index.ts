@@ -58,6 +58,14 @@ import { SkyCodeHubLogoIcon } from "./SkyCodeHubLogo";
 import { UnessaLogoIcon } from "./UnessaLogo";
 import { LeetCodeIcon } from "./LeetCode";
 import { GitHubIcon } from "./GitHub";
+import { ViteIcon } from "./Vite";
+import { FirebaseIcon } from "./Firebase";
+import { GitIcon } from "./Git";
+import { AuthAuthzIcon } from "./AuthAuthz";
+import { RAGIcon } from "./RAG";
+import { PromptEngineeringIcon } from "./PromptEngineering";
+import { OperatingSystemsIcon } from "./OperatingSystems";
+import { ComputerNetworksIcon } from "./ComputerNetworks";
 
 export {
   ReactIcon,
@@ -118,6 +126,14 @@ export {
   UnessaLogoIcon,
   LeetCodeIcon,
   GitHubIcon,
+  ViteIcon,
+  FirebaseIcon,
+  GitIcon,
+  AuthAuthzIcon,
+  RAGIcon,
+  PromptEngineeringIcon,
+  OperatingSystemsIcon,
+  ComputerNetworksIcon,
 };
 
 export { IconShell } from "./IconShell";
@@ -180,6 +196,15 @@ export const techIconMap: Record<string, ComponentType<{ className?: string }>> 
   "AI Sentiment": AiSentimentIcon,
   AI: AiIcon,
   JWT: JwtAuthIcon,
+  Vite: ViteIcon,
+  Firebase: FirebaseIcon,
+  "Authentication & Authorization": AuthAuthzIcon,
+  Git: GitIcon,
+  GitHub: GitHubIcon,
+  RAG: RAGIcon,
+  "Prompt Engineering": PromptEngineeringIcon,
+  "Operating Systems": OperatingSystemsIcon,
+  "Computer Networks": ComputerNetworksIcon,
 };
 
 /**

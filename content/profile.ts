@@ -18,6 +18,7 @@ export const profile = {
   ],
   headshot: "/images/headshot.png",
   headshotTransparent: "/images/headshot-transparent.png",
+  heroStanding: "/images/hero-standing.png",
 };
 
 export const stats = [

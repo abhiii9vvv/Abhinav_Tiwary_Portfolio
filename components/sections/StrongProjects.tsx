@@ -1,49 +1,11 @@
-"use client";
-
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { strongProjects } from "@/content/projects";
+import { strongProjects, totalRepoCount } from "@/content/projects";
+import { profile } from "@/content/profile";
 import { ProjectCard } from "@/components/ProjectCard";
-import { ensureGsapRegistered, gsap, ScrollTrigger } from "@/lib/gsap";
-import { useScrollFx } from "@/hooks/useScrollFx";
+import { ArrowUpRight } from "@/components/icons";
 
 export function StrongProjects() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const viewportRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
-  const { layoutFxEnabled } = useScrollFx();
-
-  useGSAP(
-    () => {
-      if (!layoutFxEnabled || !sectionRef.current || !viewportRef.current || !trackRef.current) {
-        return;
-      }
-      ensureGsapRegistered();
-
-      const viewport = viewportRef.current;
-      const track = trackRef.current;
-      const scrollDistance = track.scrollWidth - viewport.clientWidth;
-      if (scrollDistance <= 0) return;
-
-      const trigger = ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top+=16",
-        end: () => `+=${track.scrollWidth - viewport.clientWidth}`,
-        pin: true,
-        scrub: 1,
-        onUpdate: (self) => {
-          const currentScrollDistance = track.scrollWidth - viewport.clientWidth;
-          gsap.set(track, { x: -currentScrollDistance * self.progress });
-        },
-      });
-
-      return () => trigger.kill();
-    },
-    { scope: sectionRef, dependencies: [layoutFxEnabled] }
-  );
-
   return (
-    <section id="strong-projects" ref={sectionRef} className="relative scroll-mt-20 overflow-hidden">
+    <section id="strong-projects" className="relative scroll-mt-20">
       <div className="relative mx-auto max-w-[1600px] px-6 py-24 sm:px-10">
         <div className="mb-12">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-ink-muted">More Work</p>
@@ -51,24 +13,21 @@ export function StrongProjects() {
             Other things I&apos;ve built.
           </h2>
         </div>
-        <div ref={viewportRef} className="overflow-hidden">
-          <div
-            ref={trackRef}
-            className={
-              layoutFxEnabled
-                ? "flex w-max gap-6"
-                : "grid grid-cols-1 gap-6 sm:grid-cols-2"
-            }
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {strongProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} compact />
+          ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm text-ink transition-colors duration-200 hover:border-ink active:scale-[0.96]"
           >
-            {strongProjects.map((project) => (
-              <div
-                key={project.slug}
-                className={layoutFxEnabled ? "w-[280px] shrink-0 sm:w-[320px]" : ""}
-              >
-                <ProjectCard project={project} compact />
-              </div>
-            ))}
-          </div>
+            View all {totalRepoCount} repositories
+            <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
         </div>
       </div>
     </section>

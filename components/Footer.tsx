@@ -16,7 +16,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="text-ink-muted transition-colors hover:text-ink"
+              className="text-ink-muted transition-[color,scale] duration-200 hover:text-ink hover:scale-110 active:scale-95"
             >
               <GithubMark className="h-[18px] w-[18px]" />
             </a>
@@ -25,14 +25,14 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-ink-muted transition-colors hover:text-ink"
+              className="text-ink-muted transition-[color,scale] duration-200 hover:text-ink hover:scale-110 active:scale-95"
             >
               <LinkedinMark className="h-[18px] w-[18px]" />
             </a>
             <a
               href={`mailto:${profile.email}`}
               aria-label="Email"
-              className="text-ink-muted transition-colors hover:text-ink"
+              className="text-ink-muted transition-[color,scale] duration-200 hover:text-ink hover:scale-110 active:scale-95"
             >
               <MailMark className="h-[18px] w-[18px]" />
             </a>

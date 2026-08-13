@@ -72,6 +72,7 @@ export const featuredProjects: Project[] = [
       "Kiosk-mode exam browser with alt-tab and screen-capture restrictions, AI face proctoring, real-time monitoring, and violation detection with suspicious-activity logging.",
     tech: ["Electron", "Python", "OpenCV"],
     github: "https://github.com/abhiii9vvv/SecureExamBrowser",
+    screenshot: "/screenshots/secure-exam-browser.png",
     tier: "featured",
     note: "No public live deployment",
     status: "Engineering",

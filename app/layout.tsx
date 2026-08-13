@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { profile } from "@/content/profile";
 import { StructuredData } from "@/components/StructuredData";
-import { ScrollProgress } from "@/components/ScrollProgress";
 import "./globals.css";
 
 const SITE_URL = "https://abhinavtiwary.online";
@@ -50,9 +49,9 @@ export const metadata: Metadata = {
     siteName: `${profile.name}, Portfolio`,
     images: [
       {
-        url: profile.headshot,
-        width: 512,
-        height: 512,
+        url: "/social/og-image.png",
+        width: 1200,
+        height: 630,
         alt: profile.name,
       },
     ],
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    images: [profile.headshot],
+    images: ["/social/twitter-card.png"],
   },
   robots: {
     index: true,
@@ -91,7 +90,6 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body>
-        <ScrollProgress />
         <div className="lg:pl-[120px]">{children}</div>
       </body>
     </html>

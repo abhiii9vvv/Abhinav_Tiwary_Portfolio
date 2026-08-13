@@ -67,11 +67,11 @@ export function Sidebar() {
           className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           <Image
-            src="/images/logo.png"
+            src="/images/logo-mark.png"
             alt="Abhinav Tiwary"
-            width={555}
-            height={88}
-            className="h-7 w-auto"
+            width={512}
+            height={512}
+            className="h-10 w-10 rounded-full"
             priority
           />
         </Link>
@@ -94,8 +94,8 @@ export function Sidebar() {
                   linkRefs.current[i] = el;
                 }}
                 aria-current={isActive ? "location" : undefined}
-                className={`flex flex-col items-center gap-1.5 rounded-sm px-2 py-1 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
-                  isActive ? "scale-[1.15] text-ink opacity-100" : "text-ink-muted opacity-50 hover:opacity-80"
+                className={`flex flex-col items-center gap-1.5 rounded-sm px-2 py-1 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:scale-95 ${
+                  isActive ? "scale-[1.15] text-ink opacity-100" : "text-ink-muted opacity-50 hover:scale-105 hover:opacity-80"
                 }`}
               >
                 <link.Icon className="h-5 w-5 shrink-0" />
@@ -110,7 +110,7 @@ export function Sidebar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
-          className="mt-6 flex shrink-0 flex-col items-center gap-1.5 text-ink-muted opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="mt-6 flex shrink-0 flex-col items-center gap-1.5 text-ink-muted opacity-70 transition-[opacity,scale] duration-200 hover:scale-105 hover:opacity-100 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           <ArrowUpRight className="h-5 w-5" />
           <span className="text-[10px] uppercase tracking-[0.12em]">Resume</span>
@@ -123,62 +123,94 @@ export function Sidebar() {
           href="/"
           className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
-          <Image src="/images/logo.png" alt="Abhinav Tiwary" width={555} height={88} className="h-7 w-auto" priority />
+          <Image src="/images/logo-mark.png" alt="Abhinav Tiwary" width={512} height={512} className="h-9 w-9 rounded-full" priority />
         </Link>
         <button
           type="button"
           onClick={() => setMobileOpen((v) => !v)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-overlay"
-          className="shrink-0 rounded-sm text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-[background-color,transform] duration-150 hover:bg-bg-raised active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
-          {mobileOpen ? "Close" : "Menu"}
+          <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
+            {mobileOpen ? (
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ) : (
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            )}
+          </svg>
         </button>
       </header>
 
-      {mobileOpen && (
-        <div
-          id="mobile-nav-overlay"
-          className="fixed inset-0 z-[60] flex flex-col gap-1 bg-bg px-6 py-8 lg:hidden"
-        >
-          <div className="mb-6 flex items-center justify-between">
-            <Image src="/images/logo.png" alt="Abhinav Tiwary" width={555} height={88} className="h-7 w-auto" />
-            <button
-              type="button"
-              onClick={() => setMobileOpen(false)}
-              aria-label="Close menu"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-colors hover:bg-bg-raised focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-            >
-              <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
-                <path
-                  d="M6 6l12 12M18 6L6 18"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-          {links.map((link) => {
-            const isActive = link.href === activeHref;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                aria-current={isActive ? "location" : undefined}
-                className={`flex items-center gap-3 rounded-sm py-3 text-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
-                  isActive ? "font-medium text-ink" : "text-ink-muted hover:text-ink"
-                }`}
-              >
-                <link.Icon className="h-5 w-5 shrink-0" />
-                {link.label}
-              </Link>
-            );
-          })}
+      {/* Backdrop */}
+      <div
+        aria-hidden="true"
+        onClick={() => setMobileOpen(false)}
+        className={`fixed inset-0 z-[55] bg-ink/40 backdrop-blur-[2px] transition-opacity duration-300 ease-out lg:hidden ${
+          mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
+      {/* Slide-in panel */}
+      <div
+        id="mobile-nav-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!mobileOpen}
+        className={`fixed inset-y-0 right-0 z-[60] flex w-[78%] max-w-sm flex-col gap-1 bg-bg px-6 py-8 shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Image src="/images/logo-mark.png" alt="Abhinav Tiwary" width={512} height={512} className="h-9 w-9 rounded-full" />
+          <button
+            type="button"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-[background-color,scale] duration-150 hover:bg-bg-raised active:scale-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          >
+            <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
-      )}
+        {links.map((link) => {
+          const isActive = link.href === activeHref;
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              aria-current={isActive ? "location" : undefined}
+              className={`flex items-center gap-3 rounded-sm py-3 text-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                isActive ? "font-medium text-ink" : "text-ink-muted hover:text-ink"
+              }`}
+            >
+              <link.Icon className="h-5 w-5 shrink-0" />
+              {link.label}
+            </Link>
+          );
+        })}
+      </div>
     </>
   );
 }

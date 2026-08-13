@@ -8,7 +8,10 @@ export function EducationCommunity() {
     <Section id="education" eyebrow="Education & Community" title="Sharda University.">
       <div className="flex flex-col gap-6">
         <Reveal>
-          <div className="rounded-2xl border border-line bg-bg-raised p-6 sm:p-8">
+          <div
+            className="relative overflow-hidden rounded-2xl border border-line bg-bg-raised bg-cover bg-bottom p-6 sm:p-8"
+            style={{ backgroundImage: "linear-gradient(to top, var(--color-bg-raised) 35%, transparent), url('/generated/education-campus.jpeg')" }}
+          >
             <div className="flex items-center gap-3">
               <ShardaLogoIcon className="h-10 w-10 shrink-0" />
               <div>

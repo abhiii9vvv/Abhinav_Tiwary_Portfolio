@@ -1,9 +1,9 @@
 export const skillGroups = [
-  { label: "Frontend", items: ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"] },
-  { label: "Backend", items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "WebSockets"] },
-  { label: "Databases", items: ["MongoDB", "PostgreSQL", "MySQL", "Redis"] },
-  { label: "Cloud & Infrastructure", items: ["AWS", "Google Cloud", "Docker", "Linux"] },
-  { label: "AI", items: ["OpenAI API", "Claude", "Gemini", "AI Agents", "OpenCV"] },
-  { label: "Programming", items: ["Java", "Python", "JavaScript", "TypeScript"] },
-  { label: "CS Fundamentals", items: ["Data Structures", "Algorithms", "OOP", "DBMS", "System Design"] },
-];
+  { label: "Frontend", icon: "frontend", items: ["React.js", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS3", "Vite"] },
+  { label: "Backend", icon: "backend", items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "WebSockets", "Firebase", "Authentication & Authorization"] },
+  { label: "Databases", icon: "database", items: ["MongoDB", "PostgreSQL", "MySQL", "Redis"] },
+  { label: "Cloud & Infrastructure", icon: "cloud", items: ["AWS", "Google Cloud", "Docker", "Linux", "Git", "GitHub"] },
+  { label: "AI", icon: "ai", items: ["OpenAI API", "Claude", "Gemini", "AI Agents", "OpenCV", "RAG", "Prompt Engineering"] },
+  { label: "Programming", icon: "programming", items: ["Java", "Python", "JavaScript", "TypeScript"] },
+  { label: "CS Fundamentals", icon: "cs-fundamentals", items: ["Data Structures", "Algorithms", "OOP", "DBMS", "System Design", "Operating Systems", "Computer Networks"] },
+] as const;
