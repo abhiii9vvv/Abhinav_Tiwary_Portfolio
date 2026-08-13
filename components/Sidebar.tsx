@@ -57,7 +57,7 @@ export function Sidebar() {
       </a>
 
       {/* Desktop rail */}
-      <header className="fixed inset-y-0 left-0 z-50 hidden w-[88px] flex-col items-center border-r border-line bg-bg py-6 lg:flex">
+      <header className="fixed inset-y-0 left-0 z-50 hidden w-[120px] flex-col items-center border-r border-line bg-bg py-6 lg:flex">
         <Link
           href="/"
           className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
@@ -137,6 +137,25 @@ export function Sidebar() {
           id="mobile-nav-overlay"
           className="fixed inset-0 z-[60] flex flex-col gap-1 bg-bg px-6 py-8 lg:hidden"
         >
+          <div className="mb-6 flex items-center justify-between">
+            <Image src="/images/logo.png" alt="Abhinav Tiwary" width={555} height={88} className="h-7 w-auto" />
+            <button
+              type="button"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-colors hover:bg-bg-raised focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+            >
+              <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden="true">
+                <path
+                  d="M6 6l12 12M18 6L6 18"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
           {links.map((link) => {
             const isActive = link.href === activeHref;
             return (
