@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -35,6 +35,17 @@ export function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const activeHref = useActiveNavLink(links);
   const activeIndex = links.findIndex((link) => link.href === activeHref);
+  const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const [barPosition, setBarPosition] = useState<{ top: number; height: number } | null>(null);
+
+  useEffect(() => {
+    const activeEl = linkRefs.current[activeIndex];
+    if (!activeEl) {
+      setBarPosition(null);
+      return;
+    }
+    setBarPosition({ top: activeEl.offsetTop, height: activeEl.offsetHeight });
+  }, [activeIndex]);
 
   return (
     <>
@@ -62,20 +73,23 @@ export function Sidebar() {
         </Link>
 
         <nav aria-label="Primary" className="relative mt-10 flex flex-1 flex-col justify-center gap-6">
-          {activeIndex >= 0 && (
+          {barPosition && (
             <span
               aria-hidden="true"
-              className="absolute -left-6 w-[3px] rounded-r-full bg-ink transition-[top] duration-300 ease-out"
-              style={{ top: `${(activeIndex / links.length) * 100}%`, height: `${100 / links.length}%` }}
+              className="absolute -left-6 w-[3px] rounded-r-full bg-ink transition-[top,height] duration-300 ease-out"
+              style={{ top: `${barPosition.top}px`, height: `${barPosition.height}px` }}
             />
           )}
-          {links.map((link) => {
+          {links.map((link, i) => {
             const isActive = link.href === activeHref;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                aria-current={isActive ? "page" : undefined}
+                ref={(el) => {
+                  linkRefs.current[i] = el;
+                }}
+                aria-current={isActive ? "location" : undefined}
                 className={`flex flex-col items-center gap-1.5 rounded-sm px-2 py-1 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                   isActive ? "scale-[1.15] text-ink opacity-100" : "text-ink-muted opacity-50 hover:opacity-80"
                 }`}
@@ -130,7 +144,7 @@ export function Sidebar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                aria-current={isActive ? "page" : undefined}
+                aria-current={isActive ? "location" : undefined}
                 className={`flex items-center gap-3 rounded-sm py-3 text-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
                   isActive ? "font-medium text-ink" : "text-ink-muted hover:text-ink"
                 }`}
