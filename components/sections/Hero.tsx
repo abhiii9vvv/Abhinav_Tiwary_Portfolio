@@ -33,7 +33,7 @@ export function Hero() {
           style={{ backgroundImage: "url('/patterns/topography.svg')" }}
         />
       </motion.div>
-      <div className={`relative mx-auto grid max-w-[1600px] items-center gap-14 px-6 pb-20 pt-16 sm:grid-cols-[1.2fr_0.8fr] sm:px-10 sm:pt-24`}>
+      <div className="relative mx-auto grid max-w-[1600px] items-center gap-14 px-6 pb-20 pt-16 sm:grid-cols-[1.2fr_0.8fr] sm:px-10 sm:pt-24">
         <Reveal>
           <div>
             <p className="mb-6 flex items-center gap-1.5 text-sm uppercase tracking-[0.2em] text-ink-muted">

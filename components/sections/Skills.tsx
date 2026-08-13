@@ -36,7 +36,7 @@ export function Skills() {
 
   return (
     <section id="skills" ref={sectionRef} className="relative scroll-mt-20">
-      <div className={`relative mx-auto max-w-[1600px] px-6 py-24 sm:px-10`}>
+      <div className="relative mx-auto max-w-[1600px] px-6 py-24 sm:px-10">
         <div ref={headingRef} className="relative z-30 mb-12 bg-bg pb-2">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-ink-muted">Skills</p>
           <h2 className="font-display text-4xl leading-tight text-ink sm:text-5xl">

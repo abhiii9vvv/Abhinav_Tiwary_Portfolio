@@ -14,7 +14,7 @@ const iconMap = {
 
 export function Stats() {
   return (
-    <section className={`mx-auto max-w-[1600px] px-6 py-16 sm:px-10`}>
+    <section className="mx-auto max-w-[1600px] px-6 py-16 sm:px-10">
       <dl className="grid grid-cols-2 gap-x-8 gap-y-10 border-t border-line pt-10 sm:grid-cols-4">
         {stats.map((stat, i) => {
           const Icon = iconMap[stat.icon];

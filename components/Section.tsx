@@ -1,4 +1,3 @@
-
 type SectionProps = {
   id: string;
   eyebrow?: string;
