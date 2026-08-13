@@ -1,0 +1,9 @@
+export { HomeIcon } from "./HomeIcon";
+export { AboutIcon } from "./AboutIcon";
+export { SkillsIcon } from "./SkillsIcon";
+export { ExperienceIcon } from "./ExperienceIcon";
+export { WorkIcon } from "./WorkIcon";
+export { AchievementsIcon } from "./AchievementsIcon";
+export { CertificationsIcon } from "./CertificationsIcon";
+export { EducationIcon } from "./EducationIcon";
+export { ContactIcon } from "./ContactIcon";
