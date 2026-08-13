@@ -1,0 +1,147 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  HomeIcon,
+  AboutIcon,
+  SkillsIcon,
+  ExperienceIcon,
+  WorkIcon,
+  AchievementsIcon,
+  CertificationsIcon,
+  EducationIcon,
+  ContactIcon,
+} from "@/components/icons/nav";
+import { ArrowUpRight } from "@/components/icons";
+import { useActiveNavLink, type NavLink } from "@/hooks/useActiveNavLink";
+
+type SidebarLink = NavLink & { Icon: React.ComponentType<{ className?: string }> };
+
+const links: SidebarLink[] = [
+  { href: "/", label: "Home", sectionId: "top", Icon: HomeIcon },
+  { href: "/about", label: "About", sectionId: "about", Icon: AboutIcon },
+  { href: "/skills", label: "Skills", sectionId: "skills", Icon: SkillsIcon },
+  { href: "/experience", label: "Experience", sectionId: "experience", Icon: ExperienceIcon },
+  { href: "/work", label: "Work", sectionId: "work", Icon: WorkIcon },
+  { href: "/achievements", label: "Achievements", sectionId: "achievements", Icon: AchievementsIcon },
+  { href: "/certifications", label: "Certs", sectionId: "certifications", Icon: CertificationsIcon },
+  { href: "/education", label: "Education", sectionId: "education", Icon: EducationIcon },
+  { href: "/contact", label: "Contact", sectionId: "contact", Icon: ContactIcon },
+];
+
+export function Sidebar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const activeHref = useActiveNavLink(links);
+  const activeIndex = links.findIndex((link) => link.href === activeHref);
+
+  return (
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:left-4 focus-visible:top-4 focus-visible:z-[70] focus-visible:rounded-md focus-visible:bg-ink focus-visible:px-4 focus-visible:py-2 focus-visible:text-bg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+      >
+        Skip to content
+      </a>
+
+      {/* Desktop rail */}
+      <header className="fixed inset-y-0 left-0 z-50 hidden w-[88px] flex-col items-center border-r border-line bg-bg py-6 lg:flex">
+        <Link
+          href="/"
+          className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+        >
+          <Image
+            src="/images/logo.png"
+            alt="Abhinav Tiwary"
+            width={555}
+            height={88}
+            className="h-7 w-auto"
+            priority
+          />
+        </Link>
+
+        <nav aria-label="Primary" className="relative mt-10 flex flex-1 flex-col justify-center gap-6">
+          {activeIndex >= 0 && (
+            <span
+              aria-hidden="true"
+              className="absolute -left-6 w-[3px] rounded-r-full bg-ink transition-[top] duration-300 ease-out"
+              style={{ top: `${(activeIndex / links.length) * 100}%`, height: `${100 / links.length}%` }}
+            />
+          )}
+          {links.map((link) => {
+            const isActive = link.href === activeHref;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`flex flex-col items-center gap-1.5 rounded-sm px-2 py-1 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                  isActive ? "scale-[1.15] text-ink opacity-100" : "text-ink-muted opacity-50 hover:opacity-80"
+                }`}
+              >
+                <link.Icon className="h-5 w-5 shrink-0" />
+                <span className="text-center text-[10px] uppercase tracking-[0.12em]">{link.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
+
+        <a
+          href="https://lifeherbagroup.com/resume/Abhinav_Tiwary_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Resume"
+          className="mt-6 flex shrink-0 flex-col items-center gap-1.5 text-ink-muted opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+        >
+          <ArrowUpRight className="h-5 w-5" />
+          <span className="text-[10px] uppercase tracking-[0.12em]">Resume</span>
+        </a>
+      </header>
+
+      {/* Mobile top bar */}
+      <header className="sticky top-0 z-50 flex h-14 items-center justify-between border-b border-line bg-bg px-6 lg:hidden">
+        <Link
+          href="/"
+          className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+        >
+          <Image src="/images/logo.png" alt="Abhinav Tiwary" width={555} height={88} className="h-7 w-auto" priority />
+        </Link>
+        <button
+          type="button"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav-overlay"
+          className="shrink-0 rounded-sm text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+        >
+          {mobileOpen ? "Close" : "Menu"}
+        </button>
+      </header>
+
+      {mobileOpen && (
+        <div
+          id="mobile-nav-overlay"
+          className="fixed inset-0 z-[60] flex flex-col gap-1 bg-bg px-6 py-8 lg:hidden"
+        >
+          {links.map((link) => {
+            const isActive = link.href === activeHref;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                aria-current={isActive ? "page" : undefined}
+                className={`flex items-center gap-3 rounded-sm py-3 text-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${
+                  isActive ? "font-medium text-ink" : "text-ink-muted hover:text-ink"
+                }`}
+              >
+                <link.Icon className="h-5 w-5 shrink-0" />
+                {link.label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </>
+  );
+}
