@@ -9,26 +9,30 @@ import { useScrollFx } from "@/hooks/useScrollFx";
 
 export function StrongProjects() {
   const sectionRef = useRef<HTMLElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const { layoutFxEnabled } = useScrollFx();
 
   useGSAP(
     () => {
-      if (!layoutFxEnabled || !sectionRef.current || !trackRef.current) return;
+      if (!layoutFxEnabled || !sectionRef.current || !viewportRef.current || !trackRef.current) {
+        return;
+      }
       ensureGsapRegistered();
 
+      const viewport = viewportRef.current;
       const track = trackRef.current;
-      const scrollDistance = track.scrollWidth - track.clientWidth;
+      const scrollDistance = track.scrollWidth - viewport.clientWidth;
       if (scrollDistance <= 0) return;
 
       const trigger = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top+=80",
-        end: () => `+=${scrollDistance}`,
+        end: () => `+=${track.scrollWidth - viewport.clientWidth}`,
         pin: true,
         scrub: 1,
         onUpdate: (self) => {
-          const currentScrollDistance = track.scrollWidth - track.clientWidth;
+          const currentScrollDistance = track.scrollWidth - viewport.clientWidth;
           gsap.set(track, { x: -currentScrollDistance * self.progress });
         },
       });
@@ -47,7 +51,7 @@ export function StrongProjects() {
             Other things I&apos;ve built.
           </h2>
         </div>
-        <div className="overflow-hidden">
+        <div ref={viewportRef} className="overflow-hidden">
           <div
             ref={trackRef}
             className={
