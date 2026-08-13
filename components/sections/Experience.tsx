@@ -34,6 +34,8 @@ export function Experience() {
             gsap.set(card, {
               y: (1 - cardProgress) * 60 + i * 14,
               scale: 1 - (cards.length - 1 - i) * 0.03 * cardProgress,
+              // card 0 is the base card, already fully visible when pinning
+              // engages; only later cards fade in as they slide up over it
               opacity: i === 0 ? 1 : gsap.utils.mapRange(0, 1, 0.4, 1, cardProgress),
               zIndex: i,
             });
