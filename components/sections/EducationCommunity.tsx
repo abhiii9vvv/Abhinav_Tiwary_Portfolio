@@ -11,13 +11,13 @@ export function EducationCommunity() {
           <div className="relative overflow-hidden rounded-2xl border border-line bg-bg-raised">
             <div
               aria-hidden="true"
-              className="h-28 w-full bg-contain bg-bottom bg-no-repeat sm:h-36"
+              className="h-36 w-full bg-cover bg-center sm:h-44"
               style={{ backgroundImage: "url('/generated/education-campus.jpeg')" }}
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-0 h-28 sm:h-36"
-              style={{ backgroundImage: "linear-gradient(to top, var(--color-bg-raised) 0%, transparent 70%)" }}
+              className="pointer-events-none absolute inset-x-0 top-0 h-36 sm:h-44"
+              style={{ backgroundImage: "linear-gradient(to top, var(--color-bg-raised) 0%, transparent 60%)" }}
             />
             <div className="p-6 sm:p-8">
               <div className="flex items-center gap-3">

@@ -4,3 +4,4 @@ export { LinkedinMark } from "./LinkedinMark";
 export { MailMark } from "./MailMark";
 export { OrgMark } from "./OrgMark";
 export { LocationMark } from "./LocationMark";
+export { PdfMark } from "./PdfMark";

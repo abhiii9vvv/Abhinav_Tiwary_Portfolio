@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { profile } from "@/content/profile";
-import { ArrowUpRight } from "@/components/icons";
+import { PdfMark } from "@/components/icons";
 
 export function ResumeFab() {
   const [visible, setVisible] = useState(false);
@@ -23,8 +23,8 @@ export function ResumeFab() {
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >
+      <PdfMark className="h-4 w-4 shrink-0" />
       Resume
-      <ArrowUpRight className="h-4 w-4 shrink-0" />
     </a>
   );
 }
