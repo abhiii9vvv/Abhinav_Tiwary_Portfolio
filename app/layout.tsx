@@ -92,7 +92,7 @@ export default function RootLayout({
       </head>
       <body>
         <ScrollProgress />
-        {children}
+        <div className="lg:pl-[88px]">{children}</div>
       </body>
     </html>
   );
