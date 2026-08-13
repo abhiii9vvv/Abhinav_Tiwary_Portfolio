@@ -27,7 +27,7 @@ export function StrongProjects() {
 
       const trigger = ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "top top+=80",
+        start: "top top+=16",
         end: () => `+=${track.scrollWidth - viewport.clientWidth}`,
         pin: true,
         scrub: 1,

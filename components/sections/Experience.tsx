@@ -23,7 +23,7 @@ export function Experience() {
 
       const trigger = ScrollTrigger.create({
         trigger: stackRef.current,
-        start: "top top+=80",
+        start: "top top+=16",
         end: () => `+=${cards.length * 320}`,
         pin: true,
         scrub: 1,
