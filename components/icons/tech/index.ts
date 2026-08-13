@@ -56,6 +56,8 @@ import { CampusSetuLogoIcon } from "./CampusSetuLogo";
 import { ShardaLogoIcon } from "./ShardaLogo";
 import { SkyCodeHubLogoIcon } from "./SkyCodeHubLogo";
 import { UnessaLogoIcon } from "./UnessaLogo";
+import { LeetCodeIcon } from "./LeetCode";
+import { GitHubIcon } from "./GitHub";
 
 export {
   ReactIcon,
@@ -114,6 +116,8 @@ export {
   ShardaLogoIcon,
   SkyCodeHubLogoIcon,
   UnessaLogoIcon,
+  LeetCodeIcon,
+  GitHubIcon,
 };
 
 export { IconShell } from "./IconShell";
@@ -214,4 +218,14 @@ export const projectIconMap: Record<string, ComponentType<{ className?: string }
   "artha-social": ArthaSocialLogoIcon,
   "the-arambha": TheARambhaLogoIcon,
   campussetu: CampusSetuLogoIcon,
+};
+
+/**
+ * Lookup of achievement titles (as used in content/achievements.ts) to a
+ * real brand icon component for the non-headline achievement cards.
+ */
+export const achievementIconMap: Record<string, ComponentType<{ className?: string }>> = {
+  "AWS Agentic AI Workshop": AWSRealIcon,
+  LeetCode: LeetCodeIcon,
+  GitHub: GitHubIcon,
 };

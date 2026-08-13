@@ -2,6 +2,7 @@ import Image from "next/image";
 import { achievements } from "@/content/achievements";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { achievementIconMap } from "@/components/icons/tech";
 
 export function Achievements() {
   const [headline, ...rest] = achievements;
@@ -19,14 +20,18 @@ export function Achievements() {
           </div>
         </Reveal>
         <div className="grid items-stretch gap-6 sm:grid-cols-3">
-          {rest.map((item, i) => (
-            <Reveal key={item.title} delay={(i + 1) * 0.05}>
-              <div className="flex h-full flex-col rounded-2xl border border-line bg-bg-raised p-6">
-                <h3 className="font-display text-xl text-ink">{item.title}</h3>
-                <p className="mt-2 text-ink-muted">{item.detail}</p>
-              </div>
-            </Reveal>
-          ))}
+          {rest.map((item, i) => {
+            const Icon = achievementIconMap[item.title];
+            return (
+              <Reveal key={item.title} delay={(i + 1) * 0.05}>
+                <div className="flex h-full flex-col rounded-2xl border border-line bg-bg-raised p-6">
+                  {Icon && <Icon className="h-10 w-10" />}
+                  <h3 className="mt-4 font-display text-xl text-ink">{item.title}</h3>
+                  <p className="mt-2 text-ink-muted">{item.detail}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </Section>

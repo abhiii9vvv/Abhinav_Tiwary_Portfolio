@@ -12,9 +12,9 @@ export const profile = {
   about:
     "I work at the intersection of full-stack engineering and Generative AI, learning by shipping real products across SaaS platforms, backend systems, cloud infrastructure, real-time applications, and developer tooling.",
   aboutParagraphs: [
-    "I'm a full-stack developer who's spent the last couple of years learning by shipping things instead of just reading about them, SaaS platforms, backend systems, real-time apps, cloud infra.",
-    "Most days that's React and Next.js on the frontend, Node.js and REST APIs on the backend, and lately wiring LLM APIs and agentic workflows into whatever I'm building.",
-    "I'd rather have something working in production than a perfect plan for it. That bias toward shipping is basically how I learn.",
+    "I'm a full-stack developer who learns by shipping: SaaS platforms, backend systems, real-time apps, cloud infra.",
+    "Most days that's React and Next.js on the frontend, Node.js and REST APIs on the backend, and lately LLM APIs and agentic workflows.",
+    "I'd rather have something working in production than a perfect plan for it.",
   ],
   headshot: "/images/headshot.png",
   headshotTransparent: "/images/headshot-transparent.png",

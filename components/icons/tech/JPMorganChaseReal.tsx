@@ -8,6 +8,6 @@ import { BrandLogoShell } from "./BrandLogoShell";
 // already reads on the shell's white backing circle.
 export function JPMorganChaseRealIcon({ className }: { className?: string }) {
   return (
-    <BrandLogoShell src="/brand-icons/jpmorganchase.svg" label="JPMorgan Chase" color="#0f2a5c" className={className} />
+    <BrandLogoShell src="/brand-icons/jpmorganchase.svg" label="JPMorgan Chase" color="#0f2a5c" className={className} fill contain />
   );
 }

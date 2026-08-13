@@ -15,6 +15,7 @@ export function BrandLogoShell({
   className,
   invert = false,
   fill = false,
+  contain = false,
 }: {
   src: string;
   label: string;
@@ -27,6 +28,10 @@ export function BrandLogoShell({
    * contrast backing (e.g. fetched site logos, as opposed to small
    * monochrome brand marks like OpenAI/Claude/Gemini). */
   fill?: boolean;
+  /** When true (with fill), the logo is letterboxed with object-contain
+   * instead of cropped with object-cover. Use for non-square logos (wide
+   * wordmarks, tall marks) where cover would crop content. */
+  contain?: boolean;
 }) {
   if (fill) {
     return (
@@ -35,7 +40,13 @@ export function BrandLogoShell({
         role="img"
         aria-label={label}
       >
-        <Image src={src} alt="" width={48} height={48} className="h-full w-full object-cover" />
+        <Image
+          src={src}
+          alt=""
+          width={48}
+          height={48}
+          className={`h-full w-full ${contain ? "object-contain p-[12%]" : "object-cover"}`}
+        />
         <span
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 rounded-[11px] ring-1 ring-inset ring-black/10"

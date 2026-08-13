@@ -6,6 +6,6 @@ import { BrandLogoShell } from "./BrandLogoShell";
 // is a trademarked multi-path logo, not simple-icons monochrome data.
 export function AWSRealIcon({ className }: { className?: string }) {
   return (
-    <BrandLogoShell src="/brand-icons/aws-wiki.svg" label="AWS" color="#232f3e" className={className} />
+    <BrandLogoShell src="/brand-icons/aws-wiki.svg" label="AWS" color="#232f3e" className={className} fill contain />
   );
 }

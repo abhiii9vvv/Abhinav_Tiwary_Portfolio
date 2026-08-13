@@ -6,6 +6,6 @@ import { BrandLogoShell } from "./BrandLogoShell";
 // trademarked logo, not simple-icons monochrome path data.
 export function NptelRealIcon({ className }: { className?: string }) {
   return (
-    <BrandLogoShell src="/brand-icons/nptel.png" label="NPTEL, IIT Kharagpur" color="#8a1c1c" className={className} />
+    <BrandLogoShell src="/brand-icons/nptel.png" label="NPTEL, IIT Kharagpur" color="#8a1c1c" className={className} fill />
   );
 }
