@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { featuredProjects } from "@/content/projects";
 import { Section } from "@/components/Section";
 import { ProjectCard } from "@/components/ProjectCard";
-import { ensureGsapRegistered, gsap, ScrollTrigger } from "@/lib/gsap";
+import { ensureGsapRegistered, gsap } from "@/lib/gsap";
 import { useScrollFx } from "@/hooks/useScrollFx";
 
 export function FeaturedWork() {
@@ -35,7 +35,7 @@ export function FeaturedWork() {
         });
       });
     },
-    { scope: gridRef, dependencies: [motionEnabled] }
+    { scope: gridRef, dependencies: [motionEnabled], revertOnUpdate: true }
   );
 
   return (
