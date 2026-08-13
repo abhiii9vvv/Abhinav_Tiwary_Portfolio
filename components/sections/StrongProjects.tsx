@@ -28,7 +28,8 @@ export function StrongProjects() {
         pin: true,
         scrub: 1,
         onUpdate: (self) => {
-          gsap.set(track, { x: -scrollDistance * self.progress });
+          const currentScrollDistance = track.scrollWidth - track.clientWidth;
+          gsap.set(track, { x: -currentScrollDistance * self.progress });
         },
       });
 
