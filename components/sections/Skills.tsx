@@ -85,7 +85,7 @@ export function Skills() {
   return (
     <section id="skills" className="relative scroll-mt-20">
       <div className="relative mx-auto max-w-[1600px] px-6 py-24 sm:px-10">
-        <div className="mb-12 text-center sm:mb-16">
+        <div className="mb-12">
           <p className="mb-3 text-sm uppercase tracking-[0.2em] text-ink-muted">Skills</p>
           <h2 className="font-display text-4xl leading-tight text-ink sm:text-5xl">
             Tools I reach for.
