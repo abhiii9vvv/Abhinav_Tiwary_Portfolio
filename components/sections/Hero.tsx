@@ -82,7 +82,7 @@ export function Hero() {
                 src={profile.heroStanding}
                 alt={profile.name}
                 fill
-                sizes="(min-width: 640px) 480px, 400px"
+                sizes="250px"
                 quality={85}
                 className="relative z-10 object-contain object-bottom drop-shadow-[0_24px_48px_rgba(0,0,0,0.16)]"
                 style={{ filter: "contrast(1.05) saturate(1.05)" }}

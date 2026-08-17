@@ -68,8 +68,8 @@ export function Sidebar() {
           <Image
             src="/images/logo-mark.png"
             alt="Abhinav Tiwary"
-            width={512}
-            height={512}
+            width={40}
+            height={40}
             className="h-10 w-10 rounded-full"
             priority
           />
@@ -111,7 +111,7 @@ export function Sidebar() {
           href="/"
           className="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
-          <Image src="/images/logo-mark.png" alt="Abhinav Tiwary" width={512} height={512} className="h-9 w-9 rounded-full" priority />
+          <Image src="/images/logo-mark.png" alt="Abhinav Tiwary" width={36} height={36} className="h-9 w-9 rounded-full" priority />
         </Link>
         <button
           type="button"
@@ -163,7 +163,7 @@ export function Sidebar() {
         }`}
       >
         <div className="mb-6 flex items-center justify-between">
-          <Image src="/images/logo-mark.png" alt="Abhinav Tiwary" width={512} height={512} className="h-9 w-9 rounded-full" />
+          <Image src="/images/logo-mark.png" alt="Abhinav Tiwary" width={36} height={36} className="h-9 w-9 rounded-full" />
           <button
             type="button"
             onClick={() => setMobileOpen(false)}

@@ -10,8 +10,7 @@ export function Certifications() {
         {certifications.map((cert, i) => {
           const IssuerIcon = issuerIconMap[cert.issuer];
           return (
-            <Reveal key={cert.name} delay={i * 0.03}>
-              <li className="flex flex-col justify-between gap-3 rounded-lg px-3 py-4 transition-colors duration-200 hover:bg-bg-raised sm:flex-row sm:items-center">
+            <Reveal key={cert.name} delay={i * 0.03} as="li" className="flex flex-col justify-between gap-3 rounded-lg px-3 py-4 transition-colors duration-200 hover:bg-bg-raised sm:flex-row sm:items-center">
                 <div className="flex items-center gap-3">
                   {IssuerIcon && <IssuerIcon className="h-10 w-10 shrink-0" />}
                   <div>
@@ -20,7 +19,6 @@ export function Certifications() {
                   </div>
                 </div>
                 {cert.date && <p className="text-sm text-ink-muted">{cert.date}</p>}
-              </li>
             </Reveal>
           );
         })}

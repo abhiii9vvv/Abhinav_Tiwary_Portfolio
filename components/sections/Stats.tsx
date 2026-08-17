@@ -19,13 +19,11 @@ export function Stats() {
         {stats.map((stat, i) => {
           const Icon = iconMap[stat.icon];
           return (
-            <Reveal key={stat.label} delay={i * 0.05}>
-              <div>
+            <Reveal key={stat.label} delay={i * 0.05} as="div" className="flex flex-col">
                 <Icon className="mb-3 h-12 w-12" />
                 <dt className="font-display text-3xl tabular-nums text-ink">{stat.value}</dt>
                 <dd className="mt-1 text-sm text-ink-muted">{stat.label}</dd>
                 <dd className="mt-0.5 text-xs text-ink-muted/70">{stat.description}</dd>
-              </div>
             </Reveal>
           );
         })}
