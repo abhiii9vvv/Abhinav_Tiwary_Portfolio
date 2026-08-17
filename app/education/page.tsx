@@ -3,7 +3,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { EducationCommunity } from "@/components/sections/EducationCommunity";
 import { Footer } from "@/components/Footer";
 
-const SITE_URL = "https://abhinavtiwary.online";
+const SITE_URL = "https://www.abhinavtiwary.online";
 
 export const metadata: Metadata = {
   title:

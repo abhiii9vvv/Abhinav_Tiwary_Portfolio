@@ -5,7 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { ResumeFab } from "@/components/ResumeFab";
 import "./globals.css";
 
-const SITE_URL = "https://abhinavtiwary.online";
+const SITE_URL = "https://www.abhinavtiwary.online";
 const OG_TITLE = "Abhinav Tiwary, Full-Stack Developer & Gen AI Builder";
 const OG_DESCRIPTION = profile.headline;
 
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://abhinavtiwary.online",
+    canonical: "https://www.abhinavtiwary.online",
   },
 };
 

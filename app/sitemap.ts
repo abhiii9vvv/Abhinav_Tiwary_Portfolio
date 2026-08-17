@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://abhinavtiwary.online";
+const SITE_URL = "https://www.abhinavtiwary.online";
 
 const routes = [
   { path: "", priority: 1 },

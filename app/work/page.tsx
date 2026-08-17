@@ -4,7 +4,7 @@ import { FeaturedWork } from "@/components/sections/FeaturedWork";
 import { StrongProjects } from "@/components/sections/StrongProjects";
 import { Footer } from "@/components/Footer";
 
-const SITE_URL = "https://abhinavtiwary.online";
+const SITE_URL = "https://www.abhinavtiwary.online";
 
 export const metadata: Metadata = {
   title: "Work — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",

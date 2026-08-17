@@ -3,7 +3,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { Experience } from "@/components/sections/Experience";
 import { Footer } from "@/components/Footer";
 
-const SITE_URL = "https://abhinavtiwary.online";
+const SITE_URL = "https://www.abhinavtiwary.online";
 
 export const metadata: Metadata = {
   title: "Experience — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
