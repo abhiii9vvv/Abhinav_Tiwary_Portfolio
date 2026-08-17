@@ -19,7 +19,7 @@ export const experience: ExperienceEntry[] = [
   {
     org: "The ARambha",
     role: "Technology & Operations Associate",
-    period: "Current",
+    period: "Client",
     current: true,
     description:
       "Working across technology, digital platforms, and operational initiatives, contributing to technology-driven solutions and digital systems supporting the Punjab Assembly Election Campaign 2027.",
