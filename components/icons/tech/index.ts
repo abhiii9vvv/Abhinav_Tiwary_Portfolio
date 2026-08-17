@@ -66,6 +66,7 @@ import { RAGIcon } from "./RAG";
 import { PromptEngineeringIcon } from "./PromptEngineering";
 import { OperatingSystemsIcon } from "./OperatingSystems";
 import { ComputerNetworksIcon } from "./ComputerNetworks";
+import { PaytmIcon } from "./Paytm";
 
 export {
   ReactIcon,
@@ -134,6 +135,7 @@ export {
   PromptEngineeringIcon,
   OperatingSystemsIcon,
   ComputerNetworksIcon,
+  PaytmIcon,
 };
 
 export { IconShell } from "./IconShell";
@@ -232,6 +234,7 @@ export const orgIconMap: Record<string, ComponentType<{ className?: string }>> =
   "The ARambha": TheARambhaLogoIcon,
   SkyCodeHub: SkyCodeHubLogoIcon,
   "Unessa Foundation": UnessaLogoIcon,
+  Paytm: PaytmIcon,
 };
 
 /**
