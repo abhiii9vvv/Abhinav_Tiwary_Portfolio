@@ -1,24 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
-      // Force HTTP → HTTPS (permanent 301)
-      {
-        source: "/:path*",
-        has: [{ type: "header", key: "x-forwarded-proto", value: "http" }],
-        destination: "https://abhinavtiwary.online/:path*",
-        permanent: true,
-      },
-      // Force www → apex domain (permanent 301)
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.abhinavtiwary.online" }],
-        destination: "https://abhinavtiwary.online/:path*",
-        permanent: true,
-      },
-    ];
-  },
-
   async headers() {
     return [
       {
