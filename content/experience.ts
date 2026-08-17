@@ -9,6 +9,14 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
+    org: "Paytm",
+    role: "TechOps Intern",
+    period: "August 2026 – Present",
+    current: true,
+    description:
+      "Working as a TechOps Intern, focusing on technical operations, system monitoring, and cross-functional technology support.",
+  },
+  {
     org: "The ARambha",
     role: "Technology & Operations Associate",
     period: "Current",
