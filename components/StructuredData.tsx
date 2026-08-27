@@ -1,6 +1,6 @@
 import { profile } from "@/content/profile";
 
-const SITE_URL = "https://abhinavtiwary.online";
+const SITE_URL = "https://www.abhinavtiwary.online";
 
 export function StructuredData() {
   const person = {
