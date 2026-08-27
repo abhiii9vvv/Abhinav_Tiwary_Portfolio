@@ -1,5 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      // Force apex domain -> www (permanent 301), matching the canonical
+      // URLs declared throughout the app (layout, sitemap, robots, page
+      // metadata). Only redirects the apex host so this can't ping-pong
+      // with a www -> apex rule elsewhere.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "abhinavtiwary.online" }],
+        destination: "https://www.abhinavtiwary.online/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
