@@ -8,7 +8,7 @@ export const profile = {
   phone: "+91 6207363626",
   linkedin: "https://linkedin.com/in/abhinavtiwary",
   github: "https://github.com/abhiii9vvv",
-  resume: "https://lifeherbagroup.com/resume/Abhinav_Tiwary_Resume.pdf",
+  resume: "https://drive.google.com/file/d/1wKZB20oAqChvdvxSN7Fcs1121IPCvrpi/view?usp=sharing",
   role: "Full-Stack Developer & Gen AI Builder",
   headline: "Full-Stack Developer building scalable web platforms and AI-powered applications.",
   subheadline:
