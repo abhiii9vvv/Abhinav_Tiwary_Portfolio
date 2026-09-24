@@ -68,7 +68,7 @@ export function StructuredData({ path = "", pageName }: { path?: string; pageNam
       "@id": WEBSITE_ID,
       url: SITE_URL,
       name: profile.name,
-      alternateName: [`${profile.name} Portfolio`, "Abhinav Tiwari Portfolio"],
+      alternateName: `${profile.name} Portfolio`,
       description: profile.subheadline,
       inLanguage: "en",
       publisher: { "@id": PERSON_ID },

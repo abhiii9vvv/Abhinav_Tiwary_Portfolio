@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Abhinav Tiwary's achievements | Full-Stack & Gen AI Developer";
-const DESCRIPTION = "Achievements of Abhinav Tiwary (Abhinav Tiwari): Smart India Hackathon 2025 2nd Runner-Up, first to finish the AWS Agentic AI workshop, and 250+ DSA problems.";
+const DESCRIPTION = "Achievements of Abhinav Tiwary: Smart India Hackathon 2025 2nd Runner-Up, first to finish the AWS Agentic AI workshop, and 250+ DSA problems.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

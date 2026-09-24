@@ -13,7 +13,6 @@ export function Footer() {
           <p className="mt-1">
             {profile.role}. Based in {profile.location}.
           </p>
-          <p className="mt-1 text-xs">Also spelled Abhinav Tiwari.</p>
           <p className="mt-3 flex gap-4">
             <a href={profile.github} rel="me noopener noreferrer" target="_blank" className="hover:text-ink">
               GitHub

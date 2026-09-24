@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Projects by Abhinav Tiwary | Full-Stack & Gen AI Developer";
-const DESCRIPTION = "Projects by Abhinav Tiwary (Abhinav Tiwari): CampusSetu, MentionWave, Artha Social, SecureExamBrowser, and more, built with Next.js, Node.js, and AI.";
+const DESCRIPTION = "Projects by Abhinav Tiwary: CampusSetu, MentionWave, Artha Social, SecureExamBrowser, and more, built with Next.js, Node.js, and AI.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

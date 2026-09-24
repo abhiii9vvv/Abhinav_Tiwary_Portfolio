@@ -1,7 +1,7 @@
 export const profile = {
   name: "Abhinav Tiwary",
   firstName: "Abhinav",
-  alternateNames: ["Abhinav Tiwari", "abhiii9vvv"],
+  alternateNames: ["abhiii9vvv"],
   pronouns: "He/Him",
   location: "Delhi NCR, India",
   email: "abhinavv8975@gmail.com",

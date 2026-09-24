@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Abhinav Tiwary's tech stack | Full-Stack & Gen AI Developer";
-const DESCRIPTION = "The tech stack Abhinav Tiwary (Abhinav Tiwari) works with: React, Next.js, TypeScript, Node.js, PostgreSQL, MongoDB, Docker, AWS, and LLM APIs.";
+const DESCRIPTION = "The tech stack Abhinav Tiwary works with: React, Next.js, TypeScript, Node.js, PostgreSQL, MongoDB, Docker, AWS, and LLM APIs.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

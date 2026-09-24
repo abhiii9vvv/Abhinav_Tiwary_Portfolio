@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "About Abhinav Tiwary | Full-Stack & Gen AI Developer";
-const DESCRIPTION = "Abhinav Tiwary (Abhinav Tiwari) is a full-stack developer and Gen AI builder in Delhi NCR, and a final-year B.Tech CSE student at Sharda University.";
+const DESCRIPTION = "Abhinav Tiwary is a full-stack developer and Gen AI builder in Delhi NCR, and a final-year B.Tech CSE student at Sharda University.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

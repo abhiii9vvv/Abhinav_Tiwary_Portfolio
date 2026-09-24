@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Abhinav Tiwary's education | Full-Stack & Gen AI Developer";
-const DESCRIPTION = "Abhinav Tiwary (Abhinav Tiwari) is pursuing a B.Tech in Computer Science Engineering at Sharda University, Greater Noida (2023-2027).";
+const DESCRIPTION = "Abhinav Tiwary is pursuing a B.Tech in Computer Science Engineering at Sharda University, Greater Noida (2023-2027).";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

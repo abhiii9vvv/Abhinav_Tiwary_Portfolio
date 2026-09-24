@@ -10,9 +10,9 @@ import { themeBootScript } from "@/lib/theme";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const OG_TITLE = `${profile.name} (Tiwari) | ${profile.role}`;
+const OG_TITLE = `${profile.name} | ${profile.role}`;
 const OG_DESCRIPTION =
-  "Abhinav Tiwary (Abhinav Tiwari), full-stack developer and Gen AI builder in Delhi NCR. TechOps Intern at Paytm. Projects, experience, and resume.";
+  "Abhinav Tiwary, full-stack developer and Gen AI builder in Delhi NCR. TechOps Intern at Paytm. Projects, experience, and resume.";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -45,9 +45,8 @@ export const metadata: Metadata = {
   description: OG_DESCRIPTION,
   keywords: [
     "Abhinav Tiwary",
-    "Abhinav Tiwari",
     "Abhinav Tiwary portfolio",
-    "Abhinav Tiwari developer",
+    "Abhinav Tiwary developer",
     "abhiii9vvv",
     "Full-Stack Developer",
     "Gen AI Builder",
