@@ -9,6 +9,7 @@ export type Project = {
   screenshot?: string;
   tier: "featured" | "strong" | "more";
   note?: string;
+  highlights?: string[];
   status?: "Current" | "Client" | "Professional" | "Flagship" | "Engineering";
 };
 
@@ -23,6 +24,7 @@ export const featuredProjects: Project[] = [
     live: "https://mentionwave.vercel.app/",
     github: "https://github.com/abhiii9vvv/mentionwave",
     screenshot: "/screenshots/mentionwave.png",
+    highlights: ["Tracks keywords across X, Instagram, Facebook, YouTube, and news", "AI sentiment scoring on every mention", "Alert rules and a live dashboard"],
     tier: "featured",
     status: "Current",
   },
@@ -35,6 +37,7 @@ export const featuredProjects: Project[] = [
     tech: ["Next.js", "TypeScript", "MongoDB", "Cloudinary", "Framer Motion"],
     live: "https://www.arthasocial.in/",
     screenshot: "/screenshots/arthasocial.png",
+    highlights: ["Custom CMS the agency edits without a developer", "Lead capture, auth, and media management", "SEO infrastructure, live in production"],
     tier: "featured",
     status: "Client",
   },
@@ -47,6 +50,7 @@ export const featuredProjects: Project[] = [
     tech: ["JavaScript", "Next.js", "Tailwind CSS"],
     live: "https://www.thearambha.in/",
     screenshot: "/screenshots/thearambha.png",
+    highlights: ["Digital platform for campaign operations", "Data-driven workflows for the team on the ground"],
     tier: "featured",
     note: "Technology contribution, not campaign strategy",
     status: "Professional",
@@ -60,6 +64,7 @@ export const featuredProjects: Project[] = [
     tech: ["React", "Next.js", "Node.js", "TypeScript", "Docker", "AWS"],
     live: "https://campussetu.in/",
     screenshot: "/screenshots/campussetu.png",
+    highlights: ["Multi-tenant architecture with tenant isolation", "Role-based access for students, faculty, and admins", "Real-time collaboration over WebSockets"],
     tier: "featured",
     note: "Flagship project",
     status: "Flagship",
@@ -73,6 +78,7 @@ export const featuredProjects: Project[] = [
     tech: ["Electron", "Python", "OpenCV"],
     github: "https://github.com/abhiii9vvv/SecureExamBrowser",
     screenshot: "/screenshots/secure-exam-browser.png",
+    highlights: ["Kiosk mode that blocks alt-tab and screen capture", "AI face proctoring with OpenCV", "Violation detection with suspicious-activity logs"],
     tier: "featured",
     note: "No public live deployment",
     status: "Engineering",

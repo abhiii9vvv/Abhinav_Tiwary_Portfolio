@@ -1,36 +1,28 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { FeaturedWork } from "@/components/sections/FeaturedWork";
-import { StrongProjects } from "@/components/sections/StrongProjects";
-import { Footer } from "@/components/Footer";
+import { Work } from "@/components/home/Work";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "Projects by Abhinav Tiwary | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "Projects by Abhinav Tiwary (Abhinav Tiwari): CampusSetu, MentionWave, Artha Social, SecureExamBrowser, and more, built with Next.js, Node.js, and AI.";
 
 export const metadata: Metadata = {
-  title: "Work — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "Discover Abhinav Tiwary's featured projects and portfolio work — full-stack web apps, AI integrations, and open-source contributions built with Next.js, React, and modern AI tools.",
-  alternates: {
-    canonical: `${SITE_URL}/work`,
-  },
-  openGraph: {
-    title: "Work — Abhinav Tiwary",
-    description:
-      "Featured projects and portfolio work by Abhinav Tiwary — spanning full-stack development, generative AI, and scalable web applications.",
-    url: `${SITE_URL}/work`,
-    type: "website",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/work` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/work` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function WorkPage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <FeaturedWork />
-        <StrongProjects />
-      </main>
-      <Footer />
+      <StructuredData path="/work" pageName="Work" />
+      <PageHeader title="Projects by Abhinav Tiwary" intro={DESCRIPTION} />
+      <Work />
+      <Contact />
     </>
   );
 }

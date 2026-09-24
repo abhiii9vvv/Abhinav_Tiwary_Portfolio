@@ -1,34 +1,26 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { Contact } from "@/components/sections/Contact";
-import { Footer } from "@/components/Footer";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "Contact Abhinav Tiwary | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "Contact Abhinav Tiwary (Abhinav Tiwari) about full-stack, frontend, and Gen AI roles in Delhi NCR, or about product work.";
 
 export const metadata: Metadata = {
-  title: "Contact — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "Get in touch with Abhinav Tiwary — open to freelance projects, collaborations, internships, and full-time opportunities in full-stack development and AI.",
-  alternates: {
-    canonical: `${SITE_URL}/contact`,
-  },
-  openGraph: {
-    title: "Contact — Abhinav Tiwary",
-    description:
-      "Reach out to Abhinav Tiwary for collaborations, freelance work, or just to say hello. Available for full-stack and AI projects.",
-    url: `${SITE_URL}/contact`,
-    type: "website",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/contact` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/contact` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function ContactPage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <Contact />
-      </main>
-      <Footer />
+      <StructuredData path="/contact" pageName="Contact" />
+      <PageHeader title="Contact Abhinav Tiwary" intro={DESCRIPTION} />
+      <Contact />
     </>
   );
 }

@@ -1,34 +1,28 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { About } from "@/components/sections/About";
-import { Footer } from "@/components/Footer";
+import { About } from "@/components/home/About";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "About Abhinav Tiwary | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "Abhinav Tiwary (Abhinav Tiwari) is a full-stack developer and Gen AI builder in Delhi NCR, and a final-year B.Tech CSE student at Sharda University.";
 
 export const metadata: Metadata = {
-  title: "About — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "Learn about Abhinav Tiwary — a Full-Stack Developer and Gen AI Builder from Greater Noida, India, passionate about building intelligent web experiences with Next.js, TypeScript, and AI.",
-  alternates: {
-    canonical: `${SITE_URL}/about`,
-  },
-  openGraph: {
-    title: "About — Abhinav Tiwary",
-    description:
-      "Full-Stack Developer & Gen AI Builder. Discover Abhinav's story, values, and what drives him to build at the intersection of AI and web.",
-    url: `${SITE_URL}/about`,
-    type: "profile",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/about` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/about` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function AboutPage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <About />
-      </main>
-      <Footer />
+      <StructuredData path="/about" pageName="About" />
+      <PageHeader title="About Abhinav Tiwary" intro={DESCRIPTION} />
+      <About />
+      <Contact />
     </>
   );
 }

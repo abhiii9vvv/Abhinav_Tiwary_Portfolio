@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://www.abhinavtiwary.online";
+import { SITE_URL } from "@/lib/site";
 
 const routes = [
   { path: "", priority: 1 },
@@ -15,12 +14,12 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-08-17");
+  const lastModified = new Date("2026-09-24");
 
   return routes.map((route) => ({
     url: `${SITE_URL}${route.path}`,
     lastModified,
-    changeFrequency: "monthly",
+    changeFrequency: route.path === "" ? "weekly" : "monthly",
     priority: route.priority,
   }));
 }

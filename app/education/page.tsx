@@ -1,35 +1,28 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { EducationCommunity } from "@/components/sections/EducationCommunity";
-import { Footer } from "@/components/Footer";
+import { About } from "@/components/home/About";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "Abhinav Tiwary's education | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "Abhinav Tiwary (Abhinav Tiwari) is pursuing a B.Tech in Computer Science Engineering at Sharda University, Greater Noida (2023-2027).";
 
 export const metadata: Metadata = {
-  title:
-    "Education — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "Abhinav Tiwary's academic background — studying at Sharda University, Greater Noida, with a focus on computer science, engineering, and applied AI development.",
-  alternates: {
-    canonical: `${SITE_URL}/education`,
-  },
-  openGraph: {
-    title: "Education — Abhinav Tiwary",
-    description:
-      "Academic journey of Abhinav Tiwary — Sharda University, Greater Noida, computer science and engineering.",
-    url: `${SITE_URL}/education`,
-    type: "website",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/education` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/education` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function EducationPage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <EducationCommunity />
-      </main>
-      <Footer />
+      <StructuredData path="/education" pageName="Education" />
+      <PageHeader title="Abhinav Tiwary's education" intro={DESCRIPTION} />
+      <About />
+      <Contact />
     </>
   );
 }

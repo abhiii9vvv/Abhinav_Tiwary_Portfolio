@@ -1,34 +1,28 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { Skills } from "@/components/sections/Skills";
-import { Footer } from "@/components/Footer";
+import { Stack } from "@/components/home/Stack";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "Abhinav Tiwary's tech stack | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "The tech stack Abhinav Tiwary (Abhinav Tiwari) works with: React, Next.js, TypeScript, Node.js, PostgreSQL, MongoDB, Docker, AWS, and LLM APIs.";
 
 export const metadata: Metadata = {
-  title: "Skills — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "Explore Abhinav Tiwary's technical skill set — including Next.js, React, TypeScript, Node.js, Python, LLMs, and modern AI tooling for building full-stack applications.",
-  alternates: {
-    canonical: `${SITE_URL}/skills`,
-  },
-  openGraph: {
-    title: "Skills — Abhinav Tiwary",
-    description:
-      "A deep dive into the technologies and tools Abhinav uses — from React and Next.js to Generative AI, LangChain, and cloud platforms.",
-    url: `${SITE_URL}/skills`,
-    type: "website",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/skills` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/skills` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function SkillsPage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <Skills />
-      </main>
-      <Footer />
+      <StructuredData path="/skills" pageName="Tech stack" />
+      <PageHeader title="Abhinav Tiwary's tech stack" intro={DESCRIPTION} />
+      <Stack />
+      <Contact />
     </>
   );
 }

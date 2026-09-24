@@ -2,46 +2,179 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Tokens are RGB triplets so Tailwind can apply alpha (bg-ink/5 etc.).
+ * Light is the base; dark applies from the OS preference unless the visitor
+ * picked a theme, and always when [data-theme="dark"] is set.
+ */
 :root {
-  --color-bg: oklch(0.98 0.006 85);
-  --color-bg-raised: oklch(0.955 0.01 85);
-  --color-ink: oklch(0.19 0.01 70);
-  --color-ink-muted: oklch(0.42 0.015 65);
-  --color-accent: oklch(0.47 0.16 35);
-  --color-line: oklch(0.895 0.012 80);
+  --bg: 246 245 243;
+  --surface: 255 255 255;
+  --sunken: 237 235 232;
+  --ink: 24 22 21;
+  --muted: 94 89 84;
+  --line: 222 219 215;
+  --accent: 233 84 32; /* Ubuntu orange */
+  --accent-ink: 190 58 12; /* orange dark enough for text on light */
+  --on-accent: 255 255 255;
+  --ok: 21 128 61;
+  --shadow: 40 30 20;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: 18 17 16;
+    --surface: 27 26 24;
+    --sunken: 13 12 11;
+    --ink: 243 241 238;
+    --muted: 164 159 152;
+    --line: 48 46 43;
+    --accent: 240 98 46;
+    --accent-ink: 255 138 92;
+    --on-accent: 20 12 8;
+    --ok: 74 222 128;
+    --shadow: 0 0 0;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: 18 17 16;
+  --surface: 27 26 24;
+  --sunken: 13 12 11;
+  --ink: 243 241 238;
+  --muted: 164 159 152;
+  --line: 48 46 43;
+  --accent: 240 98 46;
+  --accent-ink: 255 138 92;
+  --on-accent: 20 12 8;
+  --ok: 74 222 128;
+  --shadow: 0 0 0;
+  color-scheme: dark;
 }
 
 html {
-  /* overflow-x clipping handled on body to avoid extra stacking context */
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-ink);
-  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: var(--font-ubuntu), Ubuntu, system-ui, sans-serif;
   overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.25);
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .shadow-soft {
+    box-shadow:
+      0 1px 0 rgb(var(--shadow) / 0.04),
+      0 12px 32px -12px rgb(var(--shadow) / 0.18);
+  }
+  .shadow-lift {
+    box-shadow:
+      0 1px 0 rgb(var(--shadow) / 0.05),
+      0 30px 60px -20px rgb(var(--shadow) / 0.35);
+  }
+  /* Faint dot grid used behind the hero and a few feature tiles. */
+  .bg-dots {
+    background-image: radial-gradient(rgb(var(--ink) / 0.09) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 55%, transparent);
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+}
+
+/* Scroll reveal: elements start hidden only when JS has confirmed support. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  }
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
   }
 }
 
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Near-black brand marks follow the text color in dark mode. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand-ink {
+    color: rgb(var(--ink)) !important;
+  }
+}
+:root[data-theme="dark"] .brand-ink {
+  color: rgb(var(--ink)) !important;
+}
+
+/* Stack section: a short orange pulse runs down the request rail. */
+.stack-pulse {
+  background: linear-gradient(to bottom, transparent, rgb(var(--accent)), transparent) no-repeat;
+  background-size: 100% 22%;
+  animation: stack-pulse 3.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes stack-pulse {
+  from {
+    background-position: 0 -30%;
+  }
+  to {
+    background-position: 0 130%;
+  }
+}
+
+/* Inside inverted (bg-ink) blocks, near-black marks take the page background color. */
+:root .on-ink .brand-ink {
+  color: rgb(var(--bg)) !important;
 }

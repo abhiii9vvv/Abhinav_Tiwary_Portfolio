@@ -1,35 +1,28 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { Certifications } from "@/components/sections/Certifications";
-import { Footer } from "@/components/Footer";
+import { Recognition } from "@/components/home/Recognition";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "Abhinav Tiwary's certifications | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "Certifications held by Abhinav Tiwary (Abhinav Tiwari), including Google Cloud Generative AI Leader, NPTEL Elite (99%), and the JPMorgan Chase software engineering simulation.";
 
 export const metadata: Metadata = {
-  title:
-    "Certifications — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "View Abhinav Tiwary's professional certifications in full-stack development, cloud, and AI — from platforms like Google, Meta, Coursera, and more.",
-  alternates: {
-    canonical: `${SITE_URL}/certifications`,
-  },
-  openGraph: {
-    title: "Certifications — Abhinav Tiwary",
-    description:
-      "Professional certifications earned by Abhinav Tiwary across full-stack development, cloud computing, and artificial intelligence.",
-    url: `${SITE_URL}/certifications`,
-    type: "website",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/certifications` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/certifications` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function CertificationsPage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <Certifications />
-      </main>
-      <Footer />
+      <StructuredData path="/certifications" pageName="Certifications" />
+      <PageHeader title="Abhinav Tiwary's certifications" intro={DESCRIPTION} />
+      <Recognition />
+      <Contact />
     </>
   );
 }

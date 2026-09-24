@@ -1,34 +1,28 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { Achievements } from "@/components/sections/Achievements";
-import { Footer } from "@/components/Footer";
+import { Recognition } from "@/components/home/Recognition";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "Abhinav Tiwary's achievements | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "Achievements of Abhinav Tiwary (Abhinav Tiwari): Smart India Hackathon 2025 2nd Runner-Up, first to finish the AWS Agentic AI workshop, and 250+ DSA problems.";
 
 export const metadata: Metadata = {
-  title: "Achievements — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "See Abhinav Tiwary's key achievements — hackathon wins, recognitions, open-source milestones, and technical accomplishments that define his developer journey.",
-  alternates: {
-    canonical: `${SITE_URL}/achievements`,
-  },
-  openGraph: {
-    title: "Achievements — Abhinav Tiwary",
-    description:
-      "Hackathon wins, recognitions, and milestones from Abhinav Tiwary's career as a Full-Stack Developer and AI Builder.",
-    url: `${SITE_URL}/achievements`,
-    type: "website",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/achievements` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/achievements` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function AchievementsPage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <Achievements />
-      </main>
-      <Footer />
+      <StructuredData path="/achievements" pageName="Achievements" />
+      <PageHeader title="Abhinav Tiwary's achievements" intro={DESCRIPTION} />
+      <Recognition />
+      <Contact />
     </>
   );
 }

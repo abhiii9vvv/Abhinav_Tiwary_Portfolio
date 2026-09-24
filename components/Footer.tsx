@@ -1,45 +1,43 @@
+import Link from "next/link";
 import { profile } from "@/content/profile";
-import { GithubMark, LinkedinMark, MailMark } from "@/components/icons";
+import { navLinks } from "@/lib/nav";
+import { Container } from "@/components/ui";
+import { PaletteHint } from "@/components/PaletteHint";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line px-6 py-10 sm:px-10">
-      <div className="mx-auto flex max-w-[1600px] flex-col justify-between gap-6 sm:flex-row sm:items-end">
+    <footer className="py-10">
+      <Container className="flex flex-col gap-6 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="font-display text-lg text-ink">{profile.name}</p>
-          <p className="mt-1 text-sm text-ink-muted">Full-Stack Developer · Backend · AI</p>
+          <p className="font-medium text-ink">{profile.name}</p>
+          <p className="mt-1">
+            {profile.role}. Based in {profile.location}.
+          </p>
+          <p className="mt-1 text-xs">Also spelled Abhinav Tiwari.</p>
+          <p className="mt-3 flex gap-4">
+            <a href={profile.github} rel="me noopener noreferrer" target="_blank" className="hover:text-ink">
+              GitHub
+            </a>
+            <a href={profile.linkedin} rel="me noopener noreferrer" target="_blank" className="hover:text-ink">
+              LinkedIn
+            </a>
+            <a href={`mailto:${profile.email}`} rel="me" className="hover:text-ink">
+              Email
+            </a>
+          </p>
         </div>
-        <div className="flex flex-col items-start gap-3 sm:items-end">
-          <div className="flex items-center gap-4">
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-ink-muted transition-[color,scale] duration-200 hover:text-ink hover:scale-110 active:scale-95"
-            >
-              <GithubMark className="h-[18px] w-[18px]" />
-            </a>
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-ink-muted transition-[color,scale] duration-200 hover:text-ink hover:scale-110 active:scale-95"
-            >
-              <LinkedinMark className="h-[18px] w-[18px]" />
-            </a>
-            <a
-              href={`mailto:${profile.email}`}
-              aria-label="Email"
-              className="text-ink-muted transition-[color,scale] duration-200 hover:text-ink hover:scale-110 active:scale-95"
-            >
-              <MailMark className="h-[18px] w-[18px]" />
-            </a>
-          </div>
-          <p className="text-sm text-ink-muted">© {new Date().getFullYear()} {profile.name}</p>
-        </div>
-      </div>
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2">
+          {navLinks.map((l) => (
+            <Link key={l.href} href={l.href} className="hover:text-ink">
+              {l.label}
+            </Link>
+          ))}
+          <Link href="/contact" className="hover:text-ink">
+            Contact
+          </Link>
+        </nav>
+        <PaletteHint />
+      </Container>
     </footer>
   );
 }

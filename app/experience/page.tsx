@@ -1,34 +1,28 @@
 import type { Metadata } from "next";
-import { Sidebar } from "@/components/Sidebar";
-import { Experience } from "@/components/sections/Experience";
-import { Footer } from "@/components/Footer";
+import { Experience } from "@/components/home/Experience";
+import { Contact } from "@/components/home/Contact";
+import { PageHeader } from "@/components/ui";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL } from "@/lib/site";
 
-const SITE_URL = "https://www.abhinavtiwary.online";
+const TITLE = "Abhinav Tiwary's experience | Full-Stack & Gen AI Developer";
+const DESCRIPTION = "Experience of Abhinav Tiwary (Abhinav Tiwari): TechOps Intern at Paytm, Technology & Operations Associate at The ARambha, and full-stack internships.";
 
 export const metadata: Metadata = {
-  title: "Experience — Abhinav Tiwary, Full-Stack Developer & Gen AI Builder",
-  description:
-    "Browse Abhinav Tiwary's professional experience — internships, freelance projects, and roles where he built production-grade full-stack and AI-powered applications.",
-  alternates: {
-    canonical: `${SITE_URL}/experience`,
-  },
-  openGraph: {
-    title: "Experience — Abhinav Tiwary",
-    description:
-      "Abhinav's professional journey — roles, projects, and impact across full-stack development and generative AI.",
-    url: `${SITE_URL}/experience`,
-    type: "website",
-  },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}/experience` },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: `${SITE_URL}/experience` },
+  twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-export default function ExperiencePage() {
+export default function Page() {
   return (
     <>
-      <Sidebar />
-      <main id="main-content">
-        <Experience />
-      </main>
-      <Footer />
+      <StructuredData path="/experience" pageName="Experience" />
+      <PageHeader title="Abhinav Tiwary's experience" intro={DESCRIPTION} />
+      <Experience />
+      <Contact />
     </>
   );
 }
