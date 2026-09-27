@@ -25,8 +25,8 @@ export function SectionHead({
 export function PageHeader({ title, intro }: { title: string; intro: string }) {
   return (
     <header className="border-b border-line">
-      <Container className="py-14 sm:py-20">
-        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-6xl">{title}</h1>
+      <Container className="py-10 sm:py-20">
+        <h1 className="text-balance text-4xl font-bold leading-[1.05] tracking-[-0.03em] sm:text-6xl">{title}</h1>
         <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted">{intro}</p>
       </Container>
     </header>

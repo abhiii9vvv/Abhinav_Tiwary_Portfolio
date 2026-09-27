@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/ui";
 import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "Abhinav Tiwary's certifications | Full-Stack & Gen AI Developer";
+const TITLE = "Abhinav Tiwary's certifications | Software & Cloud Engineer";
 const DESCRIPTION = "Certifications held by Abhinav Tiwary, including Google Cloud Generative AI Leader, NPTEL Elite (99%), and the JPMorgan Chase software engineering simulation.";
 
 export const metadata: Metadata = {

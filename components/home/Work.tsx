@@ -7,14 +7,17 @@ import { GithubIcon } from "@/components/icons/social";
 import { ArrowRightIcon, CheckIcon, PlusIcon } from "@/components/icons/ui";
 
 const projectLogos: Record<string, string> = {
+  lifeherba: "/brand-icons/lifeherba.png",
+  skycodehub: "/brand-icons/skycodehub.svg",
   campussetu: "/brand-icons/campussetu.png",
-  mentionwave: "/brand-icons/mentionwave.png",
   "artha-social": "/brand-icons/arthasocial.svg",
   "the-arambha": "/brand-icons/thearambha.png",
 };
 
 const statusLabel: Record<NonNullable<Project["status"]>, string> = {
-  Flagship: "Flagship, in active development",
+  Building: "Live, in active development",
+  Internship: "Rebuilt end to end during my internship",
+  Flagship: "SaaS platform, in development",
   Current: "Live product",
   Client: "Client work, in production",
   Professional: "Professional work",
@@ -82,15 +85,15 @@ function Logo({ slug, name }: { slug: string; name: string }) {
 }
 
 export function Work() {
-  const flagship = featuredProjects.find((p) => p.slug === "campussetu")!;
-  const rest = featuredProjects.filter((p) => p.slug !== "campussetu");
+  // The most recent project leads as the big case study.
+  const [flagship, ...rest] = featuredProjects;
 
   return (
     <section id="work" className="py-24 sm:py-32">
       <Container>
         <SectionHead
           title="Selected work"
-          intro="Products with real users, a client site in production, and one desktop app that needed OS-level engineering."
+          intro="The wellness platform I'm building now, a site I rebuilt end to end during my internship, a multi-tenant SaaS, and client work running in production."
         />
 
         {/* Flagship case study */}
@@ -103,7 +106,7 @@ export function Work() {
               <Logo slug={flagship.slug} name={flagship.name} />
               <div>
                 <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">{flagship.name}</h3>
-                <p className="text-sm text-accent-ink">{statusLabel.Flagship}</p>
+                <p className="text-sm text-accent-ink">{statusLabel[flagship.status ?? "Flagship"]}</p>
               </div>
             </div>
             <p className="mt-6 text-pretty text-lg leading-relaxed">{flagship.tagline}.</p>
@@ -141,19 +144,26 @@ export function Work() {
 
         {/* Other featured work: 2-col grid */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {rest.map((p, i) => (
+          {rest.map((p, i) => {
+            // An odd card out spans both columns as a side-by-side layout, so the grid never ends with a gap.
+            const wide = rest.length % 2 === 1 && i === rest.length - 1;
+            return (
             <article
               key={p.slug}
               data-reveal
               style={{ "--reveal-delay": `${(i % 2) * 90}ms` } as React.CSSProperties}
-              className="group flex flex-col overflow-hidden rounded-[2rem] border border-line bg-surface"
+              className={`group flex flex-col overflow-hidden rounded-[2rem] border border-line bg-surface ${
+                wide ? "md:col-span-2 md:grid md:grid-cols-2" : ""
+              }`}
             >
-              <div className="relative overflow-hidden bg-sunken px-6 pt-6 sm:px-8 sm:pt-8">
+              <div
+                className={`relative overflow-hidden bg-sunken px-6 pt-6 sm:px-8 sm:pt-8 ${wide ? "md:order-2 md:flex md:items-end" : ""}`}
+              >
                 <BrowserFrame
                   src={p.screenshot!}
                   alt={`${p.name} screenshot`}
                   url={p.live ?? p.github}
-                  className="translate-y-3 rounded-b-none border-b-0 transition-transform duration-500 ease-out group-hover:translate-y-0"
+                  className="w-full translate-y-3 rounded-b-none border-b-0 transition-transform duration-500 ease-out group-hover:translate-y-0"
                   sizes="(min-width: 768px) 45vw, 100vw"
                 />
               </div>
@@ -172,7 +182,8 @@ export function Work() {
                 </div>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
 
         {/* Smaller builds */}

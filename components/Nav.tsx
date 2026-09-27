@@ -35,7 +35,7 @@ export function Nav() {
           <span className="hidden font-medium tracking-tight sm:block">Abhinav Tiwary</span>
         </Link>
 
-        <ul className="ml-auto hidden items-center gap-1 md:flex">
+        <ul className="ml-auto hidden items-center gap-1 lg:flex">
           {navLinks.map((l) => (
             <li key={l.href}>
               <Link
@@ -51,7 +51,7 @@ export function Nav() {
           ))}
         </ul>
 
-        <div className="ml-auto flex items-center gap-2 md:ml-2">
+        <div className="ml-auto flex items-center gap-2 lg:ml-2">
           <button
             type="button"
             onClick={openPalette}
@@ -59,7 +59,7 @@ export function Nav() {
             aria-label="Open command menu"
           >
             <SearchIcon className="h-4 w-4" />
-            <kbd className="hidden font-mono text-xs lg:inline">{isMac ? "⌘K" : "Ctrl K"}</kbd>
+            <kbd className="hidden font-mono text-xs xl:inline">{isMac ? "⌘K" : "Ctrl K"}</kbd>
           </button>
           <button
             type="button"
@@ -78,6 +78,25 @@ export function Nav() {
             <span className="sm:hidden">Hiring?</span>
           </button>
         </div>
+      </nav>
+
+      {/* Phones and tablets: page links stay visible in a scrollable row. */}
+      <nav aria-label="Pages" className="border-t border-line/70 lg:hidden">
+        <ul className="mx-auto flex max-w-page gap-1 overflow-x-auto px-3 py-1.5 [scrollbar-width:none] sm:px-5 [&::-webkit-scrollbar]:hidden">
+          {[{ href: "/", label: "Home" }, ...navLinks, { href: "/contact", label: "Contact" }].map((l) => (
+            <li key={l.href} className="shrink-0">
+              <Link
+                href={l.href}
+                aria-current={pathname === l.href ? "page" : undefined}
+                className={`block rounded-lg px-3 py-1.5 text-sm transition-colors ${
+                  pathname === l.href ? "bg-ink font-medium text-bg" : "text-muted hover:text-ink"
+                }`}
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );

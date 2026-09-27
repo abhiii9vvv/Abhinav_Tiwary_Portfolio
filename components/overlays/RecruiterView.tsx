@@ -10,7 +10,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons/social";
 import { CheckIcon, CloseIcon, CopyIcon, FileIcon, PinIcon } from "@/components/icons/ui";
 import { OPEN_RECRUITER } from "@/lib/theme";
 
-const coreStack = ["TypeScript", "React", "Next.js", "Node.js", "Express", "PostgreSQL", "MongoDB", "Redis", "Docker", "AWS", "LLM APIs"];
+const coreStack = ["Linux", "Bash", "AWS", "Google Cloud", "Docker", "Kubernetes", "Git", "Networking", "Node.js", "React", "PostgreSQL", "Redis"];
 
 const proof = [
   { value: "2nd Runner-Up", label: "Smart India Hackathon 2025 (internal)" },
@@ -19,7 +19,7 @@ const proof = [
   { value: "25%", label: "API response time cut at Unessa Foundation" },
 ];
 
-const topSlugs = ["campussetu", "mentionwave", "secure-exam-browser"];
+const topSlugs = ["lifeherba", "skycodehub", "campussetu"];
 
 export function RecruiterView() {
   const [open, setOpen] = useState(false);

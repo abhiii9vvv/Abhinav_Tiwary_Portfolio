@@ -9,26 +9,27 @@ export const profile = {
   linkedin: "https://linkedin.com/in/abhinavtiwary",
   github: "https://github.com/abhiii9vvv",
   resume: "https://drive.google.com/file/d/1wKZB20oAqChvdvxSN7Fcs1121IPCvrpi/view?usp=sharing",
-  role: "Full-Stack Developer & Gen AI Builder",
-  headline: "Full-Stack Developer building scalable web platforms and AI-powered applications.",
+  role: "Software & Cloud Engineer",
+  headline: "Software and cloud engineer who builds, deploys, and supports production systems on Linux and AWS.",
   subheadline:
-    "I build and ship real-world products across full-stack engineering, backend systems, cloud infrastructure, and AI.",
+    "I build web platforms, run them on Linux and the cloud, and keep them healthy in production.",
   now: { role: "TechOps Intern", org: "Paytm" },
   about:
-    "I work at the intersection of full-stack engineering and Generative AI, learning by shipping real products across SaaS platforms, backend systems, cloud infrastructure, real-time applications, and developer tooling.",
+    "I build software and run it: web platforms, backend systems, cloud infrastructure on Linux, and the day-to-day operations that keep them healthy.",
   aboutParagraphs: [
-    "I'm a full-stack developer who learns by shipping: SaaS platforms, backend systems, real-time apps, cloud infra.",
-    "Most days that's React and Next.js on the frontend, Node.js and REST APIs on the backend, and lately LLM APIs and agentic workflows.",
+    "I'm an engineer who learns by shipping, and by keeping what I ship alive.",
+    "At Paytm I work on the operations side: system monitoring, technical operations, and support for the teams that depend on those systems.",
+    "On my own projects I cover the rest of the path: React and Node.js apps, PostgreSQL and Redis, Docker, and deploys to AWS and Linux servers.",
     "I'd rather have something working in production than a perfect plan for it.",
   ],
   availability: {
-    summary: "Open to full-stack, frontend, and Gen AI roles",
+    summary: "Open to cloud, Linux, support, and full-stack roles",
     graduating: "B.Tech CSE, graduating 2027",
     workModes: ["On-site", "Hybrid", "Remote"],
     preferredLocation: "Delhi, Noida, and Gurugram preferred",
   },
   photo: "/images/abhinav-tiwary.jpg",
-  heroPortrait: "/images/abhinav-tiwary-full-stack-developer.png",
+  heroPortrait: "/images/abhinav-tiwary-software-cloud-engineer.png",
 };
 
 export const stats = [

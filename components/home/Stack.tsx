@@ -1,5 +1,5 @@
 import { foundations, stackLayers } from "@/content/skills";
-import { BrandIcon } from "@/components/BrandIcon";
+import { BrandIcon, hasBrand } from "@/components/BrandIcon";
 import { Container, SectionHead } from "@/components/ui";
 
 export function Stack() {
@@ -7,8 +7,8 @@ export function Stack() {
     <section id="stack" className="py-24 sm:py-32">
       <Container>
         <SectionHead
-          title="Every layer of the product"
-          intro="I work the whole request path, from the button someone taps to the server that answers. Here is what I use at each layer, and where I've shipped it."
+          title="From the server up"
+          intro="I can keep a Linux box healthy, deploy to the cloud, and build the app that runs on it. Here is what I use at each layer, and where I've used it for real."
         />
 
         <div data-reveal className="on-ink relative mt-14 overflow-hidden rounded-[2rem] bg-ink text-bg">
@@ -33,19 +33,28 @@ export function Stack() {
                 </div>
 
                 <ul className="flex flex-wrap content-start gap-2">
-                  {layer.items.map((item) => (
-                    <li
-                      key={item}
-                      className="inline-flex items-center gap-2 rounded-xl border border-bg/10 bg-bg/[0.06] py-2 pl-2.5 pr-3.5 text-sm transition-[transform,border-color] duration-300 group-hover:-translate-y-px group-hover:border-bg/20"
-                    >
-                      <BrandIcon name={item} className="h-[18px] w-[18px]" />
-                      {item.replace(" API", "")}
-                    </li>
-                  ))}
+                  {layer.items.map((item) =>
+                    hasBrand(item) ? (
+                      <li
+                        key={item}
+                        className="inline-flex items-center gap-2 rounded-xl border border-bg/10 bg-bg/[0.06] py-2 pl-2.5 pr-3.5 text-sm transition-[transform,border-color] duration-300 group-hover:-translate-y-px group-hover:border-bg/20"
+                      >
+                        <BrandIcon name={item} className="h-[18px] w-[18px]" />
+                        {item.replace(" API", "")}
+                      </li>
+                    ) : (
+                      <li
+                        key={item}
+                        className="inline-flex items-center rounded-xl border border-dashed border-bg/25 px-3.5 py-2 text-sm text-bg/85 transition-transform duration-300 group-hover:-translate-y-px"
+                      >
+                        {item}
+                      </li>
+                    ),
+                  )}
                 </ul>
 
                 <div className="md:col-start-2 lg:col-start-auto">
-                  <p className="font-mono text-xs text-bg/50">Shipped in</p>
+                  <p className="font-mono text-xs text-bg/50">Used in</p>
                   <p className="mt-1.5 text-sm leading-relaxed">
                     {layer.shippedIn.map((name, j) => (
                       <span key={name}>

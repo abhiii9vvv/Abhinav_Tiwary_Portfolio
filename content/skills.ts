@@ -7,43 +7,51 @@ export type StackLayer = {
   shippedIn: string[];
 };
 
-// Item names match keys in lib/brands.ts so each one renders its real logo.
-// Ordered as a request travels: the screen, the API, the data, the box it runs on.
+// Items that match keys in lib/brands.ts render with their real logo; the rest
+// (practices like monitoring or triage) render as plain chips.
+// Ordered from the server up: keep it running, host it, store it, serve it, show it.
 export const stackLayers: StackLayer[] = [
   {
-    id: "interface",
-    label: "Interface",
-    role: "What the user touches",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Framer Motion", "HTML5", "CSS"],
-    shippedIn: ["CampusSetu", "MentionWave", "Artha Social", "The ARambha"],
+    id: "ops",
+    label: "Ops & support",
+    role: "Keeping production healthy",
+    items: ["Linux", "Bash", "Git", "Postman", "System monitoring", "Troubleshooting", "Incident triage", "DNS, HTTP, TCP/IP"],
+    shippedIn: ["Paytm (TechOps)", "devops_learn"],
   },
   {
-    id: "api",
-    label: "API",
-    role: "Auth, business logic, real time",
-    items: ["Node.js", "Express", "Prisma", "JWT", "WebSockets", "Postman"],
-    shippedIn: ["CampusSetu", "Bot Detection System", "Unessa Foundation"],
+    id: "cloud",
+    label: "Cloud & infra",
+    role: "Where it runs and ships from",
+    items: ["AWS", "Google Cloud", "Docker", "Kubernetes", "Jenkins", "Vercel", "GitHub"],
+    shippedIn: ["CampusSetu", "DevOps-Practice", "devops_learn"],
   },
   {
     id: "data",
     label: "Data",
     role: "Where state lives",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase", "Cloudinary"],
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase"],
     shippedIn: ["CampusSetu", "Artha Social"],
   },
   {
-    id: "infra",
-    label: "Infra",
-    role: "Where it runs and ships from",
-    items: ["AWS", "Google Cloud", "Docker", "Kubernetes", "Jenkins", "Linux", "Vercel", "GitHub"],
-    shippedIn: ["CampusSetu", "MentionWave", "DevOps-Practice"],
+    id: "api",
+    label: "Backend",
+    role: "APIs, auth, real time",
+    items: ["Node.js", "Express", "Prisma", "JWT", "WebSockets", "Python"],
+    shippedIn: ["CampusSetu", "Unessa Foundation", "Bot Detection System"],
+  },
+  {
+    id: "interface",
+    label: "Frontend",
+    role: "What the user touches",
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS"],
+    shippedIn: ["LifeHerba", "SkyCodeHub", "CampusSetu", "Artha Social"],
   },
   {
     id: "ai",
     label: "AI",
-    role: "The intelligence inside",
-    items: ["OpenAI API", "Claude", "Gemini", "Python", "OpenCV"],
-    shippedIn: ["MentionWave", "SecureExamBrowser", "av9Assist"],
+    role: "LLMs and computer vision",
+    items: ["OpenAI API", "Claude", "Gemini", "OpenCV"],
+    shippedIn: ["av9Assist"],
   },
 ];
 

@@ -178,3 +178,170 @@ body {
 :root .on-ink .brand-ink {
   color: rgb(var(--bg)) !important;
 }
+
+/* The header is taller below lg because of the page-link row. */
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-top: 7.5rem;
+  }
+}
+
+/* ── Ops scene (components/home/OpsScene.tsx) ───────────────────────── */
+.ops-mono {
+  font-family: var(--font-ubuntu-mono), "Ubuntu Mono", ui-monospace, monospace;
+}
+.ops-surface {
+  fill: rgb(var(--surface));
+}
+.ops-sunken {
+  fill: rgb(var(--sunken));
+}
+.ops-line-stroke {
+  stroke: rgb(var(--line));
+}
+.ops-muted-fill {
+  fill: rgb(var(--muted));
+}
+.ops-ink-fill {
+  fill: rgb(var(--ink));
+}
+
+/* Terminal lines type in once the section scrolls into view. */
+.js .ops-type {
+  opacity: 0;
+  animation: ops-type 0.45s ease-out forwards paused;
+}
+.js .is-visible .ops-type {
+  animation-play-state: running;
+}
+@keyframes ops-type {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.ops-cursor {
+  animation: ops-blink 1s steps(1) infinite;
+}
+@keyframes ops-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Rack status lights: steady heartbeat plus fast disk activity. */
+.ops-led {
+  animation: ops-led 2.4s ease-in-out infinite;
+}
+.ops-led-fast {
+  animation: ops-blink 0.7s steps(1) infinite;
+}
+@keyframes ops-led {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Data flowing along the connectors. */
+.ops-flow {
+  stroke-dasharray: 3 11;
+  animation: ops-flow 1.2s linear infinite;
+}
+@keyframes ops-flow {
+  to {
+    stroke-dashoffset: -14;
+  }
+}
+
+/* CPU graph draws itself, holds, then redraws. */
+.ops-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: ops-draw 7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes ops-draw {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  55%,
+  88% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+.ops-area,
+.ops-head {
+  animation: ops-reveal 7s ease-in-out infinite;
+}
+@keyframes ops-reveal {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  58%,
+  88% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* "All systems operational" pulse. */
+.ops-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ops-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ops-ping {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Request log scrolls upward forever (content is duplicated for a seamless loop). */
+.ops-scroll {
+  animation: ops-scroll 9s linear infinite;
+}
+@keyframes ops-scroll {
+  to {
+    transform: translateY(calc(var(--ops-log-h) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .ops-type {
+    opacity: 1;
+    animation: none;
+  }
+  .ops-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .ops-area,
+  .ops-head {
+    animation: none;
+    opacity: 1;
+  }
+  .ops-packet {
+    display: none;
+  }
+}

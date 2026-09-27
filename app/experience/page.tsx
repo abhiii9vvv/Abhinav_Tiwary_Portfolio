@@ -5,8 +5,8 @@ import { PageHeader } from "@/components/ui";
 import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "Abhinav Tiwary's experience | Full-Stack & Gen AI Developer";
-const DESCRIPTION = "Experience of Abhinav Tiwary: TechOps Intern at Paytm, Technology & Operations Associate at The ARambha, and full-stack internships.";
+const TITLE = "Abhinav Tiwary's experience | Software & Cloud Engineer";
+const DESCRIPTION = "Experience of Abhinav Tiwary: TechOps Intern at Paytm, Technology & Operations Associate at The ARambha, and software internships.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

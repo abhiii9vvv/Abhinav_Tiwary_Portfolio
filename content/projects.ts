@@ -10,23 +10,43 @@ export type Project = {
   tier: "featured" | "strong" | "more";
   note?: string;
   highlights?: string[];
-  status?: "Current" | "Client" | "Professional" | "Flagship" | "Engineering";
+  status?: "Building" | "Internship" | "Current" | "Client" | "Professional" | "Flagship" | "Engineering";
 };
 
 export const featuredProjects: Project[] = [
   {
-    slug: "mentionwave",
-    name: "MentionWave",
-    tagline: "Real-time social intelligence platform for monitoring mentions, sentiment, engagement, and conversations across multiple platforms",
+    slug: "lifeherba",
+    name: "LifeHerba",
+    tagline: "Wellness platform for consultations across nine systems of holistic medicine, verified wellness centres, therapies, and a pharmacy",
     description:
-      "Tracks configurable keyword mentions across X/Twitter, Instagram, Facebook, YouTube, and news sources, with sentiment analysis, engagement tracking, alert rules, and a real-time dashboard.",
-    tech: ["TypeScript", "Next.js", "AI Sentiment", "Vercel Blob"],
-    live: "https://mentionwave.vercel.app/",
-    github: "https://github.com/abhiii9vvv/mentionwave",
-    screenshot: "/screenshots/mentionwave.png",
-    highlights: ["Tracks keywords across X, Instagram, Facebook, YouTube, and news", "AI sentiment scoring on every mention", "Alert rules and a live dashboard"],
+      "One app to consult verified practitioners, book wellness centres and therapies, order genuine medicines, and shop supplements. I design and build it end to end.",
+    tech: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    live: "https://lifeherbagroup.com/",
+    screenshot: "/screenshots/lifeherba.png",
+    highlights: [
+      "One promise up top, with the real app shown in a phone frame instead of described in paragraphs",
+      "Care organised by system of medicine, so people browse the way they already think about treatment",
+      "Trust shown early: verified practitioners and centres, secure payments, a trust and safety section",
+      "Light, dark, and system themes plus a language switcher, built into the header from day one",
+    ],
     tier: "featured",
-    status: "Current",
+    status: "Building",
+  },
+  {
+    slug: "skycodehub",
+    name: "SkyCodeHub",
+    tagline: "Coding practice and placement platform for colleges, with the marketing site rebuilt end to end during my internship",
+    description:
+      "Rebuilt skycodehub.com end to end: information architecture, visual design, and the responsive front end.",
+    tech: ["React", "Vite", "Tailwind CSS"],
+    live: "https://skycodehub.com/",
+    screenshot: "/screenshots/skycodehub.png",
+    highlights: [
+      "Hero pairs a three-beat value prop with a product preview, so colleges see the dashboard before they book a demo",
+      "Page runs audience, proof, then one sales call to action, instead of a feature dump",
+    ],
+    tier: "featured",
+    status: "Internship",
   },
   {
     slug: "artha-social",
@@ -68,20 +88,6 @@ export const featuredProjects: Project[] = [
     tier: "featured",
     note: "Flagship project",
     status: "Flagship",
-  },
-  {
-    slug: "secure-exam-browser",
-    name: "SecureExamBrowser",
-    tagline: "Secure kiosk-mode examination browser with AI face proctoring, OS-level restrictions, real-time monitoring, and suspicious-activity detection",
-    description:
-      "Kiosk-mode exam browser with alt-tab and screen-capture restrictions, AI face proctoring, real-time monitoring, and violation detection with suspicious-activity logging.",
-    tech: ["Electron", "Python", "OpenCV"],
-    github: "https://github.com/abhiii9vvv/SecureExamBrowser",
-    screenshot: "/screenshots/secure-exam-browser.png",
-    highlights: ["Kiosk mode that blocks alt-tab and screen capture", "AI face proctoring with OpenCV", "Violation detection with suspicious-activity logs"],
-    tier: "featured",
-    note: "No public live deployment",
-    status: "Engineering",
   },
 ];
 

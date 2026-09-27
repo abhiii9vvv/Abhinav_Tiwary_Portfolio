@@ -29,7 +29,7 @@ export const experience: ExperienceEntry[] = [
     role: "Associate Web Developer Trainee",
     period: "21 May – 21 July 2026",
     description:
-      "Frontend development on responsive interfaces for real-world projects, with code reviews, debugging, and production-oriented development.",
+      "Rebuilt skycodehub.com end to end: information architecture, visual design, and a responsive React front end. Also worked through code reviews, debugging, and production releases.",
   },
   {
     org: "Unessa Foundation",

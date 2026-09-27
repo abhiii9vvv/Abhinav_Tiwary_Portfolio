@@ -27,8 +27,8 @@ export function Contact() {
               Let&apos;s build something.
             </h2>
             <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-bg/70">
-              Hiring for a full-stack, frontend, or Gen AI role, or have a product that needs building? Email is the
-              fastest way to reach me.
+              Hiring for a cloud, Linux, support, or full-stack role, or have a product that needs building? Email is
+              the fastest way to reach me.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">

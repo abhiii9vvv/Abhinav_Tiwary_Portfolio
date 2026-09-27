@@ -12,7 +12,7 @@ import "./globals.css";
 
 const OG_TITLE = `${profile.name} | ${profile.role}`;
 const OG_DESCRIPTION =
-  "Abhinav Tiwary, full-stack developer and Gen AI builder in Delhi NCR. TechOps Intern at Paytm. Projects, experience, and resume.";
+  "Abhinav Tiwary, software and cloud engineer in Delhi NCR. TechOps Intern at Paytm working on Linux, AWS, and full-stack systems. Projects, experience, and resume.";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -48,8 +48,13 @@ export const metadata: Metadata = {
     "Abhinav Tiwary portfolio",
     "Abhinav Tiwary developer",
     "abhiii9vvv",
+    "Cloud Engineer",
+    "Linux Engineer",
+    "L1 Support Engineer",
+    "Technical Support Engineer",
+    "DevOps",
+    "AWS",
     "Full-Stack Developer",
-    "Gen AI Builder",
     "Next.js Developer",
     "React Developer",
     "Node.js Developer",

@@ -5,8 +5,8 @@ import { PageHeader } from "@/components/ui";
 import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
-const TITLE = "Projects by Abhinav Tiwary | Full-Stack & Gen AI Developer";
-const DESCRIPTION = "Projects by Abhinav Tiwary: CampusSetu, MentionWave, Artha Social, SecureExamBrowser, and more, built with Next.js, Node.js, and AI.";
+const TITLE = "Projects by Abhinav Tiwary | Software & Cloud Engineer";
+const DESCRIPTION = "Projects by Abhinav Tiwary: LifeHerba, SkyCodeHub, CampusSetu, Artha Social, and more, built and deployed with Node.js, Docker, AWS, and AI.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
