@@ -6,15 +6,15 @@ import { ArrowRightIcon, FileIcon } from "@/components/icons/ui";
 
 export function Hero() {
   return (
-    <section id="top" className="relative flex overflow-hidden lg:flex-1 lg:items-center">
+    <section id="top" className="relative flex overflow-hidden lg:flex-1">
       <div aria-hidden="true" className="bg-dots mask-fade-b pointer-events-none absolute inset-0" />
-      <Container className="relative grid items-center gap-10 pb-14 pt-10 sm:gap-12 sm:pt-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:py-6">
-        <div>
+      <Container className="relative grid items-center gap-10 pb-14 pt-10 sm:gap-12 sm:pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:pb-0 lg:pt-6">
+        <div className="lg:pb-10">
           <h1 className="animate-rise" style={{ animationDelay: "80ms" }}>
             <span className="block text-base font-medium tracking-tight text-muted sm:text-xl">
               {profile.name}, {profile.role}
             </span>
-            <span className="mt-4 block text-balance text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:mt-5 sm:text-6xl lg:text-[clamp(3.25rem,6.2dvh,4.6rem)]">
+            <span className="mt-4 block text-balance text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:mt-5 sm:text-6xl lg:mt-4 lg:text-[clamp(3.25rem,8.6dvh,5.5rem)]">
               I build it, ship it, and{" "}
               <span className="relative whitespace-nowrap text-accent-ink">
                 keep it running
@@ -32,7 +32,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="mt-6 max-w-xl animate-rise text-pretty text-lg leading-relaxed text-muted sm:mt-7 sm:text-xl"
+            className="mt-6 max-w-xl animate-rise text-pretty text-lg leading-relaxed text-muted sm:mt-7 sm:text-xl lg:mt-6"
             style={{ animationDelay: "160ms" }}
           >
             Final-year CS student at Sharda University, now a {profile.now.role} at {profile.now.org}. Open to cloud,
@@ -40,7 +40,7 @@ export function Hero() {
           </p>
 
           <div
-            className="mt-8 grid animate-rise grid-cols-2 gap-3 sm:mt-9 sm:flex sm:flex-wrap sm:items-center"
+            className="mt-8 grid animate-rise grid-cols-2 gap-3 sm:mt-9 sm:flex sm:flex-wrap sm:items-center lg:mt-9"
             style={{ animationDelay: "240ms" }}
           >
             <Link
@@ -64,11 +64,11 @@ export function Hero() {
 
         {/* Portrait: the cutout rises out of the top of an orange panel. */}
         <div
-          className="relative mx-auto w-full max-w-[300px] animate-rise sm:max-w-[380px] lg:flex lg:max-w-none lg:justify-center"
+          className="relative mx-auto w-full max-w-[300px] animate-rise sm:max-w-[380px] lg:flex lg:h-full lg:max-w-none lg:items-end lg:justify-center lg:self-stretch"
           style={{ animationDelay: "200ms" }}
         >
-          <div className="relative mx-auto aspect-[4/5] w-full lg:mx-0 lg:h-[min(58dvh,560px)] lg:w-auto">
-            <div className="absolute inset-x-0 bottom-0 top-[18%] overflow-hidden rounded-[2rem] bg-accent">
+          <div className="relative mx-auto aspect-[4/5] w-full lg:mx-0 lg:h-[min(calc(100dvh-15rem),680px)] lg:w-auto">
+            <div className="absolute inset-x-0 bottom-0 top-[18%] overflow-hidden rounded-[2rem] bg-accent lg:rounded-b-none">
               <div
                 aria-hidden="true"
                 className="absolute inset-0 opacity-30"
@@ -78,7 +78,7 @@ export function Hero() {
                 }}
               />
             </div>
-            <div className="absolute inset-0 overflow-hidden rounded-b-[2rem]">
+            <div className="absolute inset-0 overflow-hidden rounded-b-[2rem] lg:rounded-b-none">
               <Image
                 src={profile.heroPortrait}
                 alt={`${profile.name}, ${profile.role}`}
