@@ -11,10 +11,9 @@ export const experience: ExperienceEntry[] = [
   {
     org: "Paytm",
     role: "TechOps Intern",
-    period: "August 2026 – Present",
-    current: true,
+    period: "20 August – 30 September 2026",
     description:
-      "Working as a TechOps Intern, focusing on technical operations, system monitoring, and cross-functional technology support.",
+      "Completed TechOps training at One97 Communications (Paytm) in the Tech-Non Dev TechOps team, working on technical operations, system monitoring, and cross-functional technology support.",
   },
   {
     org: "The ARambha",

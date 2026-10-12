@@ -35,7 +35,7 @@ export function Hero() {
             className="mt-6 max-w-xl animate-rise text-pretty text-lg leading-relaxed text-muted sm:mt-7 sm:text-xl lg:mt-6"
             style={{ animationDelay: "160ms" }}
           >
-            Final-year CS student at Sharda University, now a {profile.now.role} at {profile.now.org}. Open to cloud,
+            Final-year CS student at Sharda University, most recently a {profile.recent.role} at {profile.recent.org}. Open to cloud,
             Linux, support, and full-stack roles in Delhi NCR.
           </p>
 

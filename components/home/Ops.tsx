@@ -10,7 +10,7 @@ const practices = [
   },
   {
     title: "Monitor and support",
-    body: "At Paytm I work on technical operations and system monitoring, and support the teams that depend on those systems.",
+    body: "At Paytm I worked on technical operations and system monitoring, and supported the teams that depend on those systems.",
     brands: ["Paytm"],
   },
   {

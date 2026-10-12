@@ -12,7 +12,7 @@ import "./globals.css";
 
 const OG_TITLE = `${profile.name} | ${profile.role}`;
 const OG_DESCRIPTION =
-  "Abhinav Tiwary, software and cloud engineer in Delhi NCR. TechOps Intern at Paytm working on Linux, AWS, and full-stack systems. Projects, experience, and resume.";
+  "Abhinav Tiwary, software and cloud engineer in Delhi NCR. Former TechOps Intern at Paytm, working on Linux, AWS, and full-stack systems. Projects, experience, and resume.";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],

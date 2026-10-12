@@ -13,12 +13,12 @@ export const profile = {
   headline: "Software and cloud engineer who builds, deploys, and supports production systems on Linux and AWS.",
   subheadline:
     "I build web platforms, run them on Linux and the cloud, and keep them healthy in production.",
-  now: { role: "TechOps Intern", org: "Paytm" },
+  recent: { role: "TechOps Intern", org: "Paytm" },
   about:
     "I build software and run it: web platforms, backend systems, cloud infrastructure on Linux, and the day-to-day operations that keep them healthy.",
   aboutParagraphs: [
     "I'm an engineer who learns by shipping, and by keeping what I ship alive.",
-    "At Paytm I work on the operations side: system monitoring, technical operations, and support for the teams that depend on those systems.",
+    "At Paytm I worked on the operations side: system monitoring, technical operations, and support for the teams that depend on those systems.",
     "On my own projects I cover the rest of the path: React and Node.js apps, PostgreSQL and Redis, Docker, and deploys to AWS and Linux servers.",
     "I'd rather have something working in production than a perfect plan for it.",
   ],
