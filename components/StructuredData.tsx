@@ -83,7 +83,7 @@ export function StructuredData({ path = "", pageName }: { path?: string; pageNam
       isPartOf: { "@id": WEBSITE_ID },
       mainEntity: { "@id": PERSON_ID },
       about: { "@id": PERSON_ID },
-      dateModified: "2026-09-24",
+      dateModified: "2026-10-13T00:00:00+05:30",
       ...(path === "" && {
         hasPart: featuredProjects.map((p) => ({
           "@type": "CreativeWork",
