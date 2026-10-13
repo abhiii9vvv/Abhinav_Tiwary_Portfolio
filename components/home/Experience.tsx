@@ -12,7 +12,7 @@ const orgLogos: Record<string, string> = {
 function OrgLogo({ org }: { org: string }) {
   if (org === "Paytm") {
     return (
-      <span className="grid h-12 w-12 place-items-center rounded-2xl border border-line bg-white">
+      <span className="relative grid h-12 w-12 place-items-center rounded-2xl border border-line bg-white">
         <BrandIcon name="Paytm" className="h-7 w-7" onLight />
       </span>
     );
@@ -35,12 +35,16 @@ export function Experience() {
       <Container className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHead
-            title="Where I've worked"
+            title="Where I've *worked*"
             intro="From tech operations at Paytm to campaign technology and nonprofit backends. Every role put my code in front of real users."
           />
         </div>
 
-        <ol className="relative">
+        <ol data-reveal className="relative">
+          {/* Timeline rail: fills in orange as you scroll through the roles. */}
+          <span aria-hidden="true" className="absolute bottom-6 left-6 top-6 w-px bg-line">
+            <span className="exp-fill absolute inset-0 origin-top bg-accent" />
+          </span>
           {experience.map((e, i) => (
             <li
               key={e.org}
@@ -48,10 +52,14 @@ export function Experience() {
               style={{ "--reveal-delay": `${i * 60}ms` } as React.CSSProperties}
               className="relative grid grid-cols-[3rem_1fr] gap-5 pb-12 last:pb-0"
             >
-              {i < experience.length - 1 && (
-                <span aria-hidden="true" className="absolute bottom-0 left-6 top-14 w-px bg-line" />
-              )}
               <OrgLogo org={e.org} />
+              <span
+                aria-hidden="true"
+                className={`stamp absolute right-0 top-1 hidden text-sm sm:inline-block ${e.current ? "text-accent-ink" : "text-muted"}`}
+                style={{ "--stamp-delay": `${0.8 + i * 0.25}s` } as React.CSSProperties}
+              >
+                {e.current ? "Live" : "Shipped"}
+              </span>
               <div className="min-w-0 pt-1">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                   <h3 className="text-xl font-bold tracking-tight">{e.role}</h3>
@@ -68,7 +76,7 @@ export function Experience() {
                 </p>
                 <p className="mt-3 max-w-xl text-pretty leading-relaxed text-muted">{e.description}</p>
                 {e.highlight && (
-                  <p className="mt-4 inline-flex items-center gap-2 rounded-xl border border-accent/30 bg-accent/[0.07] px-3 py-2 text-sm font-medium">
+                  <p className="stg mt-4 inline-flex items-center gap-2 rounded-xl border border-accent/30 bg-accent/[0.07] px-3 py-2 text-sm font-medium">
                     <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent" />
                     {e.highlight}
                   </p>

@@ -11,11 +11,11 @@ export function Contact() {
         <div data-reveal className="relative overflow-hidden rounded-[2.5rem] bg-ink px-6 py-16 text-bg sm:px-12 sm:py-24">
           <div
             aria-hidden="true"
-            className="absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-accent opacity-90 blur-[2px]"
+            className="contact-orb absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-accent opacity-90 blur-[2px]"
           />
           <div
             aria-hidden="true"
-            className="absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full opacity-40"
+            className="contact-orb absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full opacity-40"
             style={{
               backgroundImage:
                 "repeating-radial-gradient(circle at center, rgb(255 255 255 / 0.35) 0 1px, transparent 1px 22px)",
@@ -23,8 +23,18 @@ export function Contact() {
           />
 
           <div className="relative max-w-3xl">
-            <h2 className="text-balance text-5xl font-bold leading-[0.98] tracking-[-0.035em] sm:text-7xl">
-              Let&apos;s build something.
+            <h2 className="font-display text-7xl uppercase leading-[0.88] sm:text-[9rem]">
+              <span className="slam">
+                <span style={{ "--i": 0 } as React.CSSProperties}>Let&apos;s build</span>
+              </span>
+              <span className="slam">
+                <span style={{ "--i": 1 } as React.CSSProperties}>
+                  something<span className="text-accent">.</span>
+                </span>
+              </span>
+              <span className="slam mt-2 font-serif text-5xl normal-case italic leading-tight text-accent sm:text-6xl">
+                <span style={{ "--i": 2 } as React.CSSProperties}>together?</span>
+              </span>
             </h2>
             <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-bg/70">
               Hiring for a cloud, Linux, support, or full-stack role, or have a product that needs building? Email is

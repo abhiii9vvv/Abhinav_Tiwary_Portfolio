@@ -25,17 +25,17 @@ const racks = [
 ];
 
 const logs = [
-  { code: "200", text: "GET /health      11ms" },
-  { code: "200", text: "GET /api/users   48ms" },
-  { code: "304", text: "GET /static/app   3ms" },
-  { code: "200", text: "POST /login      96ms" },
+  { code: "200", text: "/health   11ms" },
+  { code: "200", text: "/api/users 48ms" },
+  { code: "304", text: "/static    3ms" },
+  { code: "200", text: "/login    96ms" },
   { code: "WARN", text: "db retry 1/3" },
-  { code: "200", text: "GET /api/orders  52ms" },
-  { code: "200", text: "GET /health      12ms" },
-  { code: "201", text: "POST /tickets    74ms" },
+  { code: "200", text: "/orders   52ms" },
+  { code: "200", text: "/health   12ms" },
+  { code: "201", text: "/tickets  74ms" },
 ];
 
-const LOG_LINE = 17;
+const LOG_LINE = 20;
 const cpu =
   "M44 402 L74 396 L104 399 L134 380 L164 386 L194 360 L224 371 L254 352 L284 366 L314 344 L344 356 L374 338 L400 348";
 
@@ -53,8 +53,18 @@ export function OpsScene({ className = "" }: { className?: string }) {
           <stop offset="1" stopColor="#E95420" stopOpacity="0" />
         </linearGradient>
         <clipPath id="ops-log-clip">
-          <rect x="424" y="318" width="176" height="104" />
+          <rect x="424" y="324" width="180" height="98" />
         </clipPath>
+        {/* Log lines fade in at the bottom and out at the top instead of being cut. */}
+        <linearGradient id="ops-log-fade" x1="0" y1="324" x2="0" y2="422" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#fff" stopOpacity="0" />
+          <stop offset="0.25" stopColor="#fff" />
+          <stop offset="0.75" stopColor="#fff" />
+          <stop offset="1" stopColor="#fff" stopOpacity="0" />
+        </linearGradient>
+        <mask id="ops-log-mask">
+          <rect x="424" y="324" width="180" height="98" fill="url(#ops-log-fade)" />
+        </mask>
       </defs>
 
       {/* ── Connectors: data flows terminal → rack → monitor ── */}
@@ -63,13 +73,8 @@ export function OpsScene({ className = "" }: { className?: string }) {
         <path d="M514 260 L514 284" />
         <path d="M194 260 L194 284" />
       </g>
-      <g fill="none" stroke="#E95420" strokeWidth="2" strokeLinecap="round" className="ops-flow">
-        <path d="M364 132 C388 132 388 92 412 92" />
-        <path d="M514 260 L514 284" />
-        <path d="M194 260 L194 284" />
-      </g>
       <circle r="4" fill="#E95420" className="ops-packet">
-        <animateMotion dur="2.4s" repeatCount="indefinite" path="M364 132 C388 132 388 92 412 92" />
+        <animateMotion dur="3.2s" repeatCount="indefinite" path="M364 132 C388 132 388 92 412 92" />
       </circle>
 
       {/* ── Terminal ── */}
@@ -88,7 +93,7 @@ export function OpsScene({ className = "" }: { className?: string }) {
             key={l.text}
             x="40"
             y={82 + i * 21}
-            fontSize="12.5"
+            fontSize="13"
             className="ops-mono ops-type"
             style={{ animationDelay: `${i * 0.75}s` }}
             fill={l.tone === "ok" ? "#4ade80" : l.tone === "cmd" ? "#f3f1ee" : "#a49f98"}
@@ -114,29 +119,12 @@ export function OpsScene({ className = "" }: { className?: string }) {
           return (
             <g key={r.name}>
               <rect x="428" y={y} width="172" height="42" rx="7" className="ops-sunken" />
-              <circle cx="446" cy={y + 21} r="4" fill="#22c55e" className="ops-led" style={{ animationDelay: r.blink }} />
-              <circle
-                cx="460"
-                cy={y + 21}
-                r="4"
-                fill="#E95420"
-                className="ops-led-fast"
-                style={{ animationDelay: `${i * 0.37}s` }}
-              />
-              {[0, 1, 2, 3, 4].map((v) => (
-                <line
-                  key={v}
-                  x1={476 + v * 8}
-                  y1={y + 13}
-                  x2={476 + v * 8}
-                  y2={y + 29}
-                  className="ops-line-stroke"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              ))}
-              <text x="588" y={y + 25} textAnchor="end" fontSize="11" className="ops-mono ops-muted-fill">
+              <circle cx="448" cy={y + 21} r="5" fill="#22c55e" className="ops-led" style={{ animationDelay: r.blink }} />
+              <text x="464" y={y + 25.5} fontSize="13" className="ops-mono ops-ink-fill">
                 {r.name}
+              </text>
+              <text x="588" y={y + 25.5} textAnchor="end" fontSize="12" className="ops-mono ops-ok-fill">
+                healthy
               </text>
             </g>
           );
@@ -146,13 +134,16 @@ export function OpsScene({ className = "" }: { className?: string }) {
       {/* ── Monitoring panel ── */}
       <g>
         <rect x="24" y="284" width="592" height="152" rx="14" className="ops-surface ops-line-stroke" strokeWidth="1" />
-        <text x="44" y="309" fontSize="12" className="ops-mono ops-muted-fill">
+        <text x="44" y="310" fontSize="12.5" className="ops-mono ops-muted-fill">
           cpu · web-01
         </text>
-        <circle cx="440" cy="305" r="4" fill="#22c55e" />
-        <circle cx="440" cy="305" r="4" fill="#22c55e" className="ops-ping" />
-        <text x="452" y="309" fontSize="12" className="ops-ink-fill" fontWeight="500">
-          All systems operational
+        <text x="428" y="310" fontSize="12.5" className="ops-mono ops-muted-fill">
+          requests
+        </text>
+        <circle cx="586" cy="306" r="4" fill="#22c55e" />
+        <circle cx="586" cy="306" r="4" fill="#22c55e" className="ops-ping" />
+        <text x="576" y="310" textAnchor="end" fontSize="12" className="ops-ok-fill">
+          all ok
         </text>
 
         {/* grid + threshold */}
@@ -161,7 +152,7 @@ export function OpsScene({ className = "" }: { className?: string }) {
         ))}
         <line x1="44" y1="330" x2="400" y2="330" stroke="#E95420" strokeOpacity="0.5" strokeDasharray="6 5" />
         <text x="400" y="325" textAnchor="end" fontSize="10" className="ops-mono" fill="#E95420">
-          alert at 80%
+          alert 80%
         </text>
 
         {/* cpu line: area + stroke that draws itself */}
@@ -180,11 +171,11 @@ export function OpsScene({ className = "" }: { className?: string }) {
 
         {/* request log */}
         <line x1="416" y1="318" x2="416" y2="422" className="ops-line-stroke" />
-        <g clipPath="url(#ops-log-clip)">
+        <g clipPath="url(#ops-log-clip)" mask="url(#ops-log-mask)">
           <g className="ops-scroll" style={{ ["--ops-log-h" as string]: `${logs.length * LOG_LINE}px` }}>
             {[...logs, ...logs].map((l, i) => (
-              <text key={i} x="428" y={332 + i * LOG_LINE} fontSize="11" className="ops-mono">
-                <tspan fill={l.code === "WARN" ? "#f59e0b" : l.code.startsWith("2") ? "#16a34a" : "#8f8a84"}>
+              <text key={i} x="428" y={344 + i * LOG_LINE} fontSize="12" className="ops-mono">
+                <tspan fill={l.code === "WARN" ? "#f59e0b" : l.code.startsWith("2") ? "rgb(var(--ok))" : "#8f8a84"}>
                   {l.code.padEnd(5, " ")}
                 </tspan>
                 <tspan className="ops-muted-fill">{l.text}</tspan>

@@ -1,6 +1,7 @@
 import { BrandIcon } from "@/components/BrandIcon";
 import { Container } from "@/components/ui";
 import { OpsScene } from "./OpsScene";
+import { Words } from "@/components/Kinetic";
 
 const practices = [
   {
@@ -26,7 +27,7 @@ export function Ops() {
       <Container className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
           <h2 data-reveal className="text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
-            On call, in practice
+            <Words text="On call, in *practice*" onView />
           </h2>
           <p data-reveal className="mt-4 max-w-xl text-pretty text-lg leading-relaxed text-muted">
             Shipping is half the job. The other half is keeping it up: watching the dashboards, reading the logs, and

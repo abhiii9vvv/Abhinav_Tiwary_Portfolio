@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Words } from "@/components/Kinetic";
 
 export function Container({ className = "", children }: { className?: string; children: React.ReactNode }) {
   return <div className={`mx-auto w-full max-w-page px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>;
@@ -15,7 +16,9 @@ export function SectionHead({
 }) {
   return (
     <div data-reveal className={`max-w-2xl ${className}`}>
-      <h2 className="text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">{title}</h2>
+      <h2 className="text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
+        {typeof title === "string" ? <Words text={title} onView /> : title}
+      </h2>
       {intro && <p className="mt-4 text-pretty text-lg leading-relaxed text-muted">{intro}</p>}
     </div>
   );

@@ -92,7 +92,7 @@ export function Work() {
     <section id="work" className="py-24 sm:py-32">
       <Container>
         <SectionHead
-          title="Selected work"
+          title="Selected *work*"
           intro="The wellness platform I'm building now, a site I rebuilt end to end during my internship, a multi-tenant SaaS, and client work running in production."
         />
 
@@ -111,8 +111,8 @@ export function Work() {
             </div>
             <p className="mt-6 text-pretty text-lg leading-relaxed">{flagship.tagline}.</p>
             <ul className="mt-6 space-y-2.5">
-              {flagship.highlights?.map((h) => (
-                <li key={h} className="flex gap-3 text-[15px] leading-snug text-muted">
+              {flagship.highlights?.map((h, i) => (
+                <li key={h} className="stg flex gap-3 text-[15px] leading-snug text-muted" style={{ "--i": i + 2 } as React.CSSProperties}>
                   <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-accent-ink" />
                   {h}
                 </li>
@@ -136,9 +136,19 @@ export function Work() {
               src={flagship.screenshot!}
               alt={`${flagship.name} landing page`}
               url={flagship.live}
-              className="relative transition-transform duration-700 ease-out lg:absolute lg:left-12 lg:top-16 lg:w-[140%] lg:group-hover:-translate-x-6 lg:group-hover:-translate-y-2"
+              className="par relative transition-transform duration-700 ease-out lg:absolute lg:left-12 lg:top-16 lg:w-[140%] lg:group-hover:-translate-x-6 lg:group-hover:-translate-y-2"
               sizes="(min-width: 1024px) 60vw, 100vw"
             />
+            {/* A cursor walks the page and clicks, like a product demo. */}
+            <div aria-hidden="true" className="cursor-walk h-full w-full">
+              <span className="cursor-ring absolute -left-5 -top-5 h-10 w-10 rounded-full border-2 border-white" />
+              <svg viewBox="0 0 24 24" className="relative h-7 w-7 drop-shadow-md">
+                <path d="M4 2.5 20 11l-7 2-3.5 7.5Z" fill="#181614" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" />
+              </svg>
+              <span className="cursor-tag absolute left-6 top-7 whitespace-nowrap rounded-md bg-ink px-2 py-1 font-mono text-[11px] text-bg">
+                click
+              </span>
+            </div>
           </div>
         </article>
 
@@ -163,7 +173,7 @@ export function Work() {
                   src={p.screenshot!}
                   alt={`${p.name} screenshot`}
                   url={p.live ?? p.github}
-                  className="w-full translate-y-3 rounded-b-none border-b-0 transition-transform duration-500 ease-out group-hover:translate-y-0"
+                  className="par w-full translate-y-3 rounded-b-none border-b-0 transition-transform duration-500 ease-out group-hover:translate-y-0"
                   sizes="(min-width: 768px) 45vw, 100vw"
                 />
               </div>

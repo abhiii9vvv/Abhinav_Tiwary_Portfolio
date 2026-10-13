@@ -3,6 +3,7 @@ import Link from "next/link";
 import { profile } from "@/content/profile";
 import { Container } from "@/components/ui";
 import { ArrowRightIcon, FileIcon } from "@/components/icons/ui";
+import { Words } from "@/components/Kinetic";
 
 export function Hero() {
   return (
@@ -10,24 +11,36 @@ export function Hero() {
       <div aria-hidden="true" className="bg-dots mask-fade-b pointer-events-none absolute inset-0" />
       <Container className="relative grid items-center gap-10 pb-14 pt-10 sm:gap-12 sm:pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:pb-0 lg:pt-6">
         <div className="lg:pb-10">
-          <h1 className="animate-rise" style={{ animationDelay: "80ms" }}>
-            <span className="block text-base font-medium tracking-tight text-muted sm:text-xl">
+          <h1>
+            <span
+              className="block animate-rise text-base font-medium tracking-tight text-muted sm:text-xl"
+              style={{ animationDelay: "40ms" }}
+            >
               {profile.name}, {profile.role}
             </span>
             <span className="mt-4 block text-balance text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:mt-5 sm:text-6xl lg:mt-4 lg:text-[clamp(3.25rem,8.6dvh,5.5rem)]">
-              I build it, ship it, and{" "}
+              <Words text="I build it, ship it, and" from={0} />{" "}
               <span className="relative whitespace-nowrap text-accent-ink">
-                keep it running
+                <Words text="keep it running" from={5} />
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 300 16"
                   preserveAspectRatio="none"
                   className="absolute -bottom-2 left-0 h-3 w-full text-accent/50"
                 >
-                  <path d="M2 11C60 4 140 2 298 8" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
+                  <path
+                    d="M2 11C60 4 140 2 298 8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                    pathLength={1}
+                    className="kt-draw"
+                  />
                 </svg>
               </span>
-              .
+              <span className="sr-only">.</span>
+              <span aria-hidden="true" className="kt-dot ml-[0.06em] inline-block h-[0.17em] w-[0.17em] rounded-full bg-accent" />
             </span>
           </h1>
 
@@ -68,6 +81,16 @@ export function Hero() {
           style={{ animationDelay: "200ms" }}
         >
           <div className="relative mx-auto aspect-[4/5] w-full lg:mx-0 lg:h-[min(calc(100dvh-15rem),680px)] lg:w-auto">
+            <p
+              className="absolute bottom-4 left-4 z-10 inline-flex animate-rise items-center gap-2 rounded-full border border-line bg-surface/90 px-3.5 py-1.5 text-sm font-medium shadow-soft backdrop-blur"
+              style={{ animationDelay: "1300ms" }}
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inset-0 animate-ping rounded-full bg-ok opacity-70" />
+                <span className="relative h-2 w-2 rounded-full bg-ok" />
+              </span>
+              Open to roles · {profile.location.replace(", India", "")}
+            </p>
             <div className="absolute inset-x-0 bottom-0 top-[18%] overflow-hidden rounded-[2rem] bg-accent lg:rounded-b-none">
               <div
                 aria-hidden="true"

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { certifications, community } from "@/content/achievements";
 import { BrandIcon } from "@/components/BrandIcon";
 import { Container, SectionHead } from "@/components/ui";
+import { CountUp } from "@/components/CountUp";
 
 const certLogo: Record<string, React.ReactNode> = {
   "Google Cloud Career Launchpad": <BrandIcon name="Google Cloud" className="h-6 w-6" />,
@@ -18,7 +19,7 @@ export function Recognition() {
   return (
     <section id="recognition" className="border-t border-line bg-surface py-24 sm:py-32">
       <Container>
-        <SectionHead title="Recognition" intro="Hackathons, workshops, and a lot of practice problems." />
+        <SectionHead title="Recognition, *earned*" intro="Hackathons, workshops, and a lot of practice problems." />
 
         <div className="mt-14 grid gap-4 md:grid-cols-4">
           {/* SIH: the headline achievement */}
@@ -39,13 +40,16 @@ export function Recognition() {
               alt=""
               width={220}
               height={220}
-              className="absolute -right-4 -top-2 w-40 rotate-6 drop-shadow-2xl sm:w-52"
+              className="trophy absolute -right-4 -top-2 w-40 rotate-6 drop-shadow-2xl sm:w-52"
             />
             <p className="relative font-mono text-sm text-white/80">Smart India Hackathon 2025</p>
-            <p className="relative mt-2 text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl">
-              2nd
-              <br />
-              Runner-Up
+            <p className="relative mt-2 font-display text-7xl uppercase leading-[0.9] sm:text-8xl">
+              <span className="slam">
+                <span style={{ "--i": 0 } as React.CSSProperties}>2nd</span>
+              </span>
+              <span className="slam">
+                <span style={{ "--i": 1 } as React.CSSProperties}>Runner-up.</span>
+              </span>
             </p>
             <p className="relative mt-4 max-w-sm text-pretty leading-relaxed text-white/85">
               Internal round at Sharda University, with InternSetu, an internship discovery platform for Indian students.
@@ -63,8 +67,12 @@ export function Recognition() {
               <BrandIcon name="AWS" className="h-8 w-8" />
             </div>
             <p className="mt-5 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-              First to finish the hands-on Agentic AI workshop.
+              <span className="font-serif text-[1.15em] font-normal italic text-accent">First</span> to finish the
+              hands-on Agentic AI workshop.
             </p>
+            <span aria-hidden="true" className="stamp mt-5 self-start text-sm text-accent" style={{ "--stamp-delay": "1s" } as React.CSSProperties}>
+              Finished first
+            </span>
             <p className="mt-3 text-pretty text-sm leading-relaxed text-bg/70">{community.recognition}</p>
           </article>
 
@@ -76,7 +84,9 @@ export function Recognition() {
           >
             <BrandIcon name="LeetCode" className="h-8 w-8" />
             <div>
-              <p className="text-5xl font-bold tracking-tight">250+</p>
+              <p className="text-5xl font-bold tracking-tight">
+                <CountUp value={250} suffix="+" />
+              </p>
               <p className="mt-2 text-sm leading-snug text-muted">DSA problems: arrays, trees, graphs, and DP.</p>
             </div>
           </article>
@@ -91,7 +101,9 @@ export function Recognition() {
               <Image src="/brand-icons/nptel.png" alt="NPTEL" fill sizes="32px" className="object-contain" />
             </span>
             <div>
-              <p className="text-5xl font-bold tracking-tight">99%</p>
+              <p className="text-5xl font-bold tracking-tight">
+                <CountUp value={99} suffix="%" />
+              </p>
               <p className="mt-2 text-sm leading-snug text-muted">Elite certificate, NPTEL (IIT Kharagpur), 12-week course.</p>
             </div>
           </article>
@@ -101,8 +113,8 @@ export function Recognition() {
         <div data-reveal className="mt-4 rounded-[2rem] border border-line bg-bg p-7 sm:p-9">
           <h3 className="text-lg font-bold tracking-tight">Certifications</h3>
           <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {certifications.map((c) => (
-              <li key={c.name} className="flex gap-4">
+            {certifications.map((c, i) => (
+              <li key={c.name} className="stg flex gap-4" style={{ "--i": i + 2 } as React.CSSProperties}>
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-line bg-surface">
                   {certLogo[c.issuer]}
                 </span>

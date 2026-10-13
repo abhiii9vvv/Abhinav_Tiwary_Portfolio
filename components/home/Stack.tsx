@@ -7,7 +7,7 @@ export function Stack() {
     <section id="stack" className="py-24 sm:py-32">
       <Container>
         <SectionHead
-          title="From the server up"
+          title="From the server *up*"
           intro="I can keep a Linux box healthy, deploy to the cloud, and build the app that runs on it. Here is what I use at each layer, and where I've used it for real."
         />
 
@@ -33,11 +33,12 @@ export function Stack() {
                 </div>
 
                 <ul className="flex flex-wrap content-start gap-2">
-                  {layer.items.map((item) =>
+                  {layer.items.map((item, j) =>
                     hasBrand(item) ? (
                       <li
                         key={item}
-                        className="inline-flex items-center gap-2 rounded-xl border border-bg/10 bg-bg/[0.06] py-2 pl-2.5 pr-3.5 text-sm transition-[transform,border-color] duration-300 group-hover:-translate-y-px group-hover:border-bg/20"
+                        style={{ "--i": i * 2 + j } as React.CSSProperties}
+                        className="stg inline-flex items-center gap-2 rounded-xl border border-bg/10 bg-bg/[0.06] py-2 pl-2.5 pr-3.5 text-sm transition-[transform,border-color] duration-300 group-hover:-translate-y-px group-hover:border-bg/20"
                       >
                         <BrandIcon name={item} className="h-[18px] w-[18px]" />
                         {item.replace(" API", "")}
@@ -45,7 +46,8 @@ export function Stack() {
                     ) : (
                       <li
                         key={item}
-                        className="inline-flex items-center rounded-xl border border-dashed border-bg/25 px-3.5 py-2 text-sm text-bg/85 transition-transform duration-300 group-hover:-translate-y-px"
+                        style={{ "--i": i * 2 + j } as React.CSSProperties}
+                        className="stg inline-flex items-center rounded-xl border border-dashed border-bg/25 px-3.5 py-2 text-sm text-bg/85 transition-transform duration-300 group-hover:-translate-y-px"
                       >
                         {item}
                       </li>

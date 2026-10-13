@@ -21,6 +21,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-ubuntu)", "Ubuntu", "system-ui", "sans-serif"],
+        display: ["var(--font-anton)", "Impact", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
         mono: ["var(--font-ubuntu-mono)", "Ubuntu Mono", "ui-monospace", "monospace"],
       },
       maxWidth: {
