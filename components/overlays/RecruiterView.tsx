@@ -7,7 +7,8 @@ import { profile } from "@/content/profile";
 import { experience } from "@/content/experience";
 import { featuredProjects } from "@/content/projects";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/social";
-import { CheckIcon, CloseIcon, CopyIcon, FileIcon, PinIcon } from "@/components/icons/ui";
+import { ArrowRightIcon, CheckIcon, CloseIcon, CopyIcon, FileIcon, PinIcon } from "@/components/icons/ui";
+import { OrgLogo } from "@/components/OrgLogo";
 import { OPEN_RECRUITER } from "@/lib/theme";
 
 const coreStack = ["Linux", "Bash", "AWS", "Google Cloud", "Docker", "Kubernetes", "Git", "Networking", "Node.js", "React", "PostgreSQL", "Redis"];
@@ -20,6 +21,24 @@ const proof = [
 ];
 
 const topSlugs = ["lifeherba", "skycodehub", "campussetu"];
+
+const MONTHS = /\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/g;
+
+/** "20 August – 30 September 2026" -> "Aug – Sep 2026"; "May 2026 – Present" -> "May 2026 – now". */
+function shortPeriod(period: string) {
+  return period
+    .replace(/\b\d{1,2}\s+(?=[A-Z])/g, "")
+    .replace(MONTHS, (m) => m.slice(0, 3))
+    .replace("Present", "now");
+}
+
+type Step = { org: string; role: string; when: string; current?: boolean };
+
+/** Oldest first: where it started, then every role up to the current one. */
+const journey: Step[] = [
+  { org: "Sharda University", role: "B.Tech CSE begins", when: "Aug 2023" },
+  ...[...experience].reverse().map((e) => ({ org: e.org, role: e.role, when: shortPeriod(e.period), current: e.current })),
+];
 
 export function RecruiterView() {
   const [open, setOpen] = useState(false);
@@ -38,7 +57,6 @@ export function RecruiterView() {
     });
   };
 
-  const current = experience.filter((e) => e.current);
   const top = topSlugs
     .map((s) => featuredProjects.find((p) => p.slug === s))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -62,49 +80,61 @@ export function RecruiterView() {
           </button>
 
           {/* Header */}
-          <header className="relative flex flex-col gap-5 border-b border-line bg-dots px-6 pb-5 pt-6 sm:flex-row sm:items-end sm:px-8">
-            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl ring-2 ring-accent ring-offset-2 ring-offset-surface">
-              <Image
-                src={profile.photo}
-                alt={profile.name}
-                fill
-                sizes="80px"
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="font-mono text-xs text-accent-ink">Recruiter view · 30-second read</p>
-              <h2 className="mt-1 text-3xl font-bold tracking-tight">{profile.name}</h2>
-              <p className="mt-1 text-muted">
-                {profile.role}. {profile.availability.graduating}.
-              </p>
-              <p className="mt-2 font-medium text-ok">{profile.availability.summary}.</p>
+          <header className="relative border-b border-line bg-dots px-6 pb-6 pt-6 sm:px-8">
+            <div className="relative flex flex-col gap-5 sm:flex-row sm:items-center">
+              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-accent ring-2 ring-accent ring-offset-2 ring-offset-surface">
+                <Image src={profile.photo} alt={profile.name} fill sizes="96px" className="object-cover" />
+              </div>
+              <div className="min-w-0 flex-1 pr-10">
+                <p className="text-xs text-accent-ink">Recruiter view · 30-second read</p>
+                <h2 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">{profile.name}</h2>
+                <p className="mt-1 text-muted">
+                  {profile.role}. {profile.availability.graduating}.
+                </p>
+                <p className="mt-2 font-medium text-ok">{profile.availability.summary}.</p>
+              </div>
             </div>
           </header>
+
+          {/* Journey */}
+          <section className="border-b border-line px-6 py-6 sm:px-8">
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="text-sm font-medium text-muted">Journey</h3>
+              <p className="text-xs text-muted">2023 → now</p>
+            </div>
+            <ol className="relative mt-5 grid gap-5 sm:grid-cols-5 sm:gap-3">
+              {/* Rail through the logo centres: vertical on phones, horizontal from sm up. */}
+              <span
+                aria-hidden="true"
+                className="absolute bottom-8 left-[22px] top-[22px] w-px bg-line sm:bottom-auto sm:right-[calc((100%_-_3rem)/5_-_22px)] sm:h-px sm:w-auto"
+              />
+              {journey.map((step) => (
+                <li key={step.org} className="relative flex gap-3 sm:flex-col sm:gap-3">
+                  <OrgLogo
+                    org={step.org}
+                    className={`h-11 w-11 ${step.current ? "ring-2 ring-accent ring-offset-2 ring-offset-surface" : ""}`}
+                  />
+                  <div className="min-w-0">
+                    <p className={`text-xs ${step.current ? "font-medium text-accent-ink" : "text-muted"}`}>
+                      {step.when}
+                    </p>
+                    <p className="mt-0.5 text-sm font-medium leading-snug">{step.role}</p>
+                    <p className="text-xs leading-snug text-muted">{step.org}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
 
           <div className="grid gap-px bg-line sm:grid-cols-5">
             {/* Left column */}
             <div className="space-y-6 bg-surface p-6 sm:col-span-3 sm:px-8 sm:py-7">
-              {current.length > 0 && (
-                <section>
-                  <h3 className="text-sm font-medium text-muted">Right now</h3>
-                  <ul className="mt-3 space-y-2">
-                    {current.map((e) => (
-                      <li key={e.org} className="flex flex-wrap items-baseline gap-x-2">
-                        <span className="font-medium">{e.role}</span>
-                        <span className="text-muted">at {e.org}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              )}
-
               <section>
                 <h3 className="text-sm font-medium text-muted">Proof points</h3>
-                <dl className="mt-3 grid grid-cols-2 gap-3">
+                <dl className="mt-3 grid grid-cols-2 gap-x-6">
                   {proof.map((p) => (
-                    <div key={p.label} className="rounded-2xl bg-sunken/60 px-4 py-3">
-                      <dt className="text-lg font-bold leading-tight tracking-tight text-accent-ink">{p.value}</dt>
+                    <div key={p.label} className="border-t border-line py-3">
+                      <dt className="text-xl font-bold leading-tight tracking-tight">{p.value}</dt>
                       <dd className="mt-1 text-sm leading-snug text-muted">{p.label}</dd>
                     </div>
                   ))}
@@ -113,21 +143,31 @@ export function RecruiterView() {
 
               <section>
                 <h3 className="text-sm font-medium text-muted">Best work to look at</h3>
-                <ol className="mt-3 space-y-2.5">
-                  {top.map((p, i) => (
-                    <li key={p.slug} className="flex gap-3">
-                      <span className="mt-0.5 font-mono text-sm text-accent-ink">{i + 1}.</span>
-                      <div className="min-w-0">
-                        <a
-                          href={p.live ?? p.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-medium underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
-                        >
-                          {p.name}
-                        </a>
-                        <p className="line-clamp-1 text-sm leading-snug text-muted">{p.tagline}</p>
-                      </div>
+                <ol className="mt-3 grid grid-cols-3 gap-3">
+                  {top.map((p) => (
+                    <li key={p.slug}>
+                      <a
+                        href={p.app ?? p.live ?? p.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block overflow-hidden rounded-xl border border-line bg-bg transition-[transform,border-color] hover:-translate-y-0.5 hover:border-ink/25"
+                      >
+                        <span className="relative block aspect-[16/10] overflow-hidden bg-sunken">
+                          {p.screenshot && (
+                            <Image
+                              src={p.screenshot}
+                              alt=""
+                              fill
+                              sizes="180px"
+                              className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            />
+                          )}
+                        </span>
+                        <span className="flex items-center justify-between gap-1 px-2.5 py-2 text-sm font-medium">
+                          <span className="truncate">{p.name}</span>
+                          <ArrowRightIcon className="h-3.5 w-3.5 shrink-0 -rotate-45 text-muted transition-transform group-hover:rotate-0" />
+                        </span>
+                      </a>
                     </li>
                   ))}
                 </ol>

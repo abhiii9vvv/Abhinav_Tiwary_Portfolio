@@ -1,33 +1,6 @@
-import Image from "next/image";
 import { experience } from "@/content/experience";
-import { BrandIcon } from "@/components/BrandIcon";
+import { OrgLogo } from "@/components/OrgLogo";
 import { Container, SectionHead } from "@/components/ui";
-
-const orgLogos: Record<string, string> = {
-  "LifeHerba × Global Pact": "/brand-icons/lifeherba.png",
-  SkyCodeHub: "/brand-icons/skycodehub.svg",
-  "Unessa Foundation": "/brand-icons/unessa.png",
-};
-
-function OrgLogo({ org }: { org: string }) {
-  if (org === "Paytm") {
-    return (
-      <span className="relative grid h-12 w-12 place-items-center rounded-2xl border border-line bg-white">
-        <BrandIcon name="Paytm" className="h-7 w-7" onLight />
-      </span>
-    );
-  }
-  const src = orgLogos[org];
-  return (
-    <span className="relative h-12 w-12 overflow-hidden rounded-2xl border border-line bg-white">
-      {src ? (
-        <Image src={src} alt="" fill sizes="48px" className="object-contain p-2" />
-      ) : (
-        <span className="grid h-full place-items-center font-bold text-[#181615]">{org.slice(0, 1)}</span>
-      )}
-    </span>
-  );
-}
 
 export function Experience() {
   return (
@@ -72,7 +45,7 @@ export function Experience() {
                 <p className="mt-1 text-muted">
                   <span className="font-medium text-ink">{e.org}</span>
                   <span aria-hidden="true"> · </span>
-                  <span className="font-mono text-sm">{e.period.replace(/–/g, "-")}</span>
+                  <span className="text-sm">{e.period.replace(/–/g, "-")}</span>
                 </p>
                 <p className="mt-3 max-w-xl text-pretty leading-relaxed text-muted">{e.description}</p>
                 {e.highlight && (
