@@ -85,17 +85,19 @@ export function RecruiterView() {
           <div className="grid gap-px bg-line sm:grid-cols-5">
             {/* Left column */}
             <div className="space-y-6 bg-surface p-6 sm:col-span-3 sm:px-8 sm:py-7">
-              <section>
-                <h3 className="text-sm font-medium text-muted">Right now</h3>
-                <ul className="mt-3 space-y-2">
-                  {current.map((e) => (
-                    <li key={e.org} className="flex flex-wrap items-baseline gap-x-2">
-                      <span className="font-medium">{e.role}</span>
-                      <span className="text-muted">at {e.org}</span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
+              {current.length > 0 && (
+                <section>
+                  <h3 className="text-sm font-medium text-muted">Right now</h3>
+                  <ul className="mt-3 space-y-2">
+                    {current.map((e) => (
+                      <li key={e.org} className="flex flex-wrap items-baseline gap-x-2">
+                        <span className="font-medium">{e.role}</span>
+                        <span className="text-muted">at {e.org}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
 
               <section>
                 <h3 className="text-sm font-medium text-muted">Proof points</h3>

@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { SITE_URL } from "@/lib/site";
 
 const TITLE = "Abhinav Tiwary's experience | Software & Cloud Engineer";
-const DESCRIPTION = "Experience of Abhinav Tiwary: TechOps Intern at Paytm, Technology & Operations Associate at The ARambha, and software internships.";
+const DESCRIPTION = "Experience of Abhinav Tiwary: Lead Full-Stack Developer (Freelance) at LifeHerba × Global Pact, TechOps Intern at Paytm, and software internships.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

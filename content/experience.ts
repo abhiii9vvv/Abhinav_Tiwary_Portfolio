@@ -9,19 +9,20 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
+    org: "LifeHerba × Global Pact",
+    role: "Lead Full-Stack Developer (Freelance)",
+    period: "May 2026 – Present",
+    current: true,
+    description:
+      "Lead developer of a production telehealth platform: NestJS API, React admin console, and mobile app for video consultations, pharmacy e-commerce, and wellness booking. Built Razorpay payments with verified webhooks, self-hosted WebRTC calls over Socket.IO and Redis, and Docker deployments on AWS EC2 and RDS.",
+    highlight: "93% of 1,165 commits · 288 REST endpoints",
+  },
+  {
     org: "Paytm",
     role: "TechOps Intern",
     period: "20 August – 30 September 2026",
     description:
       "Completed TechOps training at One97 Communications (Paytm) in the Tech-Non Dev TechOps team, working on technical operations, system monitoring, and cross-functional technology support.",
-  },
-  {
-    org: "The ARambha",
-    role: "Technology & Operations Associate",
-    period: "Client",
-    current: true,
-    description:
-      "Working across technology, digital platforms, and operational initiatives, contributing to technology-driven solutions and digital systems supporting the Punjab Assembly Election Campaign 2027.",
   },
   {
     org: "SkyCodeHub",

@@ -4,7 +4,7 @@ import { BrandIcon } from "@/components/BrandIcon";
 import { Container, SectionHead } from "@/components/ui";
 
 const orgLogos: Record<string, string> = {
-  "The ARambha": "/brand-icons/thearambha.png",
+  "LifeHerba × Global Pact": "/brand-icons/lifeherba.png",
   SkyCodeHub: "/brand-icons/skycodehub.svg",
   "Unessa Foundation": "/brand-icons/unessa.png",
 };
@@ -36,7 +36,7 @@ export function Experience() {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <SectionHead
             title="Where I've *worked*"
-            intro="From tech operations at Paytm to campaign technology and nonprofit backends. Every role put my code in front of real users."
+            intro="From a production telehealth platform to tech operations at Paytm and nonprofit backends. Every role put my code in front of real users."
           />
         </div>
 
