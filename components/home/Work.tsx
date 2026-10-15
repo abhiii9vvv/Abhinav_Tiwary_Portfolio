@@ -52,6 +52,18 @@ function ProjectLinks({ project }: { project: Project }) {
           <span className="sr-only">for {project.name}</span>
         </a>
       )}
+      {project.app && (
+        <a
+          href={project.app}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-1.5 rounded-lg border border-line px-3.5 py-2 text-sm transition-colors hover:border-ink/30"
+        >
+          Open web app
+          <ArrowRightIcon className="h-3.5 w-3.5 -rotate-45 transition-transform group-hover:rotate-0" />
+          <span className="sr-only">for {project.name}</span>
+        </a>
+      )}
       {project.github && (
         <a
           href={project.github}

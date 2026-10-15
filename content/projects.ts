@@ -5,6 +5,8 @@ export type Project = {
   description: string;
   tech: string[];
   live?: string;
+  /** Signed-in web app, when it lives apart from the marketing site. */
+  app?: string;
   github?: string;
   screenshot?: string;
   tier: "featured" | "strong" | "more";
@@ -22,6 +24,7 @@ export const featuredProjects: Project[] = [
       "One app to consult verified practitioners, book wellness centres and therapies, order genuine medicines, and shop supplements. I design and build it end to end.",
     tech: ["React", "Vite", "Tailwind CSS", "TypeScript"],
     live: "https://lifeherbagroup.com/",
+    app: "https://app.lifeherbagroup.com/",
     screenshot: "/screenshots/lifeherba.png",
     highlights: [
       "One promise up top, with the real app shown in a phone frame instead of described in paragraphs",
