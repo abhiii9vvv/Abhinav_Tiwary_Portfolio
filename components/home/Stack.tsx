@@ -56,7 +56,7 @@ export function Stack() {
                 </ul>
 
                 <div className="md:col-start-2 lg:col-start-auto">
-                  <p className="font-mono text-xs text-bg/50">Used in</p>
+                  <p className="text-xs text-bg/50">Used in</p>
                   <p className="mt-1.5 text-sm leading-relaxed">
                     {layer.shippedIn.map((name, j) => (
                       <span key={name}>

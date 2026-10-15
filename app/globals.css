@@ -493,12 +493,10 @@ body {
 }
 
 /* ── Prompt Motion vocabulary ───────────────────────────────────────── */
-/* Accent word: italic serif in orange, set against the bold sans. */
+/* Accent word: Ubuntu italic in orange, set against the bold upright. */
 .kt-accent {
-  font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 500;
   color: rgb(var(--accent-ink));
   padding-right: 0.06em;
 }
@@ -509,7 +507,7 @@ body {
   border: 2px solid currentColor;
   border-radius: 6px;
   padding: 0.15em 0.55em;
-  font-family: var(--font-anton), Impact, sans-serif;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   rotate: -8deg;

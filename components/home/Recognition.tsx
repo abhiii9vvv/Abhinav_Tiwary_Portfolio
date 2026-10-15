@@ -42,8 +42,8 @@ export function Recognition() {
               height={220}
               className="trophy absolute -right-4 -top-2 w-40 rotate-6 drop-shadow-2xl sm:w-52"
             />
-            <p className="relative font-mono text-sm text-white/80">Smart India Hackathon 2025</p>
-            <p className="relative mt-2 font-display text-7xl uppercase leading-[0.9] sm:text-8xl">
+            <p className="relative text-sm text-white/80">Smart India Hackathon 2025</p>
+            <p className="relative mt-2 text-6xl font-bold leading-[0.95] tracking-tight sm:text-7xl">
               <span className="slam">
                 <span style={{ "--i": 0 } as React.CSSProperties}>2nd</span>
               </span>
@@ -63,11 +63,11 @@ export function Recognition() {
             className="flex flex-col rounded-[2rem] bg-ink p-7 text-bg md:col-span-2"
           >
             <div className="flex items-center justify-between gap-4">
-              <p className="font-mono text-sm text-bg/60">AWS Student Community Day, Delhi NCR 2026</p>
+              <p className="text-sm text-bg/60">AWS Student Community Day, Delhi NCR 2026</p>
               <BrandIcon name="AWS" className="h-8 w-8" />
             </div>
             <p className="mt-5 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-              <span className="font-serif text-[1.15em] font-normal italic text-accent">First</span> to finish the
+              <span className="font-medium italic text-accent">First</span> to finish the
               hands-on Agentic AI workshop.
             </p>
             <span aria-hidden="true" className="stamp mt-5 self-start text-sm text-accent" style={{ "--stamp-delay": "1s" } as React.CSSProperties}>
@@ -121,7 +121,7 @@ export function Recognition() {
                 <div className="min-w-0">
                   <p className="font-medium leading-snug">{c.name}</p>
                   <p className="mt-0.5 text-sm text-muted">{c.issuer}</p>
-                  {c.date && <p className="mt-0.5 font-mono text-xs text-muted">{c.date}</p>}
+                  {c.date && <p className="mt-0.5 text-xs text-muted">{c.date}</p>}
                 </div>
               </li>
             ))}

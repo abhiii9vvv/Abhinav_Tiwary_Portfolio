@@ -66,7 +66,7 @@ export function Pipeline() {
           className="relative mt-14 overflow-hidden rounded-[2rem] border border-line bg-surface p-5 shadow-lift sm:p-8"
         >
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="font-mono text-sm text-muted">
+            <p className="text-sm text-muted">
               deploy <span className="text-ink">#142</span> · main
             </p>
             <p

@@ -186,7 +186,7 @@ export function CommandPalette() {
               const Icon = c.icon;
               return (
                 <li key={c.id} role="presentation">
-                  {header && <p className="px-3 pb-1 pt-3 font-mono text-xs text-muted">{header}</p>}
+                  {header && <p className="px-3 pb-1 pt-3 text-xs text-muted">{header}</p>}
                   <button
                     type="button"
                     id={`cmd-${c.id}`}

@@ -68,12 +68,12 @@ export function About() {
                 <span className="relative h-10 w-10 overflow-hidden rounded-xl border border-line bg-white">
                   <Image src="/brand-icons/sharda.png" alt="" fill sizes="40px" className="object-contain p-1" />
                 </span>
-                <span className="font-mono text-xs text-muted">Education</span>
+                <span className="text-xs text-muted">Education</span>
               </dt>
               <dd className="mt-4">
                 <p className="font-bold tracking-tight">{education.institution}</p>
                 <p className="mt-1 text-sm text-muted">{education.degree}</p>
-                <p className="mt-1 font-mono text-xs text-muted">
+                <p className="mt-1 text-xs text-muted">
                   {education.period.replace(/–/g, "-")}, {education.location}
                 </p>
               </dd>
@@ -83,7 +83,7 @@ export function About() {
               style={{ "--reveal-delay": "80ms" } as React.CSSProperties}
               className="rounded-2xl border border-line bg-surface p-6"
             >
-              <dt className="font-mono text-xs text-muted">Community</dt>
+              <dt className="text-xs text-muted">Community</dt>
               <dd className="mt-4">
                 <p className="font-bold tracking-tight">{community.event}</p>
                 <p className="mt-1 text-sm leading-relaxed text-muted">{community.description}</p>

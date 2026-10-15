@@ -60,7 +60,7 @@ export function BrowserFrame({
         <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
         {host && (
-          <span className="mx-auto max-w-[60%] truncate rounded-md bg-surface px-3 py-0.5 font-mono text-[11px] text-muted">
+          <span className="mx-auto max-w-[60%] truncate rounded-md bg-surface px-3 py-0.5 font-mono text-xs text-muted">
             {host}
           </span>
         )}

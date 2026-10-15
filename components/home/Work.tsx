@@ -157,7 +157,7 @@ export function Work() {
               <svg viewBox="0 0 24 24" className="relative h-7 w-7 drop-shadow-md">
                 <path d="M4 2.5 20 11l-7 2-3.5 7.5Z" fill="#181614" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" />
               </svg>
-              <span className="cursor-tag absolute left-6 top-7 whitespace-nowrap rounded-md bg-ink px-2 py-1 font-mono text-[11px] text-bg">
+              <span className="cursor-tag absolute left-6 top-7 whitespace-nowrap rounded-md bg-ink px-2 py-1 font-mono text-xs text-bg">
                 click
               </span>
             </div>
@@ -227,7 +227,7 @@ export function Work() {
                   <GithubIcon className="h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-ink" />
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{p.description}</p>
-                <p className="mt-auto pt-4 font-mono text-xs text-muted">{p.tech.join(" / ")}</p>
+                <p className="mt-auto pt-4 text-xs text-muted">{p.tech.join(" / ")}</p>
               </a>
             ))}
           </div>

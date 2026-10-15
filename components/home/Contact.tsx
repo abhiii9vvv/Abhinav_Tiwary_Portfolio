@@ -23,7 +23,7 @@ export function Contact() {
           />
 
           <div className="relative max-w-3xl">
-            <h2 className="font-display text-7xl uppercase leading-[0.88] sm:text-[9rem]">
+            <h2 className="text-6xl font-bold leading-[0.95] tracking-tight sm:text-8xl">
               <span className="slam">
                 <span style={{ "--i": 0 } as React.CSSProperties}>Let&apos;s build</span>
               </span>
@@ -32,7 +32,7 @@ export function Contact() {
                   something<span className="text-accent">.</span>
                 </span>
               </span>
-              <span className="slam mt-2 font-serif text-5xl normal-case italic leading-tight text-accent sm:text-6xl">
+              <span className="slam mt-2 text-5xl font-medium italic leading-tight text-accent sm:text-6xl">
                 <span style={{ "--i": 2 } as React.CSSProperties}>together?</span>
               </span>
             </h2>

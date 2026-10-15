@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Instrument_Serif, Ubuntu, Ubuntu_Mono } from "next/font/google";
+import { Ubuntu, Ubuntu_Mono } from "next/font/google";
 import { profile } from "@/content/profile";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -26,16 +26,6 @@ const ubuntuMono = Ubuntu_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-ubuntu-mono",
-  display: "swap",
-});
-
-// Display pair for motion moments: condensed slab type and an italic serif accent.
-const anton = Anton({ subsets: ["latin"], weight: "400", variable: "--font-anton", display: "swap" });
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: "italic",
-  variable: "--font-serif",
   display: "swap",
 });
 
@@ -120,7 +110,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${ubuntu.variable} ${ubuntuMono.variable} ${anton.variable} ${serif.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${ubuntu.variable} ${ubuntuMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
