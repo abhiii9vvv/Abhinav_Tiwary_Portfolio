@@ -107,8 +107,8 @@ export function Hero() {
                 alt={`${profile.name}, ${profile.role}`}
                 fill
                 priority
-                sizes="(min-width: 1024px) 480px, (min-width: 640px) 380px, 300px"
-                className="object-cover object-top"
+                sizes="(min-width: 1024px) 600px, (min-width: 640px) 480px, 380px"
+                className="origin-top scale-125 object-cover object-top"
               />
             </div>
           </div>
